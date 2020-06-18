@@ -1,4 +1,4 @@
-var links = ['./test1/index1.html', './test2/gummy.html', './3/color_of_your_heart.html', './4/what_is_love.html', './c/Test5/page1_start.html', './c/T6/page1_question.html', './d/8.html', './d/7.html'];
+var links = ['./test1/gummy.html', './test2/gummy.html', './3/color_of_your_heart.html', './4/what_is_love.html', './TEST5/page1_start.html', './TEST6/page1_question.html', './d/8.html', './d/7.html'];
 
 class CitySvg extends React.Component {
   componentDidMount() {
@@ -39,7 +39,7 @@ class CitySvg extends React.Component {
             id: "house-seven",
             ref: h => this.houseSeven = h,
             "data-project": 6,
-            
+
             onClick: e => this.mouseAction(e)
           },
           React.createElement("g", {
@@ -318,7 +318,7 @@ class CitySvg extends React.Component {
           React.createElement("g", {
               id: "bg-fill-7",
               className: "bg-fill"
-            
+
             },
             React.createElement("path", {
               fill: "#b6d788",
