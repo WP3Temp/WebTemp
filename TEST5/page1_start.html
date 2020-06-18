@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>색깔로 알아보는 나의 상태</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'SCDream6';
+        src: url('font/SCDream6.otf');
+      }
+      body {
+        color: #676064;
+        background: #A69E8F;
+        font: 300 1em 'Fira Sans', sans-serif;
+        height: 100%;
+      }
+      header {
+        font-family: 'SCDream6';
+        font-size: 16px;
+        position: fixed;
+        top: 0;
+        margin-left: 1em;
+        text-align: center;
+        color: #E3E3E3;
+      }
+      .ment {
+        position: absolute;
+        top: 35%; left: 50%;
+        width: 1000px; heigt: 150px;
+        margin-top: -50px;
+        margin-left: -500px;
+        background: none;
+      }
+      p {
+        color: #E3E3E3;
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 88px;
+        opacity: 1;
+        text-align: center;
+        transition: opacity .8s;
+      }
+      p.hide {
+        opacity: 0;
+      }
+      .fill:hover,
+      .fill:focus {
+        box-shadow: inset 0 0 0 2em var(--hover);
+      }
+      .fill {
+        --color: #676064;
+        --hover: #4F4A4D;
+      }
+      .button {
+        position: absolute;
+        top: 60%; left: 50%;
+        width: 300px; heigt: 150px;
+        margin-top: -75px;
+        margin-left: -150px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      button {
+        color: var(--color);
+        -webkit-transition: 0.25s;
+        transition: 0.25s;
+      }
+      button:hover, button:focus {
+        border-color: var(--hover);
+        color: #676064;
+      }
+      button {
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+      }
+      a { text-decoration: none; }
+      .footer {
+        flex-wrap: wrap;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+      footer {
+        position:fixed;
+        bottom: 0;
+        text-align: center;
+        display: flex;
+        font: 10px/1.7 'Nunito';
+        padding: 3px 3px;
+        border-radius: 10px;
+        border-bottom: 1px dashed;
+        background: transparent;
+        border: 1px dashed #454a56;
+        color: #454a56;
+        background: none;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>색깔로 알아보는 나의 상태</h1>
+    </header>
+    <div class="ment">
+      <p>지금 나는 어떤 상태일까?</p>
+    </div>
+    <div class="button">
+      <a href="page2_question.html"><button class="fill">NEXT</button></a>
+    </div>
+    <div class="footer">
+      <footer>
+        본 서비스는 세종대학교 2020년 1학기 <웹프로그래밍>의 팀 프로젝트입니다. 페이지 관련 문의사항 및 건의사항을 보내주세요. 확인 후 빠르게 연락 드리겠습니다. 본 서비스의 공유 및 사용은 격렬하게 환영합니다.<br>
+        Disclaimer: All content is provided for fun and entertainment purposes only.
+      </footer>
+    </div>
+    <script src="js\jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+      $( document ).on( "mousemove", function( event ) {
+        $('p').addClass('hide');
+        $mPos = event.pageX;
+        return $mPos;
+      });
+    </script>
+  </body>
+</html>

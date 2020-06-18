@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./src/js.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./src/fullpage.js"></script>
+    <link rel="stylesheet" type="text/css" href="./dist/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="./dist/subpage7des.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Raleway:wght@100;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <p id="logo"><a href="../index.html">우리 집에 왜 왔니?</a></p>
+    </div>
+
+    <div id="fullpage">
+        <div class="section">
+            <div class="left1img">
+                <img src="./image/P7Title1.jpg" alt="">
+            </div>
+            <div class="left2img">
+                <img src="./image/P7Title2.jpg" alt="">
+            </div>
+            <div id="title">나의 다음 여행지<br>찾아보기</div>
+            <div id="subtitle">10개의 문제로 알아보는 나의 다음 여행지</div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.1</p>
+            </div>
+            <div>
+                <p class="questions">나의 패션 스타일은?</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                클래식
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                캐주얼
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.2</p>
+            </div>
+            <div>
+                <p class="questions">나는 낯선 사람과<br>술을 마셔야 한다면?</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                맥주
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                칵테일
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.3</p>
+            </div>
+            <div>
+                <p class="questions">평생 한 곳에만 살 수 있다면?</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                화려한 궁전
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                편안한 집
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.4</p>
+            </div>
+            <div>
+                <p class="questions">나는 노래방에 가면</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                춤을 춘다
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                노래를 부른다
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.5</p>
+            </div>
+            <div>
+                <p class="questions">나는 여행지로</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                산이 좋다
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                바다가 좋다
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.6</p>
+            </div>
+            <div>
+                <p class="questions">나는 장거리여행을 간다면</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                친한 친구
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                사랑하는 사람
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.7</p>
+            </div>
+            <div>
+                <p class="questions">나는 주로 사진을 찍을 때</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                도시를 찍는다
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                자연을 찍는다
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.8</p>
+            </div>
+            <div>
+                <p class="questions">휴식을 한다면?</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                공연을 본다
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                잠을 잔다
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.9</p>
+            </div>
+            <div>
+                <p class="questions">예술 작품을 볼 때</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                의도를 분석한다
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                그대로 즐긴다
+            </div>
+        </div>
+        <div class="section">
+            <div class="right1img">
+                1
+            </div>
+            <div class="right2img">
+                2
+            </div>
+            <div>
+                <p class="qnum">Q.10</p>
+            </div>
+            <div>
+                <p class="questions">둘 중의 하나만<br>가질 수 있다면</p>
+            </div>
+            <button class="moveSectionDown" id='answerbtn1' onclick="btn1input();">
+                돈이 좋다
+            </button>
+            <div class="moveSectionDown" id='answerbtn2' onclick="btn2input();">
+                권력이 좋다
+            </div>
+        </div>
+        <div class="section">
+            <div class="finalq">
+                <button id='result_render' onclick="result_render(userdata);">결과 확인</button>
+            </div>
+            <button id='back'><a href="../index.html">메인으로</a></button>
+            <button class="result__trigger">댓글 달기</button>
+        </div>
+    </div>
+
+    <script src="./src/subPage7js.js"></script>
+
+    <section>
+        <a class="scroll-down" address="true"></a>
+    </section>
+
+    <div class="result">
+        <span class="result__close">&#x2715;</span>
+        <br>
+        <br>
+        <div id="disqus_thread"></div>
+        <script>
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://webproject-007.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+
+    </div>
+</body>
+
+</html>

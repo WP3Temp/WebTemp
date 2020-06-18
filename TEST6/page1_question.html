@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내가 보는 나, 타인이 보는 나</title>
+    <link rel="stylesheet" href="css/el.css">
+    <style>
+      .scroll {
+        color: #333333;
+        font-size: 14px;
+      }
+      .page-result {
+        z-index=6;
+        width: 100%;
+        height: 100vh;
+        color: #333333;
+        background: #B0B0B0;
+      }
+      .page-result::after {
+        content: none;
+      }
+      .page-result p {
+        font-family: 'SCDream6';
+        font-size: 20px;
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 2;
+      }
+      .result {
+        position: relative;
+        top: 5rem;
+        width: 70%;
+        padding: 2rem;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+        background-color: #E3E3E3;
+      }
+
+      .scroll a {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        z-index: 2;
+        display: inline-block;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        color: #333333;
+        font : normal 400 20px/1 'Josefin Sans', sans-serif;
+        letter-spacing: .1em;
+        text-decoration: none;
+        transition: opacity .3s;
+      }
+      .scroll a:hover {
+        opacity: .5;
+      }
+
+      #scroll a {
+        padding-top: 60px;
+      }
+      #scroll a span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb04 2s infinite;
+        animation: sdb04 2s infinite;
+        box-sizing: border-box;
+      }
+
+      @-webkit-keyframes sdb04 {
+        0% {
+          -webkit-transform: rotate(-45deg) translate(0, 0);
+        }
+        20% {
+          -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+        }
+        40% {
+          -webkit-transform: rotate(-45deg) translate(0, 0);
+        }
+      }
+      @keyframes sdb04 {
+        0% {
+          transform: rotate(-45deg) translate(0, 0);
+        }
+        20% {
+          transform: rotate(-45deg) translate(-10px, 10px);
+        }
+        40% {
+          transform: rotate(-45deg) translate(0, 0);
+        }
+      }
+
+
+
+      #toggle {
+        float:right;
+        display: block;
+        width: 28px;
+        height: 30px;
+        right: 1rem;
+        margin-top: 30px;
+        margin-right: 30px;
+      }
+
+      #toggle span:after,
+      #toggle span:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -9px;
+      }
+      #toggle span:after{
+        top: 9px;
+      }
+      #toggle span {
+        position: relative;
+        display: block;
+      }
+
+      #toggle span,
+      #toggle span:after,
+      #toggle span:before {
+        width: 100%;
+        height: 5px;
+        background-color: #888;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+        border-radius: 2px;
+      }
+
+      /* on activation */
+      #toggle.on span {
+        background-color: transparent;
+      }
+      #toggle.on span:before {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      #toggle.on span:after {
+        transform: rotate(-45deg) translate(7px, -8px);
+      }
+      #toggle.on + #menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* menu appearance*/
+      #menu {
+        float:right;
+        color: #999;
+        width: 200px;
+        padding: 10px;
+        margin-top: 30px;
+
+        font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+        text-align: center;
+        border-radius: 4px;
+        background: white;
+        box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+        /* just for this demo */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s;
+      }
+      #menu:after {
+        position: relative;
+        top: -15px;
+        left: 95px;
+        content: "";
+        display: none;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 20px solid white;
+      }
+      #ul, .li, .li-a {
+        font-family: 'SCDream4';
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+      .li-a {
+        padding: 5px;
+        color: #888;
+        text-decoration: none;
+        transition: all .2s;
+      }
+      .li-a:hover,
+      .li-a:focus {
+        background: #1ABC9C;
+        color: #fff;
+      }
+      .result-img {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>내가 보는 나, 타인이 보는 나</h1>
+    </header>
+    <div class="cont s--inactive">
+      <!-- cont inner start -->
+      <div id="question" class="cont__inner">
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 1</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q1. 하루 중 제일 기분이 좋을 때는?
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q1" id="q1-a-opt" value="2"/>
+                        <label for="q1-a-opt" class="label">아침</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q1" id="q1-b-opt" value="4"/>
+                        <label for="q1-b-opt" class="label">오후나 이른 저녁</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q1" id="q1-c-opt" value="6"/>
+                        <label for="q1-c-opt" class="label">늦은 밤</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory1();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">1</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="1">1</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 2</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q2. 걸을 때, 나는 보통 이렇게 걷는다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q2" id="q2-a-opt" value="6"/>
+                        <label for="q2-a-opt" class="label">보폭을 넓게, 빨리 걷는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q2" id="q2-b-opt" value="4"/>
+                        <label for="q2-b-opt" class="label">보폭을 좁게, 빨리 걷는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q2" id="q2-c-opt" value="7"/>
+                        <label for="q2-c-opt" class="label">머리를 들고, 세상을 정면으로 바라보며 덜 빠르게 걷는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q2" id="q2-d-opt" value="2"/>
+                        <label for="q2-d-opt" class="label">바닥을 보며 덜 빠르게 걷는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q2" id="q2-e-opt" value="1"/>
+                        <label for="q2-e-opt" class="label">아주 느리게 걷는다</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory2();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">2</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="2">2</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 3</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q3. 사람들과 얘기할 때,<br>나는 이렇게 이야기한다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q3" id="q3-a-opt" value="4"/>
+                        <label for="q3-a-opt" class="label">내 팔짱을 끼고 서서</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q3" id="q3-b-opt" value="2"/>
+                        <label for="q3-b-opt" class="label">두 손을 마주잡고</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q3" id="q3-c-opt" value="5"/>
+                        <label for="q3-c-opt" class="label">한 손이나 양 손을 힙에 얹고</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q3" id="q3-d-opt" value="7"/>
+                        <label for="q3-d-opt" class="label">얘기 나누는 상대방을 건드리거나 살짝 밀면서</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q3" id="q3-e-opt" value="6"/>
+                        <label for="q3-e-opt" class="label">내 귀나 턱을 만지작거리거나 손가락으로 머리를 빗으면서</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="el__close-btn" onClick="memory3();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">3</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="3">3</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 4</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q4. 편안히 쉴 때, 나는
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q4" id="q4-a-opt" value="4"/>
+                        <label for="q4-a-opt" class="label">다리를 굽힌 채로 나란히 두고 앉는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q4" id="q4-b-opt" value="6"/>
+                        <label for="q4-b-opt" class="label">다리를 꼬고 앉는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q4" id="q4-c-opt" value="2"/>
+                        <label for="q4-c-opt" class="label">다리를 쭉 펴고 앉는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q4" id="q4-d-opt" value="1"/>
+                        <label for="q4-d-opt" class="label">한쪽 다리를 접고 깔고 앉는다</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory4();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">4</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="4">4</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 5</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q5. 뭔가 아주 재미있는 일이 생겼을 때,<br>나는 이렇게 웃는다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q5" id="q5-a-opt" value="6"/>
+                        <label for="q5-a-opt" class="label">아주 큰 소리로 즐거움을 숨기지 않고 웃는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q5" id="q5-b-opt" value="4"/>
+                        <label for="q5-b-opt" class="label">웃지만 그다지 크지 않은 소리로 웃는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q5" id="q5-c-opt" value="3"/>
+                        <label for="q5-c-opt" class="label">조용히 소리를 별로 내지 않으며 웃는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q5" id="q5-d-opt" value="5"/>
+                        <label for="q5-d-opt" class="label">오히려 쑥스러운 듯한 미소</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory5();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">5</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="5">5</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 6</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q6. 파티나 사람들이 많이 모이는 장소에,<br>나는 이렇게 등장한다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q6" id="q6-a-opt" value="6"/>
+                        <label for="q6-a-opt" class="label">사람들이 내 존재를 의식하도록 화려한 등장을 한다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q6" id="q6-b-opt" value="4"/>
+                        <label for="q6-b-opt" class="label">아는 사람들을 찾을 수 있을까 해서 둘러보며 차분히 들어선다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q6" id="q6-c-opt" value="2"/>
+                        <label for="q6-c-opt" class="label">시선을 끌지 않기 위해 할 수 있는 한 최대로 조용히 입장한다</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="el__close-btn" onClick="memory6();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">6</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="6">6</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 7</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q7. 완전히 일에 몰두한 채로 열심히 하다가<br>방해 받았을 때, 나는 이렇게 된다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q7" id="q7-a-opt" value="6"/>
+                        <label for="q7-a-opt" class="label">휴식의 기회를 반갑게 맞이한다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q7" id="q7-b-opt" value="2"/>
+                        <label for="q7-b-opt" class="label">짜증이 활활 난다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q7" id="q7-c-opt" value="4"/>
+                        <label for="q7-c-opt" class="label">그 중간 어딘가 쯤</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory7();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">7</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="7">7</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 8</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q8. 다음 중 제일 좋아하는 색은?
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q8" id="q8-a-opt" value="6"/>
+                        <label for="q8-a-opt" class="label">빨강이나 오렌지</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q8" id="q8-b-opt" value="7"/>
+                        <label for="q8-b-opt" class="label">까만색</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q8" id="q8-c-opt" value="5"/>
+                        <label for="q8-c-opt" class="label">노랑이나 연한 파랑</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q8" id="q8-d-opt" value="4"/>
+                        <label for="q8-d-opt" class="label">녹색</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q8" id="q8-e-opt" value="3"/>
+                        <label for="q8-e-opt" class="label">짙은 파랑이나 보라</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="choice" id="q8-f-opt" value="2"/>
+                        <label for="q8-f-opt" class="label">하양</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="choice" id="q8-g-opt" value="1"/>
+                        <label for="q8-g-opt" class="label">갈색이나 회색</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory8();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">8</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="8">8</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 9</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q9. 잠자리에 들어서 잠들기 바로 직전에,<br>나는 이런 자세를 취한다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q9" id="q9-a-opt" value="7"/>
+                        <label for="q9-a-opt" class="label">몸을 똑바로 펴고 누운 포즈이다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q9" id="q9-b-opt" value="6"/>
+                        <label for="q9-b-opt" class="label">엎드린 채로 몸을 죽 편 포즈이다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q9" id="q9-c-opt" value="4"/>
+                        <label for="q9-c-opt" class="label">약간 몸을 둥글린 채로 옆으로 누운 포즈이다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q9" id="q9-d-opt" value="2"/>
+                        <label for="q9-d-opt" class="label">한 팔을 베고 있다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q9" id="q9-e-opt" value="1"/>
+                        <label for="q9-e-opt" class="label">머리를 이불 밑에 넣고 있다</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="el__close-btn" onClick="memory9();"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">9</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="9">9</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+        <!-- el start -->
+        <div class="el">
+          <div class="el__overflow">
+            <div class="el__inner">
+              <div class="el__bg"></div>
+              <div class="el__preview-cont">
+                <h2 class="el__heading">Question 10</h2>
+              </div>
+              <div class="el__content">
+                <div class="el__text"></div>
+                <div class="question">
+                  <div class="text">
+                    Q10. 나는 이런 꿈을 자주 꾼다.
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="container">
+                    <ul class="list">
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q10" id="q10-a-opt" value="4" onClick="display_result(); display_scroll(); memory10();"/>
+                        <label for="q10-a-opt" class="label">낙하하는 꿈</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q10" id="q10-b-opt" value="2" onClick="display_result(); display_scroll(); memory10();"/>
+                        <label for="q10-b-opt" class="label">싸우거나 애쓰는 꿈</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q10" id="q10-c-opt" value="3" onClick="display_result(); display_scroll(); memory10();"/>
+                        <label for="q10-c-opt" class="label">무엇이나 누군가를 찾는 꿈</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q10" id="q10-d-opt" value="5" onClick="display_result(); display_scroll(); memory10();"/>
+                        <label for="q10-d-opt" class="label">날아오르거나 떠오르는 꿈</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q10" id="q10-e-opt" value="6" onClick="display_result(); display_scroll(); memory10();"/>
+                        <label for="q10-e-opt" class="label">꿈은 잘 꾸지 않는다</label>
+                      </li>
+                      <li class="list__item">
+                        <input type="radio" class="radio-btn" name="Q10" id="q10-f-opt" value="1" onClick="display_result(); display_scroll(); memory10();"/>
+                        <label for="q10-f-opt" class="label">항상 좋은 느낌의 꿈이다</label>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- scroll click말고 radio click해야 나타나게 바꾸기 -->
+                  <div id="scroll" class="scroll" onClick="cal();">
+                    <a href="#result"><span></span>Click!</a>
+                  </div>
+                </div>
+                <div class="el__close-btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="el__index">
+            <div class="el__index-back">10</div>
+            <div class="el__index-front">
+              <div class="el__index-overlay" data-index="10">10</div>
+            </div>
+          </div>
+        </div>
+        <!-- el end -->
+      </div>
+      <!-- cont inner end -->
+    </div>
+    <div id="result" class="page-result">
+      <a href="#menu" id="toggle"><span></span></a>
+      <div id="menu">
+        <ul id="ul">
+          <li class="li"><a href="../index.html" class="li-a">메인으로 돌아가기</a></li>
+          <li class="li" onclick="reset();"><a href="#question" class="li-a" onclick="reset();">다시하기</a></li>
+        </ul>
+      </div>
+      <div id="result1" class="result">
+        <p class="result-img"><img src="img/R1.jpg" width="70%"></p>
+        <p>
+          "취급 주의 형"이다. 허영심이 있고 자기중심적이며 극히 지배적인 사람이다. 당신을 부러워하고 우러러보며 당신처럼 되기를 바라는 사람들도 있지만 당신과 너무 가까워질까 우려하며 당신을 신뢰하지는 않는다.
+        </p>
+      </div>
+      <div id="result2" class="result">
+        <p class="result-img"><img src="img/R2.jpg" width="70%"></p>
+        <p>
+          잘 흥분하고 상당히 변덕스러우며 충동적이다. 자연스러운 리더 타입으로 빠른 결정을 내릴 수 있다. 과감하고 모험성이 있으며 무엇이든 한 번쯤은 시도해 보는, 찬스에 강하고 모험을 즐기는 타입이다. 당신과 가까이하는 사람들은 당신이 발하는 강렬함에 이끌린다.
+        </p>
+      </div>
+      <div id="result3" class="result">
+        <p class="result-img"><img src="img/R3.jpg" width="70%"></p>
+        <p>
+          상큼하고 발랄하고 매력적이고 재미있고 현실적이면서 늘 즐거운 사람이다.
+          어디서든지 주위의 이목을 사로잡는 사람이지만, 적당한 주제 파악으로 교만해지지 않을 줄도 아는 사람이다. 다정하고 친절하며 이해심이 많은 사람으로 여겨지며 처진 기분은 업! 시켜주고 어려울 땐 도와주는 사람이다.        </p>
+      </div>
+      <div id="result4" class="result">
+        <p class="result-img"><img src="img/R4.jpg" width="70%"></p>
+        <p>
+          현명하고 신중하며 조심스럽고 현실적이다. 똑똑하고 재능과 능력이 있으면서 한편 겸손한 사람으로도 여겨지고 있다. 친구를 사귈 때 너무 급하거나 가볍게 접근하지 않으며 한 번 사귄 친구에게는 상당히 극진하고 또 자신도 그렇게 대해주기를 기대한다. 당신의 참모습을 알게 되는 사람들은, 당신의 친구에 대한 그 신뢰를 흔드는 것이 아주 어렵다는 것과 한 번 그 신뢰가 무너지면 그것을 극복하는 것도 마찬가지로 아주 오래 걸린다는 것을 깨닫게 될 것이다.
+        </p>
+      </div>
+      <div id="result5" class="result">
+        <p class="result-img"><img src="img/R5.jpg" width="70%"></p>
+        <p>
+          집요하며 깐깐한 사람. 상당히 신중하고 대단히 조심스러우며 느리고도 꾸준하게 전진하는 사람이다. 당신이 무슨 일인가를 충동적으로 하는 모습을 본다면 친구들은 상당히 충격을 받을지도 모른다. 무슨 일이든 꼼꼼히 모든 각도에서 살펴본 다음 대부분 퇴짜를 놓는 사람으로 생각되고 있다. 친구들은 당신의 이런 모습은 주로 본인의 성격에 의한 것이라고 생각하고 있다.
+        </p>
+      </div>
+      <div id="result6" class="result">
+        <p class="result-img"><img src="img/R6.jpg" width="70%"></p>
+        <p>
+          부끄럼을 많이 타고 소심하며 우유부단하고 누군가가 곁에서 돌봐줘야만 하고,
+          본인의 일도 누군가가 대신해서 결정해 줘야만 하고 타인이나 어떤 일에 연루되는 것을 피하는 사람이다. 당신은 그야말로 돈키호테, 있지도 않은 문제점들을 발견해서 대응하려 드는 사람이라고 여겨진다. 당신을 가까이서 잘 아는 사람들은 그게 사실이 아니라는 걸 알지만 그 외 대부분의 사람들은 당신을 지루하다고 볼 것이다.
+        </p>
+      </div>
+      <div id="disqus_thread"></div>
+    </div>
+    <div class="footer">
+      <footer>
+        본 서비스는 세종대학교 2020년 1학기 <웹프로그래밍>의 팀 프로젝트입니다. 페이지 관련 문의사항 및 건의사항을 보내주세요. 확인 후 빠르게 연락 드리겠습니다. 본 서비스의 공유 및 사용은 격렬하게 환영합니다.<br>
+        Disclaimer: All content is provided for fun and entertainment purposes only.
+      </footer>
+    </div>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+    <script src="js/function.js"></script>
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://damie.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//damie.disqus.com/count.js" async></script>
+    <script>
+      var $cont = document.querySelector('.cont');
+      var $elsArr = [].slice.call(document.querySelectorAll('.el'));
+
+      var $closeBtnsArr = [].slice.call(document.querySelectorAll('.el__close-btn'));
+
+      setTimeout(function() {
+        $cont.classList.remove('s--inactive');
+      }, 200);
+
+      $elsArr.forEach(function($el) {
+        $el.addEventListener('click', function() {
+          if (this.classList.contains('s--active')) return;
+          $cont.classList.add('s--el-active');
+          this.classList.add('s--active');
+        });
+      });
+
+      $closeBtnsArr.forEach(function($btn) {
+        $btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          $cont.classList.remove('s--el-active');
+          document.querySelector('.el.s--active').classList.remove('s--active');
+        });
+      });
+      $(function() {
+        $('a[href*=#]').on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
+        });
+      });
+    </script>
+  </body>
+</html>

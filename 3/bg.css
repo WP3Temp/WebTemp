@@ -1,0 +1,201 @@
+h1 {
+	font-size: 50px; line-height: 1.4;
+	font-family:  sans-serif;
+	text-align: center; margin: auto;
+	position: absolute;
+	left: 0; top: 0; right: 0; bottom: 0;
+	width: 600px; height: 350px;
+	color: #fff;
+}
+h3{
+    font-size:22px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align:center;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:40%;
+    height: 50px;
+    color:#fff;
+}
+h4{
+    font-size:22px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align:center;
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    top:46%;
+    height: 50px;
+    color:#fff;
+}
+#bg {
+  background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+  
+	width: 100%; height: 100%;
+	position: fixed; top: 0; left: 0;
+	transition: all 3s ease-out;
+}
+
+.r-button{
+    --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
+    --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
+    --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
+    --uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
+    --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
+    --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
+    --uirButtonFontSize: var(--rButtonFontSize,  inherit);
+    --uirButtonColor: var(--rButtonColor);
+  
+    background-color: var(--uirButtonBackgroundColor);
+    padding: var(--uirButtonPadding);
+  
+    border-width: var(--uirButtonBorderWidth);
+    border-style: var(--uirButtonBorderStyle);
+    border-color: var(--uirButtonBorderColor);
+  
+    cursor: pointer;
+  
+    font-family: var(--uirButtonFontFamily);
+    font-size: var(--uirButtonFontSize);
+  }
+  
+  .r-button::-moz-focus-inner,
+  .r-button[type="button"]::-moz-focus-inner,
+  .r-button[type="reset"]::-moz-focus-inner,
+  .r-button[type="submit"]::-moz-focus-inner {
+    
+    /* Remove the inner border and padding in Firefox. */
+    
+    border-style: none;
+    padding: 0;
+  }
+
+  .button{
+    position: relative;
+    top:350px;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.button::before{
+	content: "";
+  position: relative;
+  z-index: -1;
+}
+
+.button_type1::before{
+	width: 0;
+	height: 110%;
+	opacity: 0;
+
+	position: absolute;
+    left: 50%;
+    top:50%;
+
+	transform: translate3d(-50%, -50%, 0);
+	will-change: opacity, width;
+
+	transition-property: opacity, width;
+	transition-duration: .25s, .25s;
+  transition-delay: .15s, 0s;
+  transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
+}
+
+.button_type1:hover::before{
+    opacity: 1;
+  width: 110%;
+  transition-duration: .25s, .4s;
+  transition-delay: 0s;
+}
+
+.button{
+    --rButtonPadding: 1.5rem 3rem;
+    --rButtonBorderWidth: 2px;
+      --uiButtonBgColorHover: var(--buttondBgColorHover);
+    
+    text-transform: uppercase;
+    color: var(--uiButtonBgColorHover);
+    transition: color .2s ease-out;
+  }
+  
+  .button::before{
+      background-color: var(--uiButtonBgColorHover);
+  }
+  
+  .button:hover{
+    color: #fff;
+  }
+
+  .button{
+    --buttonTextColor: #f56476;
+    --buttondBgColorHover: #f56476;
+    --rButtonBorderColor: #f56476;
+  }
+
+  @media (min-width: 768px){
+
+    html{
+      font-size: 62.5%;
+    }
+  }
+  
+  @media (max-width: 767px){
+  
+    html{
+      font-size: 50%;
+    }
+  }
+  
+  body{
+    font-family:  BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+    font-size: 1.6rem;
+    
+    margin: 0;
+    -webkit-overflow-scrolling: touch;   
+    overflow-y: scroll;
+    
+    min-height: 100vh;
+    display: flex;  
+  }
+
+    .footer {
+      flex-wrap: wrap;
+      text-align: center;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    footer {
+      position:fixed;
+      bottom: 0;
+      text-align: center;
+      display: flex;
+      font: 10px/1.7 'Nunito';
+      padding: 3px 3px;
+      background: transparent;
+      align-items: center;
+      justify-content: center;
+      color:  white;
+    }
+
+  .demo-buttons{
+    max-width: 400px;  
+    display: flex; 
+    flex-wrap: nowrap;  
+    flex-direction:column;
+    margin:auto;
+
+}
+  .button{
+    margin: 20px;
+    flex-grow: 1;
+
+  }
+
+body{
+  text-align: right;
+}

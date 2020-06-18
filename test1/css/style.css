@@ -1,0 +1,271 @@
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------------------- 
+
+Shared style
+
+-------------------------------- */
+
+
+.cd-btn {
+  display: inline-block;
+  padding: 1.0em 1.6em;
+  font-size: 2.0rem;
+  letter-spacing: .15em;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  -webkit-transition: box-shadow .3s;
+  transition: box-shadow .3s;
+}
+.cd-btn:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  line-height: 1;
+}
+
+/* Main Content */
+.cd-main-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  /* vertically align its content */
+  display: table;
+}
+.cd-main-content1 {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  /* vertically align its content */
+  display: table;
+}
+.cd-main-content1 .center {
+  /* vertically align inside parent element */
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+}
+
+.cd-main-content .center {
+  /* vertically align inside parent element */
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+
+/* -------------------------------- 
+
+Gummy Effect
+
+-------------------------------- */
+.hhh{
+  text-align: center;
+  background-color: #f3df2a;
+}
+
+
+.gummy-transition .hH{
+  color : black;
+  display : inline-box;
+  height: 70px;
+  margin: 0px;
+  padding : 5px;
+  background-color: rgb(241, 240, 137);
+}
+.gummy-transition .hh{
+  background-color: #f3df2a;
+  margin : 0;
+  padding : 0;
+}
+.gummy-transition {
+  font-family: 'Do hyeon', sans-serif;
+  color: black;
+}
+.gummy-transition h1, .gummy-transition h2 {
+  margin-bottom: .4em;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.gummy-transition .cd-btn {
+  background: #f0d807;
+  color: #f2f2f2;
+  border-radius: 50em;
+}
+.gummy-transition .cd-main-content {
+  background-image: url('train.jpg');
+  background-size:100%;
+}
+@media only screen and (min-width: 768px) {
+  .gummy-transition h1 {
+    font-size: 7.2rem;
+  }
+  .gummy-transition h2 {
+    font-size: 5.8rem;
+  }
+}
+
+/* -------------------------------- 
+
+Gummy1 Effect
+
+-------------------------------- */
+
+
+.gummy1-transition .hH{
+  color : black;
+  display : inline-box;
+  height: 70px;
+  margin: 0px;
+  padding : 5px;
+  background-color: rgb(241, 240, 137);
+}
+.gummy1-transition figure{
+  display : inline-block;
+  
+}
+.gummy1-transition .scale {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+.gummy1-transition .scale:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.gummy1-transition .image1{
+  margin : 40px 40px 0 40px;
+  font-size: 30px;
+ 
+}
+
+.gummy1-transition .text{
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.gummy1-transition p.typing-txt{
+  
+  display: none;
+}
+
+
+.gummy1-transition .typing {
+  /*       position: absolute;*/
+  font-size: 40px;
+  font-weight: 700;
+  display: inline-block;
+  animation-name: cursor;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  border-right: 1px solid #ccc;
+}
+
+
+.gummy1-transition .hh{
+  background-color: #f3df2a;
+  margin : 0;
+  padding : 0;
+}
+.gummy1-transition {
+  font-family: 'Do hyeon', sans-serif;
+  color : black;
+}
+
+.gummy1-transition h1, .gummy1-transition h2 {
+  margin-bottom: .4em;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.gummy1-transition .cd-btn {
+  background: #46165f;
+  color: #f2f2f2;
+  border-radius: 50em;
+}
+.gummy1-transition .cd-main-content1 {
+  background-image: url('road3.jpg');
+  background-size:100%;
+}
+@media only screen and (min-width: 768px) {
+  .gummy1-transition h1 {
+    font-size: 7.2rem;
+  }
+  .gummy1-transition h2 {
+    font-size: 5.8rem;
+  }
+}
+/* -------------------------------- 
+
+Gummy2 Effect
+
+-------------------------------- */
+
+
+.gummy2-transition .hH{
+  color : black;
+  display : inline-box;
+  height: 70px;
+  margin: 0px;
+  padding : 5px;
+  background-color: rgb(241, 240, 137);
+}
+.gummy2-transition .hh{
+  position: relative ;
+  z-index: 9999;
+  background-color: #f3df2a;
+  margin : 0;
+  padding : 0;
+}
+.gummy2-transition {
+  font-family: 'Do hyeon', sans-serif;
+  color : black;
+}
+.gummy2-transition h1, .gummy2-transition h2 {
+  margin-bottom: .4em;
+  font-size: 4rem;
+  font-weight: 700;
+}
+@media only screen and (min-width: 768px) {
+  .gummy2-transition h1 {
+    font-size: 7.2rem;
+  }
+  .gummy2-transition h2 {
+    font-size: 5.8rem;
+  }
+}
+

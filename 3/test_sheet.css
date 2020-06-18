@@ -1,0 +1,269 @@
+body {
+
+ background-color: #CAE1FF;
+	color: #fff;
+	font-family: 'Lato', sans-serif, arial;
+}
+
+.container > header {
+	margin: 0 auto;
+	padding: 4em 2em;
+	text-align: center;
+	background: rgba(0,0,0,.02);
+}
+
+.container > header h1 {
+	font-size: 2.625em;
+	line-height: 1.3;
+	margin: 0;
+	font-weight: 300;
+}
+
+.container > header span {
+	display: block;
+	font-size: 60%;
+	color: rgba(0,0,0,.2);
+	font-weight: 400;
+	padding: 0 0 0.6em 0.1em;
+}
+
+section {
+	padding: 7em 0;
+}
+
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ac-custom {
+	padding: 0 3em;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.ac-custom h2 {
+	font-size: 1.8em;
+	font-weight: 300;
+	padding: 0 0 0.5em;
+	margin: 0 0 30px;
+}
+
+.ac-custom ul,
+.ac-custom ol {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.ac-custom li {
+	margin: 0 auto;
+	padding: 2em 0;
+	position: relative;
+}
+
+.ac-custom label {
+	display: inline-block;
+	position: relative;
+	font-size: 1.5em;
+	padding: 0 0 0 80px;
+	vertical-align: top;
+	color: rgba(0,0,0,0.2);
+	cursor: pointer;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.ac-custom label::before {
+	width: 50px;
+	height: 50px;
+	top: 50%;
+	left: 0;
+	margin-top: -25px;
+	position: absolute;
+	cursor: pointer;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"] {
+	opacity: 0;
+	-webkit-appearance: none;
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 100;
+}
+
+.ac-custom label::before {
+	content: '';
+	border: 4px solid #fff;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.ac-radio label::before {
+	border-radius: 50%;
+}
+
+.ac-custom input[type="checkbox"]:checked + label,
+.ac-custom input[type="radio"]:checked + label {
+	color: #fff;
+} 
+
+.ac-custom input[type="checkbox"]:checked + label::before,
+.ac-custom input[type="radio"]:checked + label::before {
+	opacity: 0.8;
+}
+
+.ac-custom svg {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	margin-top: -20px;
+	left: 5px;
+	pointer-events: none;
+}
+
+.ac-custom svg path {
+	stroke: #fdeed3;
+	stroke-width: 13px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+header,section{display:block;}
+audio,canvas,video{display:inline-block;}
+audio:not([controls]){display:none;height:0;}
+[hidden]{display:none;}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+body{margin:0;}
+h1{font-size:2em;margin:0.67em 0;}
+svg:not(:root){overflow:hidden;}
+button,input{font-family:inherit;font-size:100%;margin:0;}
+button,input{line-height:normal;}
+button{text-transform:none;}
+button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
+
+.audio{
+	text-align:right;
+	background: rgba(0,0,0,.02);
+
+}
+
+/*버튼*/
+
+.r-button{
+    --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
+    --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
+    --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
+    --uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
+    --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
+    --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
+    --uirButtonFontSize: var(--rButtonFontSize,  inherit);
+    --uirButtonColor: var(--rButtonColor);
+  
+    background-color: var(--uirButtonBackgroundColor);
+    padding: var(--uirButtonPadding);
+  
+    border-width: var(--uirButtonBorderWidth);
+    border-style: var(--uirButtonBorderStyle);
+    border-color: var(--uirButtonBorderColor);
+  
+    cursor: pointer;
+  
+    font-family: var(--uirButtonFontFamily);
+    font-size: var(--uirButtonFontSize);
+  }
+  
+  .r-button::-moz-focus-inner,
+  .r-button[type="button"]::-moz-focus-inner,
+  .r-button[type="reset"]::-moz-focus-inner,
+  .r-button[type="submit"]::-moz-focus-inner {
+    
+    /* Remove the inner border and padding in Firefox. */
+    
+    border-style: none;
+    padding: 0;
+  }
+
+  .a-button{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.a-button::before{
+	content: "";
+  position: relative;
+  z-index: -1;
+}
+
+.button_type1::before{
+	width: 0;
+	height: 110%;
+	opacity: 0;
+
+	position: absolute;
+    left: 50%;
+    top:50%;
+
+	transform: translate3d(-50%, -50%, 0);
+	will-change: opacity, width;
+
+	transition-property: opacity, width;
+	transition-duration: .25s, .25s;
+  transition-delay: .15s, 0s;
+  transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
+}
+
+.button_type1:hover::before{
+    opacity: 1;
+  width: 110%;
+  transition-duration: .25s, .4s;
+  transition-delay: 0s;
+}
+
+.a-button{
+    --rButtonPadding: 1.5rem 3rem;
+    --rButtonBorderWidth: 2px;
+      --uiButtonBgColorHover: var(--buttondBgColorHover);
+    
+    text-transform: uppercase;
+    color: var(--uiButtonBgColorHover);
+    transition: color .2s ease-out;
+  }
+  
+  .a-button::before{
+      background-color: var(--uiButtonBgColorHover);
+  }
+  
+  .a-button:hover{
+    color: #fff;
+  }
+
+  .a-button{
+    --buttonTextColor: #448aff;
+  --buttondBgColorHover: #448aff;
+  --buttonTextColorHover: #fff;
+  --rButtonBorderColor: #448aff;
+  }
+
+  .demo{
+	max-width:600px;
+    display: flex; 
+    flex-wrap: nowrap;  
+    flex-direction:column;
+    margin:auto;
+	bottom: 30%; 
+}
+  .a-button{
+	flex-grow: 1;
+	font-size:25px;
+  }

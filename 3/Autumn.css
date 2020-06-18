@@ -1,0 +1,338 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	font-family: sans-serif;
+	background-color:  #d3b799;
+    
+    
+}
+
+section.container {
+    width: 650px;
+    margin: 0 auto;
+    height:800px;
+}
+
+section.container header {
+	margin: 25px 0;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted rgb(116, 122, 131);
+}
+
+section.container header h1 {
+	color: rgba(0,0,0,.2);
+    text-align: center;
+    font-size: 2em;
+	line-height: 1.3;
+	margin: 0;
+	font-weight: 300;
+}
+
+.container > header span {
+    color: white;
+	display: block;
+	font-size: 150%;
+	font-weight: 400;
+	padding: 0 0 0.6em 0.1em;
+}
+
+section.box {
+	width: 138px;
+	background-color: #FFFFFF;
+	box-shadow: 0 2px 6px #CCC;
+	border-radius: 5px;
+	display: block;
+    margin:  10px;
+    display:inline-block;
+}
+
+section.box h1 {
+	font-weight: 400;
+	font-size: 14px;
+	color: #494A4A;
+	display: block;
+    float: left;
+    flex: 0 0 auto;
+    padding: 6px;
+    text-align:left;
+    margin: 0px 0px 3px 5px;
+}
+
+section.box p {
+	font-weight: 300;
+	font-size: 11px;
+	color: #999999;
+	display: block;
+	float: left;
+    flex: 0 0 auto;
+    padding: 6px;
+    margin: 0px 0px 3px 5px;
+}
+
+
+section.color-left {
+	width: 100%;
+	height: 130px;
+	background-color: #000;
+    border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	display: block;
+	float: left;
+}
+
+/*p{
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 8px;
+    color: rgb(241, 241, 241);
+}
+*/
+.desc{
+    width: 700px;
+    margin: 0 auto;
+    height:1200px;
+    padding: 30px 30px;
+   background-color: #FFFFFF;
+   color: rgba(22, 13, 13, 0.603);
+   margin-bottom:40px;
+}
+.desc h1{
+    font-size:36px;
+   font-family: 'Jeju Gothic', sans-serif;
+   line-height: 150%;
+
+}
+b{
+  color: #FA5A0A;
+    font-size: 40px;
+}
+.desc p{
+    font-family: 'Noto Sans KR','Jeju Gothic';
+    line-height: 250%;
+}
+.desc h2{
+    font-size:30px;
+    font-family: 'Nanum Gothic Coding','Jeju Gothic';
+    line-height:200%;
+}
+img{
+   border-radius:70%;
+    box-shadow: 9px 9px 20px rgba(0, 0, 0, 0.123);
+    border:0px;
+    margin:10px;
+}
+/* Grapefruit */
+section.color-left.grapefruit-light {background-color:#962B23;}
+
+/* Bittersweet */
+section.color-left.bittersweet-light {background-color:#16546D;}
+
+/* Sunflower */
+section.color-left.sunflower-light {background-color:#E98352;}
+
+/* Grass */
+section.color-left.grass-light {background-color:#F7C6A5;}
+
+/* Mint */
+section.color-left.mint-light {background-color:#DFB501;}
+
+/* Aqua */
+section.color-left.aqua-light {background-color:#9E7317;}
+
+/* Blue Jeans */
+section.color-left.blueJeans-light {background-color:#527318;}
+
+/* Lavander */
+section.color-left.lavander-light {background-color:#93DB9B;}
+
+/* Pink Rose */
+section.color-left.pinkRose-light {background-color:#877352;}
+
+/* Light Gray */
+section.color-left.lightGray-light {background-color:#342714;}
+
+/* Medium Gray */
+section.color-left.mediumGray-light {background-color:#678A8C;}
+
+/* Dark Gray */
+section.color-left.darkGray-light {background-color:#79C6CC;}
+
+/*버튼*/
+.r-button{
+	--uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
+	--uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
+	--uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
+	--uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
+	--uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
+	--uirButtonFontFamily: var(--rButtonFontFamily, inherit);
+	--uirButtonFontSize: var(--rButtonFontSize,  inherit);
+	--uirButtonColor: var(--rButtonColor);
+  
+	background-color: var(--uirButtonBackgroundColor);
+	padding: var(--uirButtonPadding);
+  
+	border-width: var(--uirButtonBorderWidth);
+	border-style: var(--uirButtonBorderStyle);
+	border-color: var(--uirButtonBorderColor);
+  
+	cursor: pointer;
+  
+	font-family: var(--uirButtonFontFamily);
+	font-size: var(--uirButtonFontSize);
+  }
+  
+  .r-button::-moz-focus-inner,
+  .r-button[type="button"]::-moz-focus-inner,
+  .r-button[type="reset"]::-moz-focus-inner,
+  .r-button[type="submit"]::-moz-focus-inner {
+	
+	/* Remove the inner border and padding in Firefox. */
+	
+	border-style: none;
+	padding: 0;
+  }
+
+  .button{
+	position: relative;
+  z-index: 0;
+	overflow: hidden;
+}
+
+.button::before{
+	content: "";
+  position: relative;
+  z-index: -1;
+}
+
+.button_type3::before{
+	width: 110%;
+	height: 0;
+	opacity: 0;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate3d(-50%, -50%, 0);
+	will-change: opacity, height;
+
+	transition-property: opacity, height;
+	transition-duration: .25s, .25s;
+  transition-delay: .15s, 0s;
+  transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
+}
+
+.button_type3:hover::before{
+	opacity: 1;
+  height: 110%;
+  transition-duration: .25s, .4s;
+  transition-delay: 0s;
+}
+
+.button{
+	--rButtonPadding: 1.5rem 3rem;
+	--rButtonBorderWidth: 2px;
+	  --uiButtonBgColorHover: var(--buttondBgColorHover);
+	
+	text-transform: uppercase;
+	color: var(--uiButtonBgColorHover);
+	transition: color .2s ease-out;
+  }
+  
+  .button::before{
+	  background-color: var(--uiButtonBgColorHover);
+  }
+  
+  .button:hover{
+	color: #fff;
+  }
+
+  .button{
+	--buttonTextColor: #cc8b86;
+	--buttondBgColorHover: #cc8b86;
+	--rButtonBorderColor: #cc8b86;  
+  }
+
+  .demo-buttons{
+	max-width: 400px;  
+	display: flex;
+	flex-wrap: wrap;  
+	margin: auto;    
+    flex-direction:column;
+
+  }
+  
+  .button{
+	margin-top: 30px;
+	margin-bottom:10px;
+	flex-grow: 1;
+  }
+
+  .footer {
+	flex-wrap: wrap;
+	text-align: center;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+  }
+  footer {
+	bottom: 0;
+	text-align: center;
+	display: flex;
+	font: 10px/1.7 'Nunito';
+	padding: 3px 3px;
+	border-radius: 10px;
+	background: transparent;
+	color: black;
+	align-items: center;
+	justify-content: center;
+  }

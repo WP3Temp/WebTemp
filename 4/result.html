@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Result </title>
+    <link rel="stylesheet" href="result.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Gamja+Flower&family=Hi+Melody&display=swap"
+        rel="stylesheet">
+    <script src="result.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>나의 연애성향은</h1>
+        <h4></h4>
+    </header>
+
+    <div class="wrapper">
+        <ul class="tab-controls">
+            <li><label for="tab-1">이성의 매력포인트</label></li>
+            <li><label for="tab-2">데이트 성향</label></li>
+            <li><label for="tab-3">끌리는 타입</label></li>
+            <li><label for="tab-4">행운의 아이템</label></li>
+            <li><label for="tab-5">사랑에 빠지는 시간</label></li>
+        </ul>
+
+        <div class="tab-content">
+            <input id="tab-1" name="tab" type="radio" class="tab-input" checked />
+            <div class="tab-item" id="a">
+                <h2 id="select1"></h2>
+                <p id="newcontent1">
+                </p>
+            </div>
+
+            <input id="tab-2" name="tab" type="radio" class="tab-input" />
+            <div class="tab-item">
+                <h2 id="select2"></h2>
+                <p id="newcontent2">
+                </p>
+            </div>
+
+            <input id="tab-3" name="tab" type="radio" class="tab-input" />
+            <div class="tab-item">
+                <h2 id="select3"></h2>
+                <p id="newcontent3">
+                </p>
+            </div>
+
+            <input id="tab-4" name="tab" type="radio" class="tab-input" />
+            <div class="tab-item">
+                <h2 id="select4"></h2>
+                <p id="newcontent4">
+                </p>
+            </div>
+
+            <input id="tab-5" name="tab" type="radio" class="tab-input" />
+            <div class="tab-item">
+                <h2 id="select5"></h2>
+                <p id="newcontent5">
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <button class="learn-more" onclick="location.href='what_is_love.html'">다시하기</button>
+    <button class="learn-more" onclick="location.href='../index.html'">메인으로 돌아가기</button>
+
+
+</section>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://web2-hetwsougte.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+<div class="footer">
+    <footer>
+      본 서비스는 세종대학교 2020년 1학기 <웹프로그래밍>의 팀 프로젝트입니다. 페이지 관련 문의사항 및 건의사항을 보내주세요. 확인 후 빠르게 연락 드리겠습니다. 본 서비스의 공유 및 사용은 격렬하게 환영합니다.<br>
+      Disclaimer: All content is provided for fun and entertainment purposes only.
+    </footer>
+  </div>
+
+</body>
+
+</html>
