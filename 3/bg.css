@@ -1,12 +1,18 @@
+/*h1 의 폰트 스타일, 색상, 위치, 여백*/
 h1 {
 	font-size: 50px; line-height: 1.4;
 	font-family:  sans-serif;
-	text-align: center; margin: auto;
+  text-align: center; 
+  margin: auto;
 	position: absolute;
-	left: 0; top: 0; right: 0; bottom: 0;
+  left: 0; 
+  top: 0; 
+  right: 0; 
+  bottom: 0;
 	width: 600px; height: 350px;
 	color: #fff;
 }
+/*h3 의 폰트 스타일, 색상, 위치, 여백*/
 h3{
     font-size:22px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -19,6 +25,7 @@ h3{
     height: 50px;
     color:#fff;
 }
+/*h4 의 폰트 스타일, 색상, 위치, 여백*/
 h4{
     font-size:22px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -31,14 +38,19 @@ h4{
     height: 50px;
     color:#fff;
 }
+/*배경화면의 색상,크기, 변환 지속효과*/
 #bg {
   background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
-
-	width: 100%; height: 100%;
-	position: fixed; top: 0; left: 0;
+  
+  width: 100%; 
+  height: 100%;
+  position: fixed; 
+  top: 0; 
+  left: 0;
 	transition: all 3s ease-out;
 }
 
+/*버튼의 색상, 여백, 테두리 두께, 폰트 스타일*/
 .r-button{
     --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
     --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
@@ -48,44 +60,45 @@ h4{
     --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
     --uirButtonFontSize: var(--rButtonFontSize,  inherit);
     --uirButtonColor: var(--rButtonColor);
-
+  
     background-color: var(--uirButtonBackgroundColor);
     padding: var(--uirButtonPadding);
-
+  
     border-width: var(--uirButtonBorderWidth);
     border-style: var(--uirButtonBorderStyle);
     border-color: var(--uirButtonBorderColor);
-
+  
     cursor: pointer;
-
+  
     font-family: var(--uirButtonFontFamily);
     font-size: var(--uirButtonFontSize);
   }
-
+  
   .r-button::-moz-focus-inner,
   .r-button[type="button"]::-moz-focus-inner,
   .r-button[type="reset"]::-moz-focus-inner,
   .r-button[type="submit"]::-moz-focus-inner {
-
+    
     /* Remove the inner border and padding in Firefox. */
-
+    
     border-style: none;
     padding: 0;
   }
 
-  .button{
+/*버튼의 위치, 크기,튀어나오는 부분*/
+.button{
     position: relative;
-    top:500px;
+    top:350px;
     z-index: 0;
     overflow: hidden;
 }
-
+/*호버하기 전 버튼의 위치*/
 .button::before{
 	content: "";
   position: relative;
   z-index: -1;
 }
-
+/*호버하기 전 버튼의 위치, 투명도, 변환 시 애니메이션 지속 효과*/
 .button_type1::before{
 	width: 0;
 	height: 110%;
@@ -104,27 +117,28 @@ h4{
   transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
 }
 
+/*버튼 애니메이션 지속효과*/
 .button_type1:hover::before{
     opacity: 1;
   width: 110%;
   transition-duration: .25s, .4s;
   transition-delay: 0s;
 }
-
+/*버튼의 색상 및 애니메이션  효과*/
 .button{
     --rButtonPadding: 1.5rem 3rem;
     --rButtonBorderWidth: 2px;
       --uiButtonBgColorHover: var(--buttondBgColorHover);
-
+    
     text-transform: uppercase;
     color: var(--uiButtonBgColorHover);
     transition: color .2s ease-out;
   }
-
+  
   .button::before{
       background-color: var(--uiButtonBgColorHover);
   }
-
+  
   .button:hover{
     color: #fff;
   }
@@ -141,35 +155,34 @@ h4{
       font-size: 62.5%;
     }
   }
-
+  
   @media (max-width: 767px){
-
+  
     html{
       font-size: 50%;
     }
   }
 
-  body{
+/*body의 폰트 스타일, 스크롤 기능, 최소 높이*/
+body{
     font-family:  BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
     font-size: 1.6rem;
+    overflow-y: auto;
+    min-height: 150vh;
+    display: flex;  
+}
 
-    margin: 0;
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
-
-    min-height: 100vh;
-    display: flex;
-  }
-
-    .footer {
+/*footer부분 정렬, 글자 색상 및 스타일*/
+.footer{
       flex-wrap: wrap;
       text-align: center;
       display: flex;
       width: 100%;
       align-items: center;
       justify-content: center;
-    }
-    footer {
+}
+
+footer{
       position:fixed;
       bottom: 0;
       text-align: center;
@@ -180,22 +193,23 @@ h4{
       align-items: center;
       justify-content: center;
       color:  white;
-    }
-
-  .demo-buttons{
-    max-width: 400px;
-    display: flex;
-    flex-wrap: nowrap;
+}
+/*button의 최대 크기, 정렬 방법, 여백*/
+.demo-buttons{
+    max-width: 400px;  
+    display: flex; 
+    flex-wrap: nowrap;  
     flex-direction:column;
     margin:auto;
 
 }
-  .button{
+/*button 여백*/
+.button{
     margin: 20px;
     flex-grow: 1;
 
-  }
-
+}
+/*body에 있는 내용 정렬*/
 body{
   text-align: right;
 }

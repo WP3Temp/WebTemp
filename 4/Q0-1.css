@@ -1,9 +1,10 @@
+/*폰트 import*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-
+/*body의 색상*/
 body {
     background:#E0EFFF;
   }
-  
+/*sun의 위치,크기,색상,그림자 효과*/
   .sun { 
     position: absolute;
       top:0;
@@ -18,7 +19,7 @@ body {
       opacity:0.9;			
       box-shadow: 0px 0px 40px 15px #FFF4B8 ;  
   }
-  
+/*ray_box의 위치, 애니메이션*/
   .ray_box {
     position: absolute;
     margin: auto;
@@ -30,6 +31,7 @@ body {
     -webkit-animation: ray_anim 120s linear infinite;
     animation: ray_anim 120s linear infinite;
   }
+/*ray의 색상, 모양, 투명도*/
   .ray {  
       background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
           background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
@@ -38,7 +40,7 @@ body {
       position:absolute;
       opacity:0.1;
   }
-  
+/*ray1의 크기 애니메이션, 위치*/
   .ray1 {    
       height:170px;
       width:30px;
@@ -46,6 +48,7 @@ body {
       top:-175px;
       left: 15px;
   }
+/*ray2의 크기 애니메이션, 위치*/
   .ray2 {
       height:100px;
       width:8px;
@@ -53,6 +56,7 @@ body {
       top:-90px;
       left: 75px;
   }
+/*ray3의 크기 애니메이션, 위치*/
   .ray3 {
       height:170px;
       width:50px;
@@ -60,6 +64,7 @@ body {
       top:-80px;
       left: 100px;
   }
+/*ray4의 크기 애니메이션, 위치*/
   .ray4 {
       height:120px;
       width:14px;
@@ -67,6 +72,7 @@ body {
       top:30px;
       left: 100px;
   }
+/*ray5의 크기 애니메이션, 위치*/
   .ray5 {
       height:140px;
       width:30px;
@@ -74,6 +80,7 @@ body {
       top:60px;
       left: 40px;
   }
+/*ray6의 크기 애니메이션, 위치*/
   .ray6 {
       height:90px;
       width:50px;
@@ -81,6 +88,7 @@ body {
       top:60px;
       left: -40px;
   }
+/*ray7의 크기 애니메이션, 위치*/
   .ray7 {
       height:180px;
       width:10px;
@@ -88,6 +96,7 @@ body {
       top:-35px;
       left: -40px;
   }
+/*ray8의 크기 애니메이션, 위치*/
   .ray8 {
       height:120px;
       width:30px;
@@ -95,6 +104,7 @@ body {
       top:-45px;
       left:-90px;
   }
+/*ray9의 크기 애니메이션, 위치*/
   .ray9 {
       height:80px;
       width:10px;
@@ -102,6 +112,7 @@ body {
       top:-65px;
       left:-60px;
   }
+/*ray10의 크기 애니메이션, 위치*/
   .ray10 {
       height:190px;
       width:23px;
@@ -109,22 +120,19 @@ body {
       top:-185px;
       left: -60px;
   }
-  
-  
+/*ray_anim의 애니메이션*/
   @keyframes ray_anim { 
           0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
       100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
   }
-
-  
+/*content의 정렬, 폰트 스타일, 여백*/
 #content{
     text-align: center;
 	font-family: Nanum Pen Script , 'Lato', sans-serif, arial;
     font-size: 30px;
     margin: 50px 0px;
 }
-
-
+/*arrow의 크기,위치,변환*/
 #arrow {
     cursor: pointer;
     height: 60px;
@@ -135,6 +143,7 @@ body {
     transition: transform 0.1s;
     width: 70px;
   }
+/*arrow-top과arrow-bottom의 색상, 크기,위치*/
   .arrow-top, .arrow-bottom {
     background-color: #666;
     height: 4px;
@@ -143,6 +152,7 @@ body {
     top: 50%;
     width: 70%;
   }
+/*arrow-top과 arrow-bottom의 후의 색상, 위치, 변환 시간*/
   .arrow-top:after, .arrow-bottom:after {
     background-color: #fff;
     content: '';
@@ -151,32 +161,39 @@ body {
     top: 0;
     transition: all 0.15s;
   }
+/*arrow-top의 애니메이션 효과*/
   .arrow-top {
     transform: rotate(45deg);
     transform-origin: bottom right;
   }
+/*arrow-top의 다음 상태*/
   .arrow-top:after {
     left: 100%;
     right: 0;
     transition-delay: 0s;
   }
+/*arrow-bottom의 애니메이션 효과*/
   .arrow-bottom {
     transform: rotate(-45deg);
     transform-origin: top right;
   }
+/*arrow-bottom의 후의 애니메이션*/
   .arrow-bottom:after {
     left: 0;
     right: 100%;
     transition-delay: 0.15s;
   }
+/*arrow호버 시 변환 시간*/
   #arrow:hover .arrow-top:after {
     left: 0;
     transition-delay: 0.15s;
   }
+/*arrow의 호버 시 변환 시간*/
   #arrow:hover .arrow-bottom:after {
     right: 0;
     transition-delay: 0s;
   }
+/*arrow active일때 변환*/
   #arrow:active {
     transform: translateX(-50%) translateY(-50%) scale(0.9);
   }

@@ -1,26 +1,32 @@
+/*적용 폰트*/
 @import url(https://fonts.googleapis.com/css?family=Raleway:300);
 @import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
-
+/*전체 적용*/
  *, *:before, *:after {
 	 box-sizing: border-box;
 }
+/*html여백, 폰트 스타일, 배경색상*/
  html {
 	 padding-top: 50px;
 	 font-family: 'Raleway', Helvetica, arial, sans-serif;
      background: #FF8A8A;
 }
+/*header의 정렬, 색상, 폰트 스타일*/
  .header {
      text-align: center;
 	 color:white;
 	 font-family: 'Hi Melody', cursive;
 	 font-size:27px;
 }
+/*header의 a태그 색상*/
  .header a {
 	 text-decoration: none;
     color: rgba(161, 137, 170, 1);
      
 }
 /*-------------------------------------------------------------------*/
+/*결과해석 부분*/
+/*wrapper의 크기,최대길이,여백,모양*/
  .wrapper {
 	 width: 100%;
 	 max-width: 900px;
@@ -32,28 +38,33 @@
 	 height: 500px;
 	 margin-bottom:40px;
 }
+/*tab-control의 정렬, 여백, 크기*/
  .tab-controls {
 	 text-align: center;
 	 width: 100%;
 	 margin: 0;
 	 padding: 0 0 1rem;
 }
- @media (min-width: 40rem) {
+
+/*tab-controlos의 형식,여백*/
 	 .tab-controls {
 		 display: inline-block;
 		 padding: 0;
 		 border: none;
 	}
-}
+
+/*tab-controls의 li 형식*/
  .tab-controls li {
 	 display: block;
 }
- @media (min-width: 40rem) {
+
+/*tab-controls의 li의 형식, 여백*/
 	 .tab-controls li {
 		 position: relative;
 		 display: inline-block;
 		 padding: 0 1rem;
 	}
+/*tab-controls의 li의 after의 형식,위치,색상,애니메이션*/
 	 .tab-controls li:after {
 		 content: '';
 		 display: block;
@@ -65,30 +76,34 @@
 		 background: pink;
 		 transform: translateY(-50%);
 	}
+/*tab-controls의 li의 after의 내용*/
 	 .tab-controls li:last-of-type:after {
 		 content: none;
 	}
-}
+/*tab-controls의 label의 색상, 변환시간*/
  .tab-controls label {
-	/*font-size: 1.2rem;*/
+
 	 color: #796780;
-	 text-transform: uppercase;
 	 text-decoration: none;
 	 transition: 0.3s ease-in-out;
 	 cursor: pointer;
 }
+/*tab-controls의 lavel 호버 시 색상*/
  .tab-controls label:hover {
 	 color: #b9a7bf;
 }
+/*tab-input의 display방식*/
  .tab-input {
 	 display: none;
 }
+/*tab-item의 위치,변환*/
  .tab-item {
 	 position: absolute;
 	 visibility: hidden;
 	 opacity: 0;
      transform: translateY(10px);
 }  
+/*tab-input이 check 되었을 때와 tab-item의 위치, 변환, 효과 시간*/
  .tab-input:checked + .tab-item {
 	 position: static;
 	 visibility: visible;
@@ -96,28 +111,27 @@
 	 transform: translateY(0);
 	 transition: 0.3s ease-in-out;
 }
- @media (min-width: 40rem) {
+ /*tab-item의 폰트크기,줄 간격*/
 	 .tab-item {
 		 font-size: 1.2rem;
 		 line-height: 2;
 	}
-}
+/*h2의 폰트 스타일*/
 h2{
 	font-family: 'Gamja Flower', cursive;
 }
+/*li의 폰트 스타일*/
 li{
 	font-size:24px;
 	font-family: 'Gamja Flower', cursive;
 }
+/*p의 폰트 스타일*/
 p{
 	font-family: 'Hi Melody', cursive;
 	font-size:23px;
 }
-
-
+/*button의 폰트 스타일, 정렬,여백*/
  button {
-	font-family: 'Rubik', sans-serif;
-	font-size: 1rem;
 	line-height: 1.5;
 	display: flex;
 	align-items: center;
@@ -135,6 +149,7 @@ p{
 	 font-family: inherit;
 	 left: 35%;
 }
+/*button learn-more의 색상, 폰트 두께,여백,모양,변환 효과*/
  button.learn-more {
 	 font-weight: 600;
 	 color: #382b22;
@@ -146,6 +161,7 @@ p{
 	 transform-style: preserve-3d;
 	 transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
 }
+/*button의 learn-more의 before 색상,위치,그림자효과,변환 효과*/
  button.learn-more::before {
 	 position: absolute;
 	 content: '';
@@ -161,23 +177,27 @@ p{
 	 transform: translate3d(0, 0.75em, -1em);
 	 transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
 }
+/*button의 learn-more의 호버 시 색상, 변환 효과*/
  button.learn-more:hover {
 	 background: #ffe9e9;
 	 transform: translate(0, 0.25em);
 }
+/*button.의earn-more의 호버 전 상태 그림자효과, 변환 효과*/
  button.learn-more:hover::before {
 	 box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
 	 transform: translate3d(0, 0.5em, -1em);
 }
+/*button의 learn-more이 active일 때 배경색상, 변환*/
  button.learn-more:active {
 	 background: #ffe9e9;
 	 transform: translate(0em, 0.75em);
 }
+/*button의 learn-more의 active before 그림자 효과, 변환*/
  button.learn-more:active::before {
 	 box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
 	 transform: translate3d(0, 0, -1em);
 }
- 
+ /*footer의 정렬,여백,색상*/
 .footer {
 	flex-wrap: wrap;
 	text-align: center;

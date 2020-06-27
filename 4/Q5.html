@@ -2,27 +2,34 @@
 <html>
     <head>
 <title> Question 5</title>
+<!--css,js링크-->
 <link rel=stylesheet href="Q5.css">
 <script src="Q5.js"></script>
     </head>
     <body>
+      <!--노래 제어기-->
       <audio controls autoplay loop class="audio"> <!--크롬에서 작동 안됨 autoplay -->
         <source src="Q5.mp3" type="audio/mp3">
             이 브라우저는 audio태그를 지원하지 않습니다<br>
     </audio>
+    <!--질문과 선택지-->
       <div id="profile">
+<!--일러스트-->
         <div class="canvas">
           <canvas resize="true" hidpi="off" id="canvas-1"></canvas> <!--그림-->
         </div>
+        <!--질문-->
         <div class="diary">
           <span class="mood">Q5</span> <b class="fa fa-smile-o">질문5</b><br/><br />
           집으로 돌아가던 길. 핸드폰 하나를 주웠습니다. 어떤 핸드폰인가요?
         </div>
         </div>
+        <!--다음으로 이동하는 버튼-->
         <div id="arrow" onclick="store();location.href='Q5-6.html';">
           <div class="arrow-top"></div>
           <div class="arrow-bottom"></div>
         </div>
+        <!--선택지-->
         <div class="answers">
             <input type="radio" name="q5" id="r1" value="최신형 스마트폰" onclick="function1()"><label for="r1"><div>최신형 스마트폰</div><img src="smart_phone.jpg"></label>
             <input type="radio" name="q5" id="r2" value="색상과 모양이 독특한 폰" onclick="function1()"><label for="r2"><div>색상과 모양이 독특한 폰</div><img src="unique_phone.jpg"></label>

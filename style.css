@@ -1,3 +1,4 @@
+/* React 사용 대상부 조정 */
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -14,6 +15,7 @@
   height: auto;
 }
 
+/* path 렌더러 초기화 */
 .house {
   cursor: pointer;
   font-size: 30px;
@@ -43,6 +45,9 @@
   fill: #333;
 }
 
+/* path 렌더러 관련 초기화 종료 */
+
+/* 제목 및 심리테스트 미리보기 */
 #title {
   position: fixed;
   top: 60px;
@@ -50,12 +55,14 @@
   width: 100%;
 }
 
+/* 네비게이션 메뉴 속성 초기화 */
 .nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* 네비게이션 바 내부 아이템  */
 .nav-menu>ul>li {
   position: relative;
   white-space: nowrap;
@@ -86,6 +93,7 @@
   padding: 0 5px 0 7px;
   color: #45505b;
 }
+
 
 @media (min-width: 992px) {
   .nav-menu a {
@@ -122,6 +130,9 @@
   display: block;
 }
 
+/* 내비게이션 내부 아이템 적용 종료 */
+
+/* header */
 #header {
   position: fixed;
   top: 0;
@@ -133,6 +144,7 @@
   overflow-y: auto;
 }
 
+/* 미디어 태그 선언 */
 @media (max-width: 992px) {
   #header {
     width: 300px;
@@ -148,8 +160,9 @@
   }
 }
 
+/* 미디어 태그 종료 */
 
-
+/* footer  */
 .footer {
   flex-wrap: wrap;
   text-align: center;

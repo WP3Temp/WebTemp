@@ -1,8 +1,10 @@
+/*사용 글자 import*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
+/*모든 부분의 여백, 글자 크기, 정렬 방법*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,42 +31,29 @@ article, aside, details, figcaption, figure,
 section {
 	display: block;
 }
+/*줄 높이*/
 body {
 	line-height: 1;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
 
+/*배경 색상*/
 body {
 	font-family: sans-serif;
    background-color:   #fdded7;
 }
-
+/*section의 container크기, 여백*/
 section.container {
     width: 650px;
     margin: 0 auto;
     height:850px;
 }
-
+/*section의 container의 header여백, 밑에 줄 긋기*/
 section.container header {
 	margin: 25px 0;
 	padding-bottom: 10px;
 	border-bottom: 1px dotted rgb(116, 122, 131);
 }
-
+/*section의 container의 header의 h1 색상, 정렬, 크기, 두께, 높이, 여백*/
 section.container header h1 {
 	color: rgba(0,0,0,.2);
     text-align: center;
@@ -73,7 +62,7 @@ section.container header h1 {
 	margin: 0;
 	font-weight: 300;
 }
-
+/*container의 header의 span 부분 색상, 크기,두께, 여백*/
 .container > header span {
     color: white;
 	display: block;
@@ -81,7 +70,7 @@ section.container header h1 {
 	font-weight: 400;
 	padding: 0 0 0.6em 0.1em;
 }
-
+/*section의 box부분 배경색상, 그림자 효과, 여백*/
 section.box {
 	width: 138px;
 	background-color: #FFFFFF;
@@ -91,7 +80,7 @@ section.box {
     margin:  10px;
     display:inline-block;
 }
-
+/*section의 box의 h1 폰트 두께, 사이즈, 색상, 정렬, 여백*/
 section.box h1 {
 	font-weight: 400;
 	font-size: 14px;
@@ -103,7 +92,7 @@ section.box h1 {
     text-align:left;
     margin: 0px 0px 3px 5px;
 }
-
+/*section의 box의 내용 폰트 두께, 사이즈, 색상, 정렬, 여백*/
 section.box p {
 	font-weight: 300;
 	font-size: 11px;
@@ -115,7 +104,7 @@ section.box p {
     margin: 0px 0px 3px 5px;
 }
 
-
+/*section의 color-left 모양, 정렬, 크기,*/
 section.color-left {
 	width: 100%;
 	height: 130px;
@@ -126,6 +115,7 @@ section.color-left {
 	float: left;
 }
 
+/*desc의 크기,글자 색상, 배경색,여백*/
 .desc{
     width: 700px;
     margin: 0 auto;
@@ -135,39 +125,47 @@ section.color-left {
    color: rgba(22, 13, 13, 0.603);
    margin-bottom:40px;
 }
+/*desc의 h1폰트 스타일*/
 .desc h1{
     font-size:36px;
    font-family: 'Jeju Gothic', sans-serif;
    line-height: 150%;
 
 }
+/*강조 부분 색상*/
 b{
 color: rgb(248, 157, 126);
     font-size: 40px;
 }
+/*desc의 내용 폰트 스타일*/
 .desc p{
     font-family: 'Noto Sans KR','Jeju Gothic';
     line-height: 250%;
 }
+/*desc의 h2폰트 스타일, 글자 높이*/
 .desc h2{
     font-size:30px;
     font-family: 'Nanum Gothic Coding','Jeju Gothic';
     line-height:200%;
 }
+/*이미지 모양, 그림자효과, 여백*/
 img{
    border-radius:70%;
     box-shadow: 9px 9px 20px rgba(0, 0, 0, 0.123);
     border:0px;
     margin:10px;
 }
+/*html전체 높이*/
 html{
     height:100%;
 }
+/*body의 정렬, 최소 높이*/
 body{
     display:flex;
     flex-direction: column;
     min-height: 100%;
 }
+/*footer 배경색상, 위치, 여백, 높이*/
 footer{
     background-color:black;
     position:relative;
@@ -175,43 +173,43 @@ footer{
     margin-top: auto;
     clear:both;
 }
-/* Grapefruit */
+/* 색상*/
 section.color-left.grapefruit-light {background-color:	#D52F17;}
 
-/* Bittersweet */
+/* 색상*/
 section.color-left.bittersweet-light {background-color:	#FA5913 ;}
 
-/* Sunflower */
+/* 색상*/
 section.color-left.sunflower-light {background-color:	#E58559;}
 
-/* Grass */
+/* 색상*/
 section.color-left.grass-light {background-color:	#FAD5C5	;}
 
-/* Mint */
+/* 색상 */
 section.color-left.mint-light {background-color:#EEF3B1;}
 
-/* Aqua */
+/* 색상 */
 section.color-left.aqua-light {background-color:	#A5D311;}
 
-/* Blue Jeans */
+/* 색상*/
 section.color-left.blueJeans-light {background-color:	#93DB9C	;}
 
-/* Lavander */
+/* 색상*/
 section.color-left.lavander-light {background-color:	#5BB474		;}
 
-/* Pink Rose */
+/* 색상*/
 section.color-left.pinkRose-light {background-color:	#288C2A	;}
 
-/* Light Gray */
+/* 색상*/
 section.color-left.lightGray-light {background-color:	#BBEAD6;}
 
-/* Medium Gray */
+/* 색상*/
 section.color-left.mediumGray-light {background-color:	#64BDCB;}
 
-/* Dark Gray */
+/* 색상 */
 section.color-left.darkGray-light {background-color:	#2E6B98;}
 
-/*버튼*/
+/*시작, 질문페이지와 동일한 버튼*/
 .r-button{
     --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
     --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
@@ -245,19 +243,19 @@ section.color-left.darkGray-light {background-color:	#2E6B98;}
     border-style: none;
     padding: 0;
   }
-
+/*버튼의 위치*/
   .button{
 	position: relative;
   z-index: 0;
 	overflow: hidden;
 }
-
+/*버튼 호버 전 위치*/
 .button::before{
 	content: "";
   position: relative;
   z-index: -1;
 }
-
+/*버튼 호버 전 투명도 크기, 이동 애니메이션*/
 .button_type4::before{
 	width: 0;
 	height: 110%;
@@ -275,38 +273,37 @@ section.color-left.darkGray-light {background-color:	#2E6B98;}
   transition-delay: .15s, 0s;
   transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
 }
-
+/*버튼 호버 시 투명도, 길이, 지속시간*/
 .button_type4:hover::before{
 	opacity: 1;
   width: 110%;
   transition-duration: .25s, .4s;
   transition-delay: 0s;
 }
-
+/*버튼의 여백, 길이, 색상, 애니메이션 효과*/
 .button{
     --rButtonPadding: 1.5rem 3rem;
     --rButtonBorderWidth: 2px;
       --uiButtonBgColorHover: var(--buttondBgColorHover);
     
-    text-transform: uppercase;
     color: var(--uiButtonBgColorHover);
     transition: color .2s ease-out;
   }
-  
+  /*버튼 호버 전 배경색상*/
   .button::before{
       background-color: var(--uiButtonBgColorHover);
   }
-  
+  /*버튼 호버 시 색상*/
   .button:hover{
     color: #fff;
   }
-
+/*버튼의 색상*/
   .button{
     --buttonTextColor: #f56476;
     --buttondBgColorHover: #f56476;
     --rButtonBorderColor: #f56476;
   }
-  
+  /*버튼의 최대 길이, 정렬 방법, 여백*/
   .demo-buttons{
     max-width: 400px;  
     display: flex;
@@ -314,12 +311,13 @@ section.color-left.darkGray-light {background-color:	#2E6B98;}
     flex-direction:column;
     margin: auto;    
   }
-
+/*버튼의 여백 크기*/
   .button{
     margin-top: 30px;
     margin-bottom:10px;
     flex-grow: 1;
   }
+/*footer 정렬, 색상, 폰트*/
   .footer {
     flex-wrap: wrap;
     text-align: center;

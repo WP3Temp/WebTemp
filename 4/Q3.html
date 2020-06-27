@@ -2,27 +2,34 @@
 <html>
     <head>
 <title> Question 3</title>
+<!--css,js링크-->
 <link rel=stylesheet href="Q3.css">
 <script src="Q3.js"></script>
     </head>
     <body>
+      <!--노래 제어-->
       <audio controls autoplay loop class="audio"> <!--크롬에서 작동 안됨 autoplay -->
         <source src="Q3.mp3" type="audio/mp3">
             이 브라우저는 audio태그를 지원하지 않습니다<br>
     </audio>
+    <!--질문과 선택지, 일러스트-->
       <div id="profile">
+        <!--일러스트-->
         <div class="canvas">
           <canvas resize="true" hidpi="off" id="canvas-1"></canvas> <!--그림-->
         </div>
+        <!--질문-->
         <div class="diary">
           <span class="mood">Q3</span> <b class="fa fa-smile-o">질문3</b><br/><br />
           밖에 나가보니 누군가가 당신의 집 앞에 예쁜 선물 상자를 보냈네요. 선물 상자 안에는 무엇이 들어있나요?
         </div>
         </div>
+        <!--다음페이지로 이동하는 버튼-->
         <div id="arrow" onclick="store();location.href='Q4.html';">
           <div class="arrow-top"></div>
           <div class="arrow-bottom"></div>
         </div>
+        <!--선택지-->
         <div class="answers">
             <input type="radio" name="q3" id="r1" value="옷" onclick="function1()"><label for="r1"><div>옷</div><img src="clothes.jpg"></label>
             <input type="radio" name="q3" id="r2" value="수첩 혹은 소설"onclick="function1()"><label for="r2"><div>수첩 혹은 소설</div><img src="book.jpg"></label>

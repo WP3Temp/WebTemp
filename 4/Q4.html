@@ -2,33 +2,39 @@
 <html>
     <head>
 <title> Question 4</title>
+<!--css,js 링크-->
 <link rel=stylesheet href="Q4.css">
 <script src="Q4.js"></script>
     </head>
     <body>
+      <!--노래 제어-->
       <audio controls autoplay loop class="audio"> <!--크롬에서 작동 안됨 autoplay -->
         <source src="Q4.mp3" type="audio/mp3">
             이 브라우저는 audio태그를 지원하지 않습니다<br>
     </audio>
+    <!--질문과 선택지, 일러스트-->
       <div id="profile">
+        <!--일러스트-->
         <div class="canvas">
           <canvas resize="true" hidpi="off" id="canvas-1"></canvas> <!--그림-->
         </div>
+        <!--질문-->
         <div class="diary">
           <span class="mood">Q4</span> <b class="fa fa-smile-o">질문4</b><br/><br />
           다시 약속장소로 향하던 중 갑자기 많은 사람들이 하늘을 올려다봅니다. 사람들은 하늘에 무엇을 보고 있는 건가요?
         </div>
         </div>
+        <!--다음페이지로 이동하는 버튼-->
         <div id="arrow" onclick="store();location.href='Q4-5.html';">
           <div class="arrow-top"></div>
           <div class="arrow-bottom"></div>
         </div>
+        <!--선택지-->
         <div class="answers">
             <input type="radio" name="q4" id="r1" value="아름다운 저녁노을" onclick="function1()"><label for="r1"><div>아름다운 저녁노을</div><img src="sunset.jpg"></label>
             <input type="radio" name="q4" id="r2" value="철새의 무리" onclick="function1()"><label for="r2"><div>철새의 무리</div><img src="bird.jpg"></label>
             <input type="radio" name="q4" id="r3" value="멋진 무지개" onclick="function1()"><label for="r3"><div>멋진 무지개</div><img src="rainbow.jpg"></label>
             <input type="radio" name="q4" id="r4" value="열기구" onclick="function1()"><label for="r4"><div>열기구</div><img src="balloon.jpg"></label>
-
         </div>
     </body>
 </html>

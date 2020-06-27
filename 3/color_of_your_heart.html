@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
-<title> color of my heart </title>
+<title> color of my heart </title> 
+<!--css,js 링크걸기-->
 <link rel="stylesheet" href="bg.css">
 <script src="bg.js"></script>
-
-
     </head>
-    <body>
 
+    <body>
+        <!--배경-->
     <section id="bg">
     <h1>Color of My Heart</h1>
-
     <audio controls autoplay loop class="audio"> <!--크롬에서 작동 안됨 autoplay -->
         <source src="Blueming.mp3" type="audio/mp3">
             이 브라우저는 audio태그를 지원하지 않습니다<br>
     </audio>
-
+    <!--사이트 소개글-->
     <h3>심리테스트로 나의 계절컬러를 찾아보세요!</h3>
     <h4>나의 심리테스트를 통해 퍼스널 컬러를 알아볼 수 있어요.</h4>
+    <!--buttons-->
     <div class="demo-buttons">
+        <!--시작 button-->
         <button class="r-button button button_type1" onclick="location.href='test_sheet.html'" >
             <span class="button__label">what is my color?</span>
         </button>
+        <!--돌아가기 button-->
         <button class="r-button button button_type1" onclick="location.href='../index.html'">
             <span class="button__label">go back to menu</span>
         </button>
     </div>
+    
     </section>
+    <!--footer-->
     <div class="footer">
                 <footer>
                   본 서비스는 세종대학교 2020년 1학기 <웹프로그래밍>의 팀 프로젝트입니다. 페이지 관련 문의사항 및 건의사항을 보내주세요. 확인 후 빠르게 연락 드리겠습니다. 본 서비스의 공유 및 사용은 격렬하게 환영합니다.<br>
                   Disclaimer: All content is provided for fun and entertainment purposes only.
                 </footer>
     </div>
-
 
     </body>
 </html>

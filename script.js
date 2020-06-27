@@ -1,15 +1,20 @@
+// 리스트에 각 링크 정보 저장
 var links = ['./test1/gummy.html', './test2/gummy.html', './3/color_of_your_heart.html', './4/what_is_love.html', './TEST5/page1_start.html', './TEST6/page1_question.html', './d/8.html', './d/7.html'];
 
+// 리액트 사용, 가상 클래스 생성
 class CitySvg extends React.Component {
   componentDidMount() {
     this.houses = [this.houseOne, this.houseTwo, this.houseThree, this.houseFour, this.houseFive,
       this.houseSix, this.houseSeven, this.wheel2
     ];
+    // 리액트 컴포넌트 생성 개수 조정
     this.index = '10';
+    // 전체 컨테이너 크기 조정
     $('.container').parallax({
       scalarX: 5,
       scalarY: 5
     });
+    // 관람차 돌아가는 모션
     TweenMax.set(this.wheel, {
       transformOrigin: '50% 50%'
     });
@@ -19,13 +24,16 @@ class CitySvg extends React.Component {
       repeat: -1
     });
   }
-
+  // 마우스 클릭 이벤트 캐치
   mouseAction(evt) {
     const index = evt.currentTarget.dataset.project;
+    // 로그 생성
     this.houses[index].classList.toggle('active');
+    // 페이지 이동
     location.href = links[index];
   }
 
+  // 도시 이미지 리액트로 렌터 시작
   render() {
     return (
       React.createElement("svg", {
@@ -39,9 +47,10 @@ class CitySvg extends React.Component {
             id: "house-seven",
             ref: h => this.houseSeven = h,
             "data-project": 6,
-
+            // 클릭 시 색상 변경 제어
             onClick: e => this.mouseAction(e)
           },
+          // 앨리먼트 생성부
           React.createElement("g", {
               id: "bg-fill-2",
               className: "bg-fill"
@@ -70,6 +79,7 @@ class CitySvg extends React.Component {
               fill: "#333",
               d: "M905.31 279.27c.92-.47 1.53-7.83 0-8.19s-39.21 0-58.82 0c-3 0-3 0-3 3v2.5c-.14 1.74.15 3 2.38 2.76 1-.13 1.32.5 1.27 1.4v75.41c0 .45-.07.9-.11 1.35v2.81c0 9.16.07 18.33.14 27.49 0 1.19-.43 2.64-1.6 2.6-1.89-.06-3.79 0-5.68 0v.79h65.5v-.79a13.2 13.2 0 0 0-1.59 0c-1.62.19-2.07-1.57-2.06-3.12V281.4c-.09-3.17 2.67-1.66 3.57-2.13zm-14.07 109a1.15 1.15 0 0 1-1.15 1.15h-7.58a1.15 1.15 0 0 1-1.15-1.15v-18.74a1.15 1.15 0 0 1 1.15-1.15h7.58a1.15 1.15 0 0 1 1.15 1.15zm4.84 1.08c-1.59.07-2.7 0-2.64-2.17.15-6.21 0-12.43.11-18.64.06-2.37-.74-3-3-2.9-3.1.17-6.21.12-9.32 0-1.8-.06-2.37.61-2.35 2.37.08 6.29 0 12.58.07 18.87 0 1.8-.35 2.52-2.34 2.49q-12.27-.17-24.55 0c-1.86 0-2.27-.58-2.27-2.33.06-17.66 0-35.31 0-53v-52.29c0-2 .47-2.57 2.51-2.56q22.16.14 44.33 0c1.72 0 2.35.36 2.35 2.25q-.09 52.86 0 105.71c0 2.57-1.41 2.13-2.9 2.2zm4.21-112.83h-52c-.91 0-2.06.36-2.11-1.26s1.17-1.43 2.18-1.43h52c1 0 2.25-.4 2.22 1.38s-1.35 1.3-2.29 1.3z"
             }))),
+        // 생성부 종려
 
 
         React.createElement("g", {
@@ -532,6 +542,7 @@ class CitySvg extends React.Component {
   }
 }
 
+// 리액트 컴포넌트 렌더 제어
 class App extends React.Component {
   render() {
     return (
@@ -540,11 +551,11 @@ class App extends React.Component {
   }
 }
 
-
+// wrapper 에 가상 클래스 할당
 ReactDOM.render(React.createElement(App, null), document.querySelector(".wrapper"));
 
-
-var $w = $( window ).width();
+// 캐릭터 움직임을 위한 변수 선언부
+var $w = $(window).width();
 var $dW = $('.bb8').css('width');
 $dW = $dW.replace('px', '');
 $dW = parseInt($dW);
@@ -554,108 +565,117 @@ var $dMinSpeed = 1;
 var $dMaxSpeed = 4;
 var $dAccel = 1.04;
 var $dRot = 0;
-var $mPos = $w - $w/5;
+var $mPos = $w - $w / 5;
 var $slowOffset = 120;
 var $movingRight = false;
 
-function moveDroid(){
-  if($mPos > $dPos + ($dW/4)){
+// 캐릭터 움직임 구현부
+function moveDroid() {
+  if ($mPos > $dPos + ($dW / 4)) {
     // moving right
-    if(!$movingRight){
+    if (!$movingRight) {
       $movingRight = true;
       $('.antennas').addClass('right');
       $('.eyes').addClass('right');
     }
-    if($mPos - $dPos > $slowOffset){
-      if($dSpeed < $dMaxSpeed){
+    if ($mPos - $dPos > $slowOffset) {
+      if ($dSpeed < $dMaxSpeed) {
         // speed up
         $dSpeed = $dSpeed * $dAccel;
       }
-    } else if($mPos-$dPos < $slowOffset){
-      if($dSpeed > $dMinSpeed){
+    } else if ($mPos - $dPos < $slowOffset) {
+      if ($dSpeed > $dMinSpeed) {
         // slow down
         $dSpeed = $dSpeed / $dAccel;
       }
     }
     $dPos = $dPos + $dSpeed;
     $dRot = $dRot + $dSpeed;
-  } else if($mPos < $dPos - ($dW/4)){
+  } else if ($mPos < $dPos - ($dW / 4)) {
     // moving left
-    if($movingRight){
+    if ($movingRight) {
       $movingRight = false;
       $('.antennas').removeClass('right');
       $('.eyes').removeClass('right');
     }
-    if($dPos - $mPos > $slowOffset){
-      if($dSpeed < $dMaxSpeed){
+    if ($dPos - $mPos > $slowOffset) {
+      if ($dSpeed < $dMaxSpeed) {
         // speed up
         $dSpeed = $dSpeed * $dAccel;
       }
-    } else if($dPos - $mPos < $slowOffset){
-      if($dSpeed > $dMinSpeed){
+    } else if ($dPos - $mPos < $slowOffset) {
+      if ($dSpeed > $dMinSpeed) {
         // slow down
         $dSpeed = $dSpeed / $dAccel;
       }
     }
     $dPos = $dPos - $dSpeed;
     $dRot = $dRot - $dSpeed;
-  } else { }
+  } else {}
   $('.bb8').css('left', $dPos);
-  $('.ball').css({ WebkitTransform: 'rotate(' + $dRot + 'deg)'});
-  $('.ball').css({ '-moz-transform': 'rotate(' + $dRot + 'deg)'});
+  $('.ball').css({
+    WebkitTransform: 'rotate(' + $dRot + 'deg)'
+  });
+  $('.ball').css({
+    '-moz-transform': 'rotate(' + $dRot + 'deg)'
+  });
 }
 
+// 마우스 위치로 이동 시 인터벌 생성
 setInterval(moveDroid, 10);
 
-$( document ).on( "mousemove", function( event ) {
+// 마우스 위치 받아오기
+$(document).on("mousemove", function (event) {
   $('h2').addClass('hide');
   $mPos = event.pageX;
   return $mPos;
 });
 
-$('#wheel').hover(function() {
+
+//건물 위에 마우스 호버 시 타이틀 수정
+$('#wheel').hover(function () {
   $('#titlecontext').text('성향으로 알아보는 다음 여행지');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-seven').hover(function() {
+$('#house-seven').hover(function () {
   $('#titlecontext').text('나의 정신연령 알아보기');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-six').hover(function() {
+$('#house-six').hover(function () {
   $('#titlecontext').text('내가 보는 나, 타인이 보는 나');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-five').hover(function() {
+$('#house-five').hover(function () {
   $('#titlecontext').text('색깔로 알아보는 나의 상태');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-four').hover(function() {
+$('#house-four').hover(function () {
   $('#titlecontext').text('연애성향 파악하기');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-three').hover(function() {
+$('#house-three').hover(function () {
   $('#titlecontext').text('퍼스널컬러 찾기');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-two').hover(function() {
+$('#house-two').hover(function () {
   $('#titlecontext').text('나의 전생 알아보기');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');
 });
 
-$('#house-one').hover(function() {
+$('#house-one').hover(function () {
   $('#titlecontext').text('나의 성향 알아보기');
 }, function () {
   $('#titlecontext').text('우리 집에 왜 왔니?');

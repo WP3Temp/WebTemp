@@ -1,24 +1,25 @@
+/*body 폰트 스타일*/
 body {
 
  background-color: #CAE1FF;
 	color: #fff;
 	font-family: 'Lato', sans-serif, arial;
 }
-
+/*container의 header부분 배경색, 여백, 정렬*/
 .container > header {
 	margin: 0 auto;
 	padding: 4em 2em;
 	text-align: center;
 	background: rgba(0,0,0,.02);
 }
-
+/*contatiner의 header의 h1의 글자크기, 줄간격, 두께*/
 .container > header h1 {
 	font-size: 2.625em;
 	line-height: 1.3;
 	margin: 0;
 	font-weight: 300;
 }
-
+/*header의 span의 색상, 글자 두께, 여백*/
 .container > header span {
 	display: block;
 	font-size: 60%;
@@ -26,11 +27,11 @@ body {
 	font-weight: 400;
 	padding: 0 0 0.6em 0.1em;
 }
-
+/*section간 간격*/
 section {
 	padding: 7em 0;
 }
-
+/*모든 부분 적용*/
 *,
 *:after,
 *::before {
@@ -38,20 +39,20 @@ section {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+/*ac-custom의 여백, 최대 높이*/
 .ac-custom {
 	padding: 0 3em;
 	max-width: 900px;
 	margin: 0 auto;
 }
-
+/*ac-custom의 h2의 글자 크기, 두께, 여백*/
 .ac-custom h2 {
 	font-size: 1.8em;
 	font-weight: 300;
 	padding: 0 0 0.5em;
 	margin: 0 0 30px;
 }
-
+/*ac-custom의 list여백 및 크기*/
 .ac-custom ul,
 .ac-custom ol {
 	list-style: none;
@@ -59,13 +60,13 @@ section {
 	margin: 0 auto;
 	max-width: 800px;
 }
-
+/*ac-custom의 list의 요소 간 간격, 위치*/
 .ac-custom li {
 	margin: 0 auto;
 	padding: 2em 0;
 	position: relative;
 }
-
+/*ac-custom의 label되어있는 것의 글자 크기, 정렬, 색상, 애니메이션 변환 효과*/
 .ac-custom label {
 	display: inline-block;
 	position: relative;
@@ -77,8 +78,7 @@ section {
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
 }
-
-.ac-custom input[type="checkbox"],
+/*ac-custom의 radio버튼의 크기 모양*/
 .ac-custom input[type="radio"],
 .ac-custom label::before {
 	width: 50px;
@@ -89,8 +89,7 @@ section {
 	position: absolute;
 	cursor: pointer;
 }
-
-.ac-custom input[type="checkbox"],
+/*ac-custom의 radio버튼의  정렬*/
 .ac-custom input[type="radio"] {
 	opacity: 0;
 	-webkit-appearance: none;
@@ -98,28 +97,28 @@ section {
 	vertical-align: middle;
 	z-index: 100;
 }
-
+/*ac-custom의 label의 전 색상 및 애니메이션 변환 시간*/
 .ac-custom label::before {
 	content: '';
 	border: 4px solid #fff;
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
-
+/*ac-cutom의 label의 전 모양*/
 .ac-radio label::before {
 	border-radius: 50%;
 }
-
+/* ac-custom의 radio버튼과 선지내용의 색상*/
 .ac-custom input[type="checkbox"]:checked + label,
 .ac-custom input[type="radio"]:checked + label {
 	color: #fff;
 } 
-
+/*ac-custom의 radio버튼과 선지내용의 전 투명도*/
 .ac-custom input[type="checkbox"]:checked + label::before,
 .ac-custom input[type="radio"]:checked + label::before {
 	opacity: 0.8;
 }
-
+/*ac-custom의 radio버튼의 애니메이션 속성*/
 .ac-custom svg {
 	position: absolute;
 	width: 40px;
@@ -129,7 +128,7 @@ section {
 	left: 5px;
 	pointer-events: none;
 }
-
+/*svg의 경로 두께, 색상*/
 .ac-custom svg path {
 	stroke: #fdeed3;
 	stroke-width: 13px;
@@ -137,7 +136,7 @@ section {
 	stroke-linejoin: round;
 	fill: none;
 }
-
+/*모든 부분에 대한 여백 및 크기 지정*/
 header,section{display:block;}
 audio,canvas,video{display:inline-block;}
 audio:not([controls]){display:none;height:0;}
@@ -151,13 +150,14 @@ button,input{line-height:normal;}
 button{text-transform:none;}
 button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
 
+/*노래 제어부분 색상*/
 .audio{
 	text-align:right;
 	background: rgba(0,0,0,.02);
 
 }
 
-/*버튼*/
+/*결과 버튼 bg.css의 버튼과 동일 버튼 적용*/
 
 .r-button{
     --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
@@ -192,19 +192,19 @@ button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],inp
     border-style: none;
     padding: 0;
   }
-
-  .a-button{
+/*버튼의 위치 및 넘어가는 부분 처리*/
+.a-button{
     position: relative;
     z-index: 0;
     overflow: hidden;
 }
-
+/*버튼의 전 위치*/
 .a-button::before{
 	content: "";
   position: relative;
   z-index: -1;
 }
-
+/*버튼의 호버 전 상태*/
 .button_type1::before{
 	width: 0;
 	height: 110%;
@@ -222,39 +222,40 @@ button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],inp
   transition-delay: .15s, 0s;
   transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
 }
-
+/*버튼 호버 전 애니메이션 변환 시간*/
 .button_type1:hover::before{
     opacity: 1;
   width: 110%;
   transition-duration: .25s, .4s;
   transition-delay: 0s;
 }
-
+/*버튼의 여백, 길이*/
 .a-button{
     --rButtonPadding: 1.5rem 3rem;
     --rButtonBorderWidth: 2px;
       --uiButtonBgColorHover: var(--buttondBgColorHover);
     
-    text-transform: uppercase;
     color: var(--uiButtonBgColorHover);
     transition: color .2s ease-out;
   }
-  
+  /*버튼의 호버 전 배경색상*/
   .a-button::before{
       background-color: var(--uiButtonBgColorHover);
   }
-  
+
+  /*버튼 호버 시 색상*/
   .a-button:hover{
     color: #fff;
   }
 
+/*버튼의 색상*/
   .a-button{
     --buttonTextColor: #448aff;
   --buttondBgColorHover: #448aff;
   --buttonTextColorHover: #fff;
   --rButtonBorderColor: #448aff;
   }
-
+/*버튼의 최대길이, 정렬 방법, 위치*/
   .demo{
 	max-width:600px;
     display: flex; 
@@ -263,6 +264,7 @@ button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],inp
     margin:auto;
 	bottom: 30%; 
 }
+/*버튼의 글자 크기*/
   .a-button{
 	flex-grow: 1;
 	font-size:25px;

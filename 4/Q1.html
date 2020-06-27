@@ -2,15 +2,17 @@
 <html>
     <head>
 <title> Question 1</title>
+<!--css,js링크-->
 <link rel=stylesheet href="Q1.css">
 <script src="Q1.js"></script>
     </head>
     <body>
+      <!--노래 제어-->
       <audio controls autoplay loop class="audio"> <!--크롬에서 작동 안됨 autoplay -->
         <source src="Q1.mp3" type="audio/mp3">
             이 브라우저는 audio태그를 지원하지 않습니다<br>
     </audio>
-   
+   <!--질문-->
       <div id="profile">
         <div class="canvas">
           <canvas resize="true" hidpi="off" id="canvas-1"></canvas> <!--그림-->
@@ -19,11 +21,14 @@
           <span class="mood">Q1</span> <b class="fa fa-smile-o">질문1</b><br/><br />
           알람이 울리기도 전에 개운하게 일어나 화장실로 향하는 당신, 가장 먼저 씻는 곳은?
         </div>
+
       </div>
+      <!--다음페이지 이동 버튼-->
       <div id="arrow" onclick="store();location.href='Q1-2.html';">
         <div class="arrow-top"></div>
         <div class="arrow-bottom"></div>
       </div>
+      <!--선지-->
           <div class="answers">
             <input type="radio" name="q1" id="r1" value="얼굴" onclick="function1()"><label for="r1"><div>얼굴</div><img src="face.jpg"></label>
             <input type="radio" name="q1" id="r2" value="치아"onclick="function1()"><label for="r2"><div>치아</div><img src="q1_r1.jpg"></label>

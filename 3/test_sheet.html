@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+<!--css 연결-->
 <title> Question </title>
 <link rel="stylesheet" href=" test_sheet.css">
-<link rel="shortcut icon" href="../favicon.ico">
+
     </head>
     <body>
+<!--노래 제어-->
         <div class="container">
 			<div class="audio">
 			<audio controls autoplay loop > <!--크롬에서 작동 안됨 autoplay -->
@@ -13,11 +15,14 @@
 					이 브라우저는 audio태그를 지원하지 않습니다<br>
 			</audio>
 		</div>
+<!--사이트 이름과 소개-->
         <header>
 			<h1>Color of My Heart<span>나만의 퍼스널컬러 찾기</span></h1>
 			<p>모든 문항은 당신의 마음을 반영합니다</p>	
 		</header>
+		<!--질문과 선지-->
         <section>
+			<!--질문1 과 선지-->
             <form class="ac-custom ac-radio ac-fill" autocomplete="off">
                 <h2><b>Q1. 가장 좋아하는 이벤트 유형은 무엇인가요?</b></h2>
                 <ul>
@@ -26,7 +31,9 @@
                     <li><input id="q1_c" name="q1" type="radio" value="2" onclick="func1()"><label for="q1_c">뮤지컬 공연 또는 충동적으로 어떤 재미있는 일을 하는 것</label></li>
                     <li><input id="q1_d" name="q1" type="radio" value="3" onclick="func1()"><label for="q1_d">전시회 오프닝 파티나 오페라 공연 같은 특별한 행사 보러가기</label></li>
                 </ul>
-            </form>
+			</form>
+
+			<!--질문2 과 선지-->
             <section>
 				<form class="ac-custom ac-radio ac-fill" autocomplete="off">
 					<h2><b>Q2. 당신은 어떤 유형의 사람인가요?</b></h2>
@@ -37,7 +44,9 @@
 						<li><input id="q2_d" name="q2" type="radio" value="3" onclick="func2()"><label for="q2_d">자기 확신이 강해서 굳은 의지로 목표를 이룬다</label></li>
 					</ul>
 				</form>
-            </section>
+			</section>
+
+			<!--질문3 과 선지-->
             <section>
 				<form class="ac-custom ac-radio ac-fill" autocomplete="off">
 					<h2><b>Q3. 어떤 종류의 영화를 가장 좋아하나요?</b></h2>
@@ -48,7 +57,9 @@
 						<li><input id="q3_d" name="q3" type="radio" value="3" onclick="func3()"><label for="q3_d">느와르 또는 예술 영화</label></li>
 					</ul>
 				</form>
-            </section>
+			</section>
+
+			<!--질문4 와 선지-->
             <section>
 				<form class="ac-custom ac-radio ac-fill" autocomplete="off">
 					<h2><b>Q4. 여가시간이 생기면 무엇을 가장 하고 싶은가요?</b></h2>
@@ -59,7 +70,9 @@
 						<li><input id="q4_d" name="q4" type="radio" value="3" onclick="func4()"><label for="q4_d">수영장 의자에 누워 칵테일을 마신다</label></li>
 					</ul>
 				</form>
-            </section>
+			</section>
+
+			<!--질문5 과 선지-->
             <section>
 				<form class="ac-custom ac-radio ac-fill" autocomplete="off">
 					<h2><b>Q5. 친구가 기분이 좋지 않다면 당신은 어떻게 행동할 것인가요?</b></h2>
@@ -71,13 +84,16 @@
 					</ul>
 				</form>
 			</section>
+
+			<!--결과페이지 이동 버튼-->
 			<div id="demo-buttons" class="demo">
 				<button class="r-button a-button button_type1"  id="result" onclick="Myresult()" >
 					<span class="button__label">퍼스널컬러 보기</span>
 				</button>
 			</div>
         </section>
-    </div>
+	</div>
+	<!--js 연결-->
 <script src="test_sheet.js"></script>
     </body>
 </html>

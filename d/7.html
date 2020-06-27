@@ -2,23 +2,27 @@
 <html lang="en">
 
 <head>
+    <!-- js 파일 링크 -->
     <script src="./src/js.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>나의 다음 여행지 알아보기</title>
     <script src="./src/fullpage.js"></script>
     <link rel="stylesheet" type="text/css" href="./dist/fullpage.css" />
     <link rel="stylesheet" type="text/css" href="./dist/subpage7des.css" />
+    <!-- 외부 폰트 가져오기 -->
     <link
         href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Raleway:wght@100;900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
+    <!-- header -->
     <div id="header">
         <p id="logo"><a href="../index.html">우리 집에 왜 왔니?</a></p>
     </div>
 
+    <!-- 전체 화면 레이아웃 섹션 선언 -->
     <div id="fullpage">
         <div class="section">
             <div class="left1img">
@@ -30,6 +34,8 @@
             <div id="title">나의 다음 여행지<br>찾아보기</div>
             <div id="subtitle">10개의 문제로 알아보는 나의 다음 여행지</div>
         </div>
+        <!-- 타이틀 페이지 종료 -->
+        <!-- 이하 문제 페이지 -->
         <div class="section">
             <div class="right1img">
                 1
@@ -230,25 +236,30 @@
                 권력이 좋다
             </div>
         </div>
+        <!-- 문제 페이지 종료 -->
+        <!-- 결과 조회 -->
         <div class="section">
             <div class="finalq">
+                <!-- 결과 조회용 버튼 -->
                 <button id='result_render' onclick="result_render(userdata);">결과 확인</button>
             </div>
             <button id='back'><a href="../index.html">메인으로</a></button>
             <button class="result__trigger">댓글 달기</button>
         </div>
     </div>
-
+    <!-- 주 스크립트 링크 -->
     <script src="./src/subPage7js.js"></script>
-
+    <!-- 스크롤 지시기 섹션 -->
     <section>
         <a class="scroll-down" address="true"></a>
     </section>
-
+    <!-- 이하 모달 레이아웃  -->
+    <!-- 기본 속성 display none -->
     <div class="result">
         <span class="result__close">&#x2715;</span>
         <br>
         <br>
+        <!-- 댓글 서비스 연결 -->
         <div id="disqus_thread"></div>
         <script>
             (function () { // DON'T EDIT BELOW THIS LINE

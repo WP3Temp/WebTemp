@@ -1,17 +1,20 @@
-
+/*폰트 import*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-
+/*전체 적용 여백*/
 * {
     margin: 0;
     padding: 0;
     border: 0;
 }
+/*html,body의 최소 높이*/
 html, body {
     min-height: 100%;
 }
+/*body의 배경색상*/
 body {
     background-color: #CFDCFF ;
 }
+/*clock의 위치,크기,색상, 모양*/
 .clock {
     position: relative;
     height: 200px;
@@ -28,6 +31,7 @@ body {
     bottom: 0;
     margin: auto;
 }
+/*clock의 top의 위치,크기,색상,여백*/
 .clock .top {
     position: absolute;
     width: 3px;
@@ -37,6 +41,7 @@ body {
     right: 0;
     margin: 0 auto;
 }
+/*clock의 right의 위치, 크기,색상,여백*/
 .clock .right {
     position: absolute;
     width: 8px;
@@ -47,6 +52,7 @@ body {
     right: 0;
     margin: auto 0;
 }
+/*clock의 bottom의 크기,색상, 위치,여백*/
 .clock .bottom {
     position: absolute;
     width: 3px;
@@ -57,6 +63,7 @@ body {
     bottom: 0;
     margin: 0 auto;
 }
+/*clock의 left의 위치, 크기,색상*/
 .clock .left {
     position: absolute;
     width: 8px;
@@ -67,6 +74,7 @@ body {
     left: 0;
     margin: auto 0;
 }
+/*clock의 center의 위치, 색상, 크기, 모양*/
 .clock .center {
     height: 6px;
     width: 6px;
@@ -79,6 +87,7 @@ body {
     background: #262626;
     border-radius: 100%;
 }
+/*clock의 shadow의 위치,크기,애니메이션 효과*/
 .clock .shadow {
     height: 200px;
     width: 200px;
@@ -88,6 +97,7 @@ body {
     transform: rotate(135deg);
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
 }
+/*clock의 hour의 크기,위치, 애니메이션 지속시간*/
 .clock .hour {
     width: 3px;
     height: 100%;
@@ -97,6 +107,7 @@ body {
     margin: 0 auto;
     animation: time 60s infinite linear;
 }
+/*clock의 hour의 전상태 위치, 색상, 크기*/
 .clock .hour:before {
     position: absolute;
     content: "";
@@ -105,6 +116,7 @@ body {
     width: 3px;
     top: 30px;
 }
+/*clock의 minute의 위치, 크기,애니메이션 지속 기간*/
 .clock .minute {
     width: 1px;
     height: 100%;
@@ -114,6 +126,7 @@ body {
     margin: 0 auto;
     animation: time 30s infinite linear;
 }
+/*clock의 minute의 위치, 색상, 크기*/
 .clock .minute:before {
     position: absolute;
     content: "";
@@ -122,6 +135,7 @@ body {
     width: 1px;
     top: 50px;
 }
+/*clock의 second의 위치, 크기, 애니메이션 지속 시간*/
 .clock .second {
     width: 2px;
     height: 100%;
@@ -131,6 +145,7 @@ body {
     margin: 0 auto;
     animation: time 15s infinite linear;
 }
+/*clock의 second의 전상태 위치, 색상,크기*/
 .clock .second:before {
     position: absolute;
     content: "";
@@ -139,19 +154,20 @@ body {
     width: 2px;
     top: 45px;
 }
+/*time애니메이션*/
 @keyframes time {
     to {
         transform: rotate(360deg);
    }
 }
-
+/*content의 정렬, 폰트 스타일, 여백*/
 #content{
     text-align: center;
 	font-family: Nanum Pen Script , 'Lato', sans-serif, arial;
     font-size: 30px;
     margin: 50px 0px;
 }
-
+/*버튼*/
 #arrow {
     cursor: pointer;
     height: 60px;
@@ -162,6 +178,7 @@ body {
     transition: transform 0.1s;
     width: 70px;
   }
+  /*arrow-top과 arrow-bottom의 색상, 크기, 위치*/
   .arrow-top, .arrow-bottom {
     background-color: #666;
     height: 4px;
@@ -170,6 +187,7 @@ body {
     top: 50%;
     width: 70%;
   }
+  /*arrow-top과 arrow-bottom의 after상태 색상, 크기,위치,변환시간*/
   .arrow-top:after, .arrow-bottom:after {
     background-color: #fff;
     content: '';
@@ -178,32 +196,39 @@ body {
     top: 0;
     transition: all 0.15s;
   }
+  /*arrow-top의 애니메이션 변환*/
   .arrow-top {
     transform: rotate(45deg);
     transform-origin: bottom right;
   }
+  /*arrow-top의 after상태 위치, 변환시간*/
   .arrow-top:after {
     left: 100%;
     right: 0;
     transition-delay: 0s;
   }
+  /*arrow-bottom의 변환위치*/
   .arrow-bottom {
     transform: rotate(-45deg);
     transform-origin: top right;
   }
+  /*arrow-bottom의 변환시간, 위치*/
   .arrow-bottom:after {
     left: 0;
     right: 100%;
     transition-delay: 0.15s;
   }
+  /*arrow호버 시 arrow-top의 변환*/
   #arrow:hover .arrow-top:after {
     left: 0;
     transition-delay: 0.15s;
   }
+  /*arrow호버 시 arrow-bottom의 변환*/
   #arrow:hover .arrow-bottom:after {
     right: 0;
     transition-delay: 0s;
   }
+  /*arrow가 active일 때 변환*/
   #arrow:active {
     transform: translateX(-50%) translateY(-50%) scale(0.9);
   }

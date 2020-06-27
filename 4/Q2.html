@@ -2,27 +2,34 @@
 <html>
     <head>
 <title> Question 2</title>
+<!--css,js링크-->
 <link rel=stylesheet href="Q2.css">
 <script src="Q2.js"></script>
     </head>
     <body>
+      <!--노래 제어-->
       <audio controls autoplay loop class="audio"> <!--크롬에서 작동 안됨 autoplay -->
         <source src="Q2.mp3" type="audio/mp3">
             이 브라우저는 audio태그를 지원하지 않습니다<br>
     </audio>
+    <!--질문과 선택지-->
       <div id="profile">
+        <!--일러스트와 질문-->
         <div class="canvas">
           <canvas resize="true" hidpi="off" id="canvas-1"></canvas> <!--그림-->
         </div>
+        <!--질문-->
         <div class="diary">
           <span class="mood">Q2</span> <b class="fa fa-smile-o">질문2</b><br/><br />
           오랜만에 만나는 반가운 친구와의 약속. 일찍 일어난 덕에 시간이 여유로워 신경써서 외출을 준비합니다. 가장 먼저 입는 옷은?
         </div>
       </div>
+      <!--다음페이지로 이동하는 버튼-->
       <div id="arrow" onclick="store();location.href='Q2-3.html';">
         <div class="arrow-top"></div>
         <div class="arrow-bottom"></div>
       </div>
+      <!--선택지-->
         <div class="answers">
             <input type="radio" name="q2" id="r1" value="상의" onclick="function1()"><label for="r1"><div>상의</div><img src="q2_r1.jpg"></label>
             <input type="radio" name="q2" id="r2" value="하의"onclick="function1()"><label for="r2"><div>하의</div><img src="q2_r2.jpg"></label>

@@ -1,8 +1,9 @@
+/*폰트 import*/
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-
+/*html 크기, 폰트,색상, 위치*/
 html {
   width: 100%;
   height: 100%;
@@ -10,7 +11,7 @@ html {
 	font-family: Nanum Pen Script , 'Lato', sans-serif, arial;
   background: #C8E677 ;
 }
-
+/*canvas의 크기*/
 canvas {
   width: 612px;
   height: 288px;
@@ -20,7 +21,7 @@ canvas {
   opacity: 0.8;
   display: none;
 }
-
+/*profile의 여백,크기*/
 #profile {
   display: box;
   margin: 0 auto;
@@ -28,7 +29,7 @@ canvas {
   height: auto;
   padding-top: 24px;
 }
-
+/*canvas의 이미지, 정렬, 크기, 위치*/
 .canvas {
   background-image: url("closet.jpg");
   background-position: bottom center;
@@ -38,7 +39,7 @@ canvas {
   position: relative;
   left: 20px;
 }
-
+/*diary의 크기,여백, 색상, 폰트 스타일, 자간 간격, 위치*/
 .diary {
   width: 609px;
   height: auto;
@@ -54,7 +55,7 @@ canvas {
   position: relative;
   left: 20px;
 }
-
+/*diary의 mood의 색상,여백, 크기*/
 .diary .mood {
   background-color: #333;
   color: #fff;
@@ -63,28 +64,9 @@ canvas {
   margin: 0 10px 0 0;
 }
 
-.arrow1, .arrow2 {
-  background-color: #eee;
-  padding: 5px 10px 15px 10px;
-  text-align: center;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  z-index: 100;
-}
 
-.arrow1 {
-  left: 25%;
-  margin: 0 0 0 -373px;
-  top: -20px;
-}
-.arrow2 {
-  left: 75%;
-  margin: 0 0 0 332px;
-  top: -60px;
-}
 
+/*answers의 크기,위치,폰트 스타일, 자간 간격*/
 .answers{
  top:500px;
  margin: 0 auto;
@@ -95,22 +77,24 @@ canvas {
  letter-spacing: 0.125em;
 
 }
-
+/*radio의 display속성*/
 input[type="radio"]{
   display: none;
 }
+/*radio와 label의 정렬,위치*/
 input[type="radio"] + label{
     appearance: none;
     cursor: pointer;
     display: inline-block;
-    /*padding-right: 10px;*/
     position: relative;
     vertical-align: middle;
 }
+/*radio check와 label의 변환 시간*/
 input[type="radio"]:checked + label{
     backface-visibility: hidden;
     animation: checked 200ms ease 1;
 }
+/*radio와 label의 전 색상, 크기,위치*/
 input[type="radio"] + label:before {
     background: none repeat scroll 0 0 rgba(117,117,117,0.2);
     border-radius: 100% 100% 100% 100%;
@@ -121,13 +105,15 @@ input[type="radio"] + label:before {
     top: 6px;
     width: 7px;
 }
+/*radio와 label의 호버 전 색상*/
 input[type="radio"] + label:hover:before {
     background: none repeat scroll 0 0 rgb(117,117,117);
 }
+/*radio checked와 label의 전 색상*/
 input[type="radio"]:checked + label:before {
     background: none repeat scroll 0 0 rgb(117, 117, 117);
 }
-
+/*radio와 label 의 다음 상태 모양, 크기,위치*/
 input[type="radio"] + label:after
 {
     border: 3px solid grey;
@@ -139,16 +125,18 @@ input[type="radio"] + label:after
     top: -1px;
     width: 15px;
 }
+/*radio checked와 label의 다음 색상*/
 input[type="radio"]:checked + label:after
 {
     border-color: grey;
 }
+/*이미지 크기,여백*/
 img{
 width: 230px;
 height: 230px;
 padding: 20px;
 }
-
+/*arrow의 크기,위치,변환*/
 #arrow {
   cursor: pointer;
   height: 60px;
@@ -159,6 +147,7 @@ padding: 20px;
   transition: transform 0.1s;
   width: 70px;
 }
+/*arrow-top과arrow-bottom의 색상, 크기,위치*/
 .arrow-top, .arrow-bottom {
   background-color: #666;
   height: 4px;
@@ -167,6 +156,7 @@ padding: 20px;
   top: 50%;
   width: 70%;
 }
+/*arrow-top과 arrow-bottom의 후의 색상, 위치, 변환 시간*/
 .arrow-top:after, .arrow-bottom:after {
   background-color: #fff;
   content: '';
@@ -175,32 +165,39 @@ padding: 20px;
   top: 0;
   transition: all 0.15s;
 }
+/*arrow-top의 애니메이션 효과*/
 .arrow-top {
   transform: rotate(45deg);
   transform-origin: bottom right;
 }
+/*arrow-top의 다음 상태*/
 .arrow-top:after {
   left: 100%;
   right: 0;
   transition-delay: 0s;
 }
+/*arrow-bottom의 애니메이션 효과*/
 .arrow-bottom {
   transform: rotate(-45deg);
   transform-origin: top right;
 }
+/*arrow-bottom의 후의 애니메이션*/
 .arrow-bottom:after {
   left: 0;
   right: 100%;
   transition-delay: 0.15s;
 }
+/*arrow호버 시 변환 시간*/
 #arrow:hover .arrow-top:after {
   left: 0;
   transition-delay: 0.15s;
 }
+/*arrow의 호버 시 변환 시간*/
 #arrow:hover .arrow-bottom:after {
   right: 0;
   transition-delay: 0s;
 }
+/*arrow active일때 변환*/
 #arrow:active {
   transform: translateX(-50%) translateY(-50%) scale(0.9);
 }
