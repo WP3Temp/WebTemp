@@ -1,16 +1,19 @@
 var check = new Array(-1,-1,-1,-1); // 사용자가 선택한 이미지 인덱스 저장
-window.onload=function(){
+
+window.onload=function(){ // next 버튼 보이지 않음
   document.getElementById("next").style.display="none";
 }
-function display_button(){
+
+function display_button(){ // next 버튼 출력
   document.getElementById("next").style.display='';
 }
-function count_ck(){
+
+function count_ck(){ // 선택한 이미지 개수 카운트
   var chkbox = document.getElementsByName("COLOR");
   var i, j = 0, k;
   var flag;
   var cnt=0;
-  for (i=0; i<4; i++){ // check에서 저장할 top 찾기
+  for (i=0; i<4; i++){ // check에서 저장할 top 찾기 (선택한 순서대로 저장하기 위해 필요했었음 지금은 필요 없음)
     if(check[j]!=-1){
       j++;
     }
@@ -54,8 +57,10 @@ function check_img() { // 선택한 이미지 정보 넘겨주기
   localStorage.setItem('fourth', check[3]);
 }
 
-$(document).ready(function(){
-  if(localStorage.getItem('first')=='0'){
+$(document).ready(function(){ // 결과 페이지에서 localstorage에 저장된 값에 따른 div만 보여주기 위해 hide 사용
+  // 결과 페이지의 first div
+  if(localStorage.getItem('first')=='0'){ // 사용자가 1번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
     $('#first-a-COLOR4').hide();
@@ -91,7 +96,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
     $('#first-preview-COLOR4').hide();
@@ -127,44 +132,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR1.png" width="200"></p><p>1. 쓸쓸함 어리광</p><p>표면상으로 명랑하고 사교적이며 정서적인 인정미가 넘쳐흐르는 것처럼 보이지만 마음 한구석에는 누구도 편드는 사람이 없어 혼자 외롭게 지내며, 의지할 이성, 안심하고 어리광 부리거나 의존하고 싶은 애정욕구를 갖고 있다. 이 색깔이 36번과 함께 선택되면 어느 쪽이 먼저 선택되었는가에 따라 뉘앙스가 좀 달라진다. 고독감, 쓸쓸함이 특히 강하다.</p>');
   }
-  if(localStorage.getItem('first')=='1'){
+  if(localStorage.getItem('first')=='1'){ // 사용자가 2번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR3').hide();
     $('#first-a-COLOR4').hide();
@@ -200,7 +172,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR3').hide();
     $('#first-preview-COLOR4').hide();
@@ -236,44 +208,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR2.png" width="200"></p><p>2. 명랑함 넘치는 자신감</p><p>명랑하고 자신감이 넘치며 기쁨으로 가득 차 있다. 애정이 풍부하고, 매우 협조적이며 난잡한 점이 전혀 없어 가장 바람직한 정신 상태를 유지하고 있다고 볼 수 있다. 성인보다는 어린, 도시보다는 지방 사람들이 많이 선택하는데, 이는 도시인과 성인에게 그만큼 스트레스가 많다는 것을 나타낸다. 축제의상이나 축하행사에 이용되는 경우가 많은데, `내부에 잠재한 것이 겉으로 나타난 현상`이라고 봐도 좋다. 슬픔에 잠겨 있을 때는 쓸 수 없는 색깔이기 때문이다.</p>');
   }
-  if(localStorage.getItem('first')=='2'){
+  if(localStorage.getItem('first')=='2'){ // 사용자가 3번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR4').hide();
@@ -309,7 +248,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR4').hide();
@@ -345,44 +284,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR3.png" width="200"></p><p>3. 우울</p><p> 현재 감기에 걸렸거나, 피로가 쌓여 힘들거나, 생리 전후거나, 애인과의 사이에 트러블이 발생해 좋은 상태가 아니다. 또 가족 중에 환자가 있어서 마음과 몸의 밸런스가 취해지지 않아 늘 위화감이 생기고 울적한 생활이 계속되고 있는 상태이다. 자신의 의식이나 몸 상태가 왜 나쁜지 그 원인을 자각할 때가 많으며, 이 색깔을 선택한 시점에서 원인을 물으면 전혀 주저하지 않고 자신이 처한 상황을 솔직하게 대답해 준다.</p>');
   }
-  if(localStorage.getItem('first')=='3'){
+  if(localStorage.getItem('first')=='3'){ // 사용자가 4번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -418,7 +324,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -454,44 +360,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR4.png" width="200"></p><p>4. 소화기 불량</p><p>과식과 과음에 따른 가슴 앓이와 위통으로 몸 상태가 좋지 않으며, 지나치게 신경을 혹사한 탓에 위의 상태가 나빠져 통증을 느끼고 있을 수도 있다. 또 실제로는 나쁜 곳이 없는데도 끊임없이 위에 신경이 쓰이는 등 소화기 쪽으로 늘 의식이 향해 있다. 자각증세가 없어도 나중에 정말로 나빠진 예가 많으니 위장이 약해지지 않도록 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('first')=='4'){
+  if(localStorage.getItem('first')=='4'){ // 사용자가 5번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -527,7 +400,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -563,44 +436,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR5.png" width="200"></p><p>5. 비뇨기 불량</p><p>지금 화장실에 가고 싶지 않은가? 혹은 소변을 자주 본다든가 깊은 밤에 소변을 본다는 말을 들은 적은 없는지? 또 그런 것에 마음 쓴 적은 없는지? 또 신장, 요관, 방광, 요도 등 비뇨기과의 질병이나 기왕증에 고민하고 있는 것은 아닌지, 술을 좋아하는 사람이 종종 선택하는 색깔인데, 알코올에 의한 요폐증 또는 불완전 요폐 등의 불안한 근심을 잠재적으로 품고 있으며, 선천적으로 비뇨기계의 결함을 가지고 있으면서도 알코올을 좋아하는 사람이 많다.</p>');
   }
-  if(localStorage.getItem('first')=='5'){
+  if(localStorage.getItem('first')=='5'){ // 사용자가 6번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -636,7 +476,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -672,44 +512,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR6.png" width="200"></p><p>6. 불신 의혹</p><p>뜻하지 않게 보기 싫은 것을 보거나, 생각하지도 않았던 불쾌한 얘기를 듣거나 해서 평소에 믿었던 것에 의문을 품게 되며, 그 원인이 되는 인물이나 사건에 대해 불안과 불신을 가지게 된 상태, 이 의식은 불신, 의혹, 불안, 공포, 죽음으로 이어지는 것으로 어린이가 이 색깔을 선택한 경우에는 그 밖에 선택한 다른 색깔이나 생활환경 등을 고려해 원인을 확인할 필요가 있다. 다른 불건전한 의식도 상승작용하여 위험한 행동으로 나타나는 경우도 있으니 매우 주의해야 한다. 이 색깔을 선택하는 자체가 건전한 정신 상태라고 할 수 없는데, 최근 이 색깔을 선택하는 사람이 부쩍 늘고 있는 추세라고 한다. 사소한 것으로 남을 신용할 수 없는 세상이 온 것이다.</p>');
   }
-  if(localStorage.getItem('first')=='6'){
+  if(localStorage.getItem('first')=='6'){ // 사용자가 7번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -745,7 +552,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -781,44 +588,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR7.png" width="200"></p><p>7. 피</p><p>마음속으로 `피`에 관한 무엇인가를 가지고 있다. 예를 들면 교통사고 현장을 만나게 된다든가, 텔레비전이나 영화의 무서운 장면이 기억에 남아 있다든가, 또 자신 아니면 친구나 애인이 큰 부상을 입었거나 출산이 마음에 걸리는 등 피와 관계되는 일이 있다. 특히 성인 여성은 생리 중이거나 그 전후에 이 색깔을 선택하게 되는데, 이 색깔의 의식은 바람직하지 못한 피에 얽힌 것이다. 유혈 사건이 텔레비전에서 방영되면 그 직후에는 거의 모든 사람들이 이 색을 선택한다고 한다.</p>');
   }
-  if(localStorage.getItem('first')=='7'){
+  if(localStorage.getItem('first')=='7'){ // 사용자가 8번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -854,7 +628,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -890,44 +664,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR8.png" width="200"></p><p>8. 체념 거슬림</p><p>욕심이 나서 견딜 수 없었던 것, 하고 싶어서 참을 수 없었던 것을 어떤 이유에서든 체념하지 않으면 안 될 형편이었는데, 그 원인이 되었던 상태 또는 사항에 대해 앙갚음을 해주거나 심통을 부리고 싶은 생각으로 꽉 찬 상태다. 만약 어린이가 이 색깔을 선택하면 세심한 배려가 필요하다. 발산하는 방법에 따라 폭력이나 안 좋은 방향으로 빠질 우려가 있기 때문이다. 이 색깔은 어린이뿐 아니라 성인에게도 남을 괴롭히는 폭력의 위험성을 내포하고 있으므로 주의 깊게 지켜보아야 하며, 다른 선택된 색깔과 비교판단해서 빨리 대처하는 것이 좋다.</p>');
   }
-  if(localStorage.getItem('first')=='8'){
+  if(localStorage.getItem('first')=='8'){ // 사용자가 9번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -963,7 +704,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -999,44 +740,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR9.png" width="200"></p><p>9. 도움이 필요함</p><p>뭔가 큰 걱정거리를 가지고 있어 정신적으로 몹시 쫓기고 있는 상태, 누구에겐가 상담하고 싶고, 누구의 도움이 필요하다고 마음속으로 외치고 있다. 고민하는 문제에 관해 자신이 무력하고 아무 쓸모 없다고 생각하기 때문이다.</p>');
   }
-  if(localStorage.getItem('first')=='9'){
+  if(localStorage.getItem('first')=='9'){ // 사용자가 10번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1072,7 +780,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1108,44 +816,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR10.png" width="200"></p><p>10. 매우 강렬한 금전욕 물질욕</p><p>이 색깔을 선택한 당신은 무슨 사정인지 많은 금액과 비싼 상품이 꼭 필요한 상황에 놓였다. 그리고 그 목적은 달성하기 위해선 비록 비합법적인 방법이라도 손에 넣은 직후여서 아직도 그 의식으로부터 해방된 상태가 아니다. 이 색깔을 선택할 때는 감정이 무겁게 가라 않고, 그 일 이외에는 아무 생각도 없을 만큼 욕구가 강렬하기 때문이다.</p>');
   }
-  if(localStorage.getItem('first')=='10'){
+  if(localStorage.getItem('first')=='10'){ // 사용자가 11번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1181,44 +856,47 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
+    $('#first-preview-COLOR1').hide();
+    $('#first-preview-COLOR2').hide();
+    $('#first-preview-COLOR3').hide();
+    $('#first-preview-COLOR4').hide();
+    $('#first-preview-COLOR5').hide();
+    $('#first-preview-COLOR6').hide();
+    $('#first-preview-COLOR7').hide();
+    $('#first-preview-COLOR8').hide();
+    $('#first-preview-COLOR9').hide();
+    $('#first-preview-COLOR10').hide();
+    $('#first-preview-COLOR12').hide();
+    $('#first-preview-COLOR13').hide();
+    $('#first-preview-COLOR14').hide();
+    $('#first-preview-COLOR15').hide();
+    $('#first-preview-COLOR16').hide();
+    $('#first-preview-COLOR17').hide();
+    $('#first-preview-COLOR18').hide();
+    $('#first-preview-COLOR19').hide();
+    $('#first-preview-COLOR20').hide();
+    $('#first-preview-COLOR21').hide();
+    $('#first-preview-COLOR22').hide();
+    $('#first-preview-COLOR23').hide();
+    $('#first-preview-COLOR24').hide();
+    $('#first-preview-COLOR25').hide();
+    $('#first-preview-COLOR26').hide();
+    $('#first-preview-COLOR27').hide();
+    $('#first-preview-COLOR28').hide();
+    $('#first-preview-COLOR29').hide();
+    $('#first-preview-COLOR30').hide();
+    $('#first-preview-COLOR31').hide();
+    $('#first-preview-COLOR32').hide();
+    $('#first-preview-COLOR33').hide();
+    $('#first-preview-COLOR34').hide();
+    $('#first-preview-COLOR35').hide();
+    $('#first-preview-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR11.png" width="200"></p><p>11. 자기주장욕 현시욕</p><p>기력이 충실하고 활기가 넘치며, 행동은 적극적이고 매사에 힘찬 활력이 넘쳐흐르지만, 그 밑바닥에는 뭔가 마음에 흡족하지 않은 것이 숨겨져 있어 그 불만의 행동의 기폭제가 되고 있는 상태이다. 그 때문에 남을 밀어내야겠다고 생각하며, 경우에 따라서는 상대를 공격해서라도 자신을 전면으로 내놓고 싶은 자기주장욕, 자기 현시욕이 강하다.</p>');
   }
-  if(localStorage.getItem('first')=='11'){
+  if(localStorage.getItem('first')=='11'){ // 사용자가 12번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1254,7 +932,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1290,44 +968,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR12.png" width="200"></p><p>12. 근심</p><p>현재 처하고 있는 상황 속에서 걱정되는 것, 마음이 놓이지 않는 것, 신경이 쓰이는 것 등 그 무엇인가의 의식에 사로잡혀 있다. 사람이 많건 적건 근심을 안고 있는 법인데, 이 색깔을 선택한다는 것은 그만큼 마음에 걸리는 근심 걱정이 강하는 것을 뜻한다. 어린이가 처음에 이 색깔을 선택하는 경우에는 대부분 공부(성적, 숙제, 시험)에 관한 걱정거리가 있다고 생각해도 좋다.</p>');
   }
-  if(localStorage.getItem('first')=='12'){
+  if(localStorage.getItem('first')=='12'){ // 사용자가 13번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1363,7 +1008,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1399,44 +1044,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR13.png" width="200"></p><p>13. 친한 남성이 그리움</p><p>할아버지, 아버지, 형제, 아들, 남편, 친구 등 당신에게 가장 가까운 남성이 당신에게서 멀어져 가는 것 같은 일종의 공포심마저 느끼는 상태다. 심하면 그리워지기까지 하여 이런 기분을 이해해 달라는 차원에서 자신이 사랑한 것만큼 상대로부터 사랑받고 싶어 한다. 어린이가 이 색깔을 선택하면 아버지에 대한 애정욕구로 보아도 좋다.</p>');
   }
-  if(localStorage.getItem('first')=='13'){
+  if(localStorage.getItem('first')=='13'){ // 사용자가 14번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1472,7 +1084,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1508,44 +1120,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR14.png" width="200"></p><p>14. 물욕 금전욕 애정욕</p><p>비싼 물품이 욕심난다든가 갑자기 돈이 필요하게 되는 등, 돈과 물품에 대한 생각이 머리에서 떠나지 않고 있는 상태다. 혹은 그런 것을 막 손에 넣은 직후인지도 모르겠지만, 어쨌거나 이런 욕구 의식이 남아있다. 이 색깔은 10번의 상황과 비슷하지만 10번처럼 비상수단을 취하면서까지 욕심낼 만큼 절박하지는 않다. 물질적, 금전적으로 만족하지 못하고 있으며, 어린이가 이 색깔을 선택한 경우에는 애정욕구가 강하므로 주의가 필요하다. 이 색깔은 세상의 경기가 좋지 않게 되면 유행하는데, 이 색깔이 가지는 뜻의 집단적인 의식의 표출이라고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('first')=='14'){
+  if(localStorage.getItem('first')=='14'){ // 사용자가 15번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1581,7 +1160,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1617,44 +1196,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR15.png" width="200"></p><p>15. 몸 상태 불량</p><p>몸 상태가 좋은 편도 아니지만 정신적으로도 어둡게 가라앉은 상태다. 선택한 색깔 중에 이 색깔이 돋보일 뿐 다른 것은 눈에 들어오지 않는다든가, 16, 31번과 함께 선택되고 다른 색깔은 관심이 없는 경우에는 별로 걱정할 것이 없다. 그러나 3, 9, 22번과 함께 선택되었을 경우에는 주의해야 하며, 이 경우에는 의사의 건강진단을 받아두는 것이 좋다. 이 색깔이 포함되고 있다고 해서 금세 암의 위험이 있다고 말할 수는 없지만, 선택하는 순서와 다른 색과의 관계에서 볼 때 위험한 요소가 내포되었다고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('first')=='15'){
+  if(localStorage.getItem('first')=='15'){ // 사용자가 16번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1690,7 +1236,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1726,44 +1272,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR16.png" width="200"></p><p>16. 육체적 피로</p><p>심신이 지칠 대로 지쳐서 쉬고 싶다는 생각이 드는 한편에서는 맡은 일을 성실하게 하지 않으면 안 된다는 생각에 정신적으로 협공을 당하는 상태다. 피로감과 의무감, 복종심이 내부에서 서로 갈등을 빚고 있는 상태, 어린이가 이 색깔을 선택하거나 즐겨 선택한다면 놀고 싶은 욕망을 강렬하게 억제당하고 있어 반항하고 싶지만 뜻대로 되지 않는다고 생각해도 무방하다.</p>');
   }
-  if(localStorage.getItem('first')=='16'){
+  if(localStorage.getItem('first')=='16'){ // 사용자가 17번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1799,7 +1312,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1835,44 +1348,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR17.png" width="200"></p><p>17. 증오 적의</p><p>뭔가를 잊고 싶고 생각하기 싶은데도 할 수 없이 자꾸 생각하게 되는 딜레마에 빠진 상태, 몹시 불쾌한 일이 있었으며, 그 원인이 되었던 사람과 사건에 대해 지독한 증오를 품고 있다. 더욱이 이 의식은 의외로 뿌리 깊은 지속성이 있어서 어떤 계기만 주어지면 직접 보복행위로 나올 위험성을 내포하고 있기도 하다. 올바른 가치 판단을 가지고 있지 않은 어린이가 이 색깔을 선택한 경우에는 신속히 그 원인을 찾아내 제거하도록 해야 한다. 6번이 내향적인 것과는 달리 이 색깔은 외향적인 특징을 가지고 있다.</p>');
   }
-  if(localStorage.getItem('first')=='17'){
+  if(localStorage.getItem('first')=='17'){ // 사용자가 18번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -1908,7 +1388,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -1944,44 +1424,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR18.png" width="200"></p><p>18. 만족감 포만감</p><p>오래전부터 갖고 싶어 하던 물건을 손에 넣은 만족감과 식사를 끝낸 후의 만복감을 만끽하고 있는 상태다. 느긋한 마음에 풍요감으로 가득 차 있으며, 인간관계나 애정, 물질적인 면에서도 아무 불만이 없는 극히 평화로운 기분에 싸여 있다. 마음의 평안을 뚜렷이 말해 주는 색깔이다.</p>');
   }
-  if(localStorage.getItem('first')=='18'){
+  if(localStorage.getItem('first')=='18'){ // 사용자가 19번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2017,7 +1464,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2053,44 +1500,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR19.png" width="200"></p><p>19. 겸허한 체험</p><p>솔직하고 순종적이지만 마음속으로는 체념해야 하는 그 무엇인가를 감추고 있는 상태다. 그러나 이 겸허함과 복종심으로 감싼 체념이 겉으로 나타나 불리하게 하는 일은 없다. 이 경우에는 `할 수 없다`는 이면의 사항을 말하기보다는 표면의 솔직성과 겸허함이 중요하며, 만약 다른 불만이 있으면 별도의 의식을 갖게 되어 다른 색깔을 택하게 될 것이다.</p>');
   }
-  if(localStorage.getItem('first')=='19'){
+  if(localStorage.getItem('first')=='19'){ // 사용자가 20번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2126,7 +1540,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2162,44 +1576,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR20.png" width="200"></p><p>20. 이성에 대한 그리움</p><p>꿈같은 연애를 하고 싶다거나 애인이 그립고 헤어진 사람과 다시 만나고 싶다거나 이성에 대한 그리움으로 견딜 수 없는 상태다. 또 성적인 충동도 억제할 수 없어서 ‘그 사람의 아이를 가지고 싶어’, ‘그에게 힘껏 안기고 싶어’ 하는 생각도 한다. 연령이나 상황에 따라 내용은 다르지만 이성에 대한 관심이 높아진 상태이며, 특히 성적으로 미숙한 어린이가 이 색깔을 선택한 경우 부모들의 행동을 보고 싶어 하는 수도 있으니 주의해야 한다. 이 색깔의 의식은 직접적이어서 기분이 나면 서슴지 않고 이 색깔을 선택하게 된다. 일생을 혼자 산 고흐는 이 색깔(섹스)을 죄악으로 생각했다고 한다.</p>');
   }
-  if(localStorage.getItem('first')=='20'){
+  if(localStorage.getItem('first')=='20'){ // 사용자가 21번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2235,7 +1616,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2271,44 +1652,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR21.png" width="200"></p><p>21. 사람에 대한 봉사</p><p>존경하는 사람, 사랑하는 사람, 평소에 소중하게 생각하는 사람들에 대해 자신을 희생하면서까지 헌신적인 애정을 바치고 싶다는 생각으로 가득 차 있는 상태. 물론 상대에게서도 강렬한 사랑을 받고 싶은 소망으로 안타까운 심정을 안고 있다. 이 색깔에 의해 나타나는 사랑의 의식 밑바닥에는 상대에게 바치는 행위가 실패로 끝나지나 않을까 하는 불안과 공포, 또는 상대가 자신에게서 떠나버리지는 않을까 하는 두 가지 근심으로 가슴을 죄고 있다. 신부 의상, 의사나 간호사의 흰 가운, 회교도들의 메카를 순례할 때 입는 갈라베이야, 싸움에서 졌을 때 흔드는 백기 등은 우리의 의식과 색깔이 갖는 뜻과 관련성을 상징하고 있다. 모든 색깔이 완전히 조화를 이루어 태양의 흰빛(白光)으로 되돌아가듯이 이 색깔은 인간의 사랑의 원형적인 것-가족애와 같은-이 아닌가 하는 느낌이 들기도 한다.</p>');
   }
-  if(localStorage.getItem('first')=='21'){
+  if(localStorage.getItem('first')=='21'){ // 사용자가 22번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2344,7 +1692,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2380,44 +1728,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR22.png" width="200"></p><p>22. 남을 학대하고 싶은 충동</p><p>지금 만족하는 것이 없이 극도로 욕구불만에 싸인 상태. 그 원인을 만든 상태 또는 자신보다 약한 사람을 괴롭히고 학대하는 것으로 불만을 해소하려 하고 있다. 불안정한 정신 상태로 위험할 수도 있다. 이런 의식은 비뚤어지고 왜곡된 내용을 가지고 있기 때문에 지성과 이성이 발달하지 못한 어린이가 선택했을 경우 종종 8번이나 17번과 같은 색깔로 연쇄반응을 일으키며, 폭력이나 잔학성의 원인이 될 수도 있으니 한시 빨리 원인을 찾고 대응책을 강구해야 한다.</p>');
   }
-  if(localStorage.getItem('first')=='22'){
+  if(localStorage.getItem('first')=='22'){ // 사용자가 23번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2453,7 +1768,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2489,44 +1804,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR23.png" width="200"></p><p>23. 희망</p><p>밝은 행복감이 넘쳐흘러 편안하고 안정된 마음으로 모든 것에 우호적인 정신 상태. 목표를 정하고 노력해 온 것이 달성된 직후의 기쁨, 혹은 달성이 눈앞에 다가온 것에 대한 확신 등 과거에 쌓아올린 근면과 연마가 `희망`으로 변하여 축복해 주고 있다. 이 색깔은 2번과 마찬가지로 성인보다는 어린이, 도시보다는 지방에 사는 사람들이 더 많이 선택한다.</p>');
   }
-  if(localStorage.getItem('first')=='23'){
+  if(localStorage.getItem('first')=='23'){ // 사용자가 24번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2562,7 +1844,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2598,44 +1880,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR24.png" width="200"></p><p>24. 초조함</p><p>무슨 일이 일어나면 자기 생각이나 의견을 전혀 내놓지 않고, 자기 힘으로는 해결할 수 없다는 것을 알고 초조하고 불안한 상태다. 초조한 자신이 다시 불안하고 초조해져서 나중에는 짜증을 내고, 또 짜증스러운 자신이 초조해져서 불안과 초조가 점점 더해간다. 마치 개미구멍에라도 빠진 것처럼 답답한 상태다.</p>');
   }
-  if(localStorage.getItem('first')=='24'){
+  if(localStorage.getItem('first')=='24'){ // 사용자가 25번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2671,7 +1920,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2707,44 +1956,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR25.png" width="200"></p><p>25. 만족감</p><p>의외로 목적을 빨리 달성하거나 뜻을 이루었다는 마음으로 기분이 최고조에 올라 남들이 의아해할 만큼 들떠 있는 상태다. 그러나 이 의식이 도가 지나치면 때로는 &#39나는 누구보다 뛰어나다&#39는 독선적인 생각으로 경박한 행동을 하게 돼 상대에게 불쾌감을 줄 수도 있으니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('first')=='25'){
+  if(localStorage.getItem('first')=='25'){ // 사용자가 26번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2780,7 +1996,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2816,44 +2032,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR26.png" width="200"></p><p>26. 밝은 명랑함 속의 불안</p><p>즐거운 일, 기쁜 일이 있어 매우 밝은 기분이지만, 마음에 걸리는 일과 해소되지 않는 근심거리도 있어서 명랑할 수만은 없는 상태다.</p>');
   }
-  if(localStorage.getItem('first')=='26'){
+  if(localStorage.getItem('first')=='26'){ // 사용자가 27번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2889,7 +2072,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -2925,44 +2108,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR27.png" width="200"></p><p>27. 절대자에 대한 사랑</p><p>‘절대’적으로 믿는 것-종교, 회사, 거래처, 고객, 희망학교-이 자신으로부터 멀어져 가는 것은 아닐까 하는 불안, 자신이 하는 행위가 실패하는 것은 아닐까 하는 근심에서 그 ‘절대자’에게 강렬한 사랑을 받고 싶어 하는 바람이 ‘절대자’를 사랑하는 행위로 나타나 있는 상태. 이 색깔이 수도승, 수녀의 옷 색깔로 쓰이고 있는 것은 신에 대한 외경과 경건의 기도에 부응코자 하는 데서 나온 듯하다. 마음속에 있는 것이 색깔로 되어 표면으로 나타난 전형적인 예라고 하겠다. 장례를 지낼 때도 이 색깔을 쓰는데, 그것은 죽은 자에게 바치는 산 사람의 기도와 정화의 소원을 담은 뜻이라고 생각할 수 있다.</p>');
   }
-  if(localStorage.getItem('first')=='27'){
+  if(localStorage.getItem('first')=='27'){ // 사용자가 28번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -2998,7 +2148,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3034,44 +2184,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR28.png" width="200"></p><p>28. 허기</p><p>지금 몹시 허기가 졌거나 목이 말라 물을 마시고 싶은 상태다. 혹은 다이어트에 신경이 쓰여 자연식품에만 생각이 가 있을 수도 있다. 어린이의 편식을 걱정하거나 저녁 준비할 것으로 머리가 복잡해 있지는 않은지? 식사를 끝낸 직후에도 이 색깔을 선택하는데, 음식에 대한 관심이 높아져 있기 때문이다.</p>');
   }
-  if(localStorage.getItem('first')=='28'){
+  if(localStorage.getItem('first')=='28'){ // 사용자가 29번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3107,7 +2224,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3143,44 +2260,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR29.png" width="200"></p><p>29. 망설임 불안</p><p>양자택일의 문제에 직면해 있는 상태. 그러나 어느 쪽을 택하든 어느 정도의 곤란과 앞일에 대한 불안을 떨쳐버릴 수가 없어 숨이 막힐 것만 같은 심정이다.</p>');
   }
-  if(localStorage.getItem('first')=='29'){
+  if(localStorage.getItem('first')=='29'){ // 사용자가 30번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3216,7 +2300,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3252,44 +2336,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR30.png" width="200"></p><p>30. 소화기 불량</p><p>현재 소화기계에 질환을 가지고 있든가, 소화기 질환을 앓은 경력이 있어 아직도 그 의식의 꼬리를 떨치지 못하고 있는 상태다.</p>');
   }
-  if(localStorage.getItem('first')=='30'){
+  if(localStorage.getItem('first')=='30'){ // 사용자가 31번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3325,7 +2376,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3361,44 +2412,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR31.png" width="200"></p><p>31. 수면</p><p>수면 부족이 계속되고 밤을 꼬박 새우기도 하며, 또 그와는 반대로 잠을 지나치게 많이 자서 의식이 잠에서 덜 깬 흐리멍덩한 상태. 바빠서 잠을 충분히 자지 못하는 상황으로, 16번과 함께 선택되는 경우가 많고 방치해 두면 3번 색을 선택하게 되니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('first')=='31'){
+  if(localStorage.getItem('first')=='31'){ // 사용자가 32번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3434,7 +2452,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3470,44 +2488,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR32.png" width="200"></p><p>32. 정서불안</p><p>어떤 이유로, 혹은 이유도 모르는 채 막연한 불안감을 가지고 있으며, 미래에 대해서도 전망이 밝지 않아 괴로운 상태다. 이 색깔이 뜻하는 것은 12번이나 29번과는 근본적으로 다르며, 생명을 잡아 흔드는 듯한 뿌리 깊은 곳에서 솟구쳐 오르는 불안이다. 어머니에게 호되게 야단을 맞은 어린이가 이 색깔을 선택하는 것도 그런 이유에서다.</p>');
   }
-  if(localStorage.getItem('first')=='32'){
+  if(localStorage.getItem('first')=='32'){ // 사용자가 33번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3543,7 +2528,7 @@ $(document).ready(function(){
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3579,44 +2564,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR33.png" width="200"></p><p>33. 신변정리</p><p>언제나 하지 않으면 안 된다고 생각해 온 것, 가령 청소, 세탁, 정리 정돈, 방의 도배, 이사, 채권채무의 이행 등 마음에 걸리는 것이 있거나, 그런 것을 하고 난 직후여서 아직도 의식이 남아 있는 상태다. 어린이가 이 색깔을 선택했을 경우에는 어머니로부터 방 청소, 뒷정리 등으로 꾸지람을 들었음을 나타낸다.</p>');
   }
-  if(localStorage.getItem('first')=='33'){
+  if(localStorage.getItem('first')=='33'){ // 사용자가 34번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3652,7 +2604,7 @@ $(document).ready(function(){
     $('#first-a-COLOR33').hide();
     $('#first-a-COLOR35').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3688,44 +2640,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR33').hide();
     $('#first-preview-COLOR35').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR35').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR34.png" width="200"></p><p>34. 회복</p><p>질병, 스트레스, 생리, 부상 등으로 앓고 있던 몸과 정신이 이제는 확실히 회복기에 접어들었거나, 회복해서 원기를 되찾은 직후의 상태다. 평온함으로 가득 찬 해방감이 넘쳐흐르는 바람직한 정신 상태다.</p>');
   }
-  if(localStorage.getItem('first')=='34'){
+  if(localStorage.getItem('first')=='34'){ // 사용자가 35번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3761,7 +2680,7 @@ $(document).ready(function(){
     $('#first-a-COLOR33').hide();
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3797,44 +2716,11 @@ $(document).ready(function(){
     $('#first-preview-COLOR33').hide();
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR36').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR35.png" width="200"></p><p>35. 친한 여성이 그리움</p><p>어머니, 할머니, 자매, 딸, 아내, 여자 친구 등 평소에 가장 가깝게 지내던 여성이 멀어져 가는듯한 느낌이 들어 안타까워하고 있는 상태. 그리고 그 사람을 그리워하고 있으며, 이런 기분을 알아주었으면 하는 마음에서 자신이 사랑하는 것만큼 상대에게서 사랑을 받았으면 하는 바람으로 가득 차 있다. 어린이가 이 색깔을 선택한 경우에는 어머니에 대한 애정욕구가 큰 것으로 볼 수 있다.</p>');
   }
-  if(localStorage.getItem('first')=='35'){
+  if(localStorage.getItem('first')=='35'){ // 사용자가 36번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-a-COLOR1').hide();
     $('#first-a-COLOR2').hide();
     $('#first-a-COLOR3').hide();
@@ -3870,7 +2756,7 @@ $(document).ready(function(){
     $('#first-a-COLOR33').hide();
     $('#first-a-COLOR34').hide();
     $('#first-a-COLOR35').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#first-preview-COLOR1').hide();
     $('#first-preview-COLOR2').hide();
     $('#first-preview-COLOR3').hide();
@@ -3906,45 +2792,12 @@ $(document).ready(function(){
     $('#first-preview-COLOR33').hide();
     $('#first-preview-COLOR34').hide();
     $('#first-preview-COLOR35').hide();
-
-    $('#first-info-COLOR1').hide();
-    $('#first-info-COLOR2').hide();
-    $('#first-info-COLOR3').hide();
-    $('#first-info-COLOR4').hide();
-    $('#first-info-COLOR5').hide();
-    $('#first-info-COLOR6').hide();
-    $('#first-info-COLOR7').hide();
-    $('#first-info-COLOR8').hide();
-    $('#first-info-COLOR9').hide();
-    $('#first-info-COLOR10').hide();
-    $('#first-info-COLOR11').hide();
-    $('#first-info-COLOR12').hide();
-    $('#first-info-COLOR13').hide();
-    $('#first-info-COLOR14').hide();
-    $('#first-info-COLOR15').hide();
-    $('#first-info-COLOR16').hide();
-    $('#first-info-COLOR17').hide();
-    $('#first-info-COLOR18').hide();
-    $('#first-info-COLOR19').hide();
-    $('#first-info-COLOR20').hide();
-    $('#first-info-COLOR21').hide();
-    $('#first-info-COLOR22').hide();
-    $('#first-info-COLOR23').hide();
-    $('#first-info-COLOR24').hide();
-    $('#first-info-COLOR25').hide();
-    $('#first-info-COLOR26').hide();
-    $('#first-info-COLOR27').hide();
-    $('#first-info-COLOR28').hide();
-    $('#first-info-COLOR29').hide();
-    $('#first-info-COLOR30').hide();
-    $('#first-info-COLOR31').hide();
-    $('#first-info-COLOR32').hide();
-    $('#first-info-COLOR33').hide();
-    $('#first-info-COLOR34').hide();
-    $('#first-info-COLOR35').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#first-info-COLOR').html('<p><img src="img/COLOR36.png" width="200"></p><p>36. 애정결핍</p><p>특정한 사람으로부터 강렬한 사랑을 받고 싶고, 보다 더 신경 써 주었으면 하는 마음에서 조바심을 내고 있는 상태. 또 누구라도 좋으니 모르는 이성으로부터 강렬한 사랑을 받고 싶다는 간절한 소망을 안고 있다. 이 의식 밑바닥에는 스스로도 모르는 애수의 감정, 안타까운 심정, 슬픔, 인생은 무상하다는 느낌, 그리움 등이 뒤섞여 있다.</p>');
   }
-
-  if(localStorage.getItem('second')=='0'){
+  // 결과 페이지의 second div
+  if(localStorage.getItem('second')=='0'){ // 사용자가 1번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
     $('#second-a-COLOR4').hide();
@@ -3980,7 +2833,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
     $('#second-preview-COLOR4').hide();
@@ -4016,44 +2869,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR1.png" width="200"></p><p>1. 쓸쓸함 어리광</p><p>표면상으로 명랑하고 사교적이며 정서적인 인정미가 넘쳐흐르는 것처럼 보이지만 마음 한구석에는 누구도 편드는 사람이 없어 혼자 외롭게 지내며, 의지할 이성, 안심하고 어리광 부리거나 의존하고 싶은 애정욕구를 갖고 있다. 이 색깔이 36번과 함께 선택되면 어느 쪽이 먼저 선택되었는가에 따라 뉘앙스가 좀 달라진다. 고독감, 쓸쓸함이 특히 강하다.</p>');
   }
-  if(localStorage.getItem('second')=='1'){
+  if(localStorage.getItem('second')=='1'){ // 사용자가 2번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR3').hide();
     $('#second-a-COLOR4').hide();
@@ -4089,7 +2909,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR3').hide();
     $('#second-preview-COLOR4').hide();
@@ -4125,44 +2945,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR2.png" width="200"></p><p>2. 명랑함 넘치는 자신감</p><p>명랑하고 자신감이 넘치며 기쁨으로 가득 차 있다. 애정이 풍부하고, 매우 협조적이며 난잡한 점이 전혀 없어 가장 바람직한 정신 상태를 유지하고 있다고 볼 수 있다. 성인보다는 어린, 도시보다는 지방 사람들이 많이 선택하는데, 이는 도시인과 성인에게 그만큼 스트레스가 많다는 것을 나타낸다. 축제의상이나 축하행사에 이용되는 경우가 많은데, `내부에 잠재한 것이 겉으로 나타난 현상`이라고 봐도 좋다. 슬픔에 잠겨 있을 때는 쓸 수 없는 색깔이기 때문이다.</p>');
   }
-  if(localStorage.getItem('second')=='2'){
+  if(localStorage.getItem('second')=='2'){ // 사용자가 3번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR4').hide();
@@ -4198,7 +2985,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR4').hide();
@@ -4234,44 +3021,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR3.png" width="200"></p><p>3. 우울</p><p> 현재 감기에 걸렸거나, 피로가 쌓여 힘들거나, 생리 전후거나, 애인과의 사이에 트러블이 발생해 좋은 상태가 아니다. 또 가족 중에 환자가 있어서 마음과 몸의 밸런스가 취해지지 않아 늘 위화감이 생기고 울적한 생활이 계속되고 있는 상태이다. 자신의 의식이나 몸 상태가 왜 나쁜지 그 원인을 자각할 때가 많으며, 이 색깔을 선택한 시점에서 원인을 물으면 전혀 주저하지 않고 자신이 처한 상황을 솔직하게 대답해 준다.</p>');
   }
-  if(localStorage.getItem('second')=='3'){
+  if(localStorage.getItem('second')=='3'){ // 사용자가 4번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4307,7 +3061,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4343,44 +3097,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR4.png" width="200"></p><p>4. 소화기 불량</p><p>과식과 과음에 따른 가슴 앓이와 위통으로 몸 상태가 좋지 않으며, 지나치게 신경을 혹사한 탓에 위의 상태가 나빠져 통증을 느끼고 있을 수도 있다. 또 실제로는 나쁜 곳이 없는데도 끊임없이 위에 신경이 쓰이는 등 소화기 쪽으로 늘 의식이 향해 있다. 자각증세가 없어도 나중에 정말로 나빠진 예가 많으니 위장이 약해지지 않도록 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('second')=='4'){
+  if(localStorage.getItem('second')=='4'){ // 사용자가 5번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4416,7 +3137,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4452,44 +3173,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR5.png" width="200"></p><p>5. 비뇨기 불량</p><p>지금 화장실에 가고 싶지 않은가? 혹은 소변을 자주 본다든가 깊은 밤에 소변을 본다는 말을 들은 적은 없는지? 또 그런 것에 마음 쓴 적은 없는지? 또 신장, 요관, 방광, 요도 등 비뇨기과의 질병이나 기왕증에 고민하고 있는 것은 아닌지, 술을 좋아하는 사람이 종종 선택하는 색깔인데, 알코올에 의한 요폐증 또는 불완전 요폐 등의 불안한 근심을 잠재적으로 품고 있으며, 선천적으로 비뇨기계의 결함을 가지고 있으면서도 알코올을 좋아하는 사람이 많다.</p>');
   }
-  if(localStorage.getItem('second')=='5'){
+  if(localStorage.getItem('second')=='5'){ // 사용자가 6번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4525,7 +3213,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4561,44 +3249,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR6.png" width="200"></p><p>6. 불신 의혹</p><p>뜻하지 않게 보기 싫은 것을 보거나, 생각하지도 않았던 불쾌한 얘기를 듣거나 해서 평소에 믿었던 것에 의문을 품게 되며, 그 원인이 되는 인물이나 사건에 대해 불안과 불신을 가지게 된 상태, 이 의식은 불신, 의혹, 불안, 공포, 죽음으로 이어지는 것으로 어린이가 이 색깔을 선택한 경우에는 그 밖에 선택한 다른 색깔이나 생활환경 등을 고려해 원인을 확인할 필요가 있다. 다른 불건전한 의식도 상승작용하여 위험한 행동으로 나타나는 경우도 있으니 매우 주의해야 한다. 이 색깔을 선택하는 자체가 건전한 정신 상태라고 할 수 없는데, 최근 이 색깔을 선택하는 사람이 부쩍 늘고 있는 추세라고 한다. 사소한 것으로 남을 신용할 수 없는 세상이 온 것이다.</p>');
   }
-  if(localStorage.getItem('second')=='6'){
+  if(localStorage.getItem('second')=='6'){ // 사용자가 7번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4634,7 +3289,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4670,44 +3325,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR7.png" width="200"></p><p>7. 피</p><p>마음속으로 `피`에 관한 무엇인가를 가지고 있다. 예를 들면 교통사고 현장을 만나게 된다든가, 텔레비전이나 영화의 무서운 장면이 기억에 남아 있다든가, 또 자신 아니면 친구나 애인이 큰 부상을 입었거나 출산이 마음에 걸리는 등 피와 관계되는 일이 있다. 특히 성인 여성은 생리 중이거나 그 전후에 이 색깔을 선택하게 되는데, 이 색깔의 의식은 바람직하지 못한 피에 얽힌 것이다. 유혈 사건이 텔레비전에서 방영되면 그 직후에는 거의 모든 사람들이 이 색을 선택한다고 한다.</p>');
   }
-  if(localStorage.getItem('second')=='7'){
+  if(localStorage.getItem('second')=='7'){ // 사용자가 8번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4743,7 +3365,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4779,44 +3401,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR8.png" width="200"></p><p>8. 체념 거슬림</p><p>욕심이 나서 견딜 수 없었던 것, 하고 싶어서 참을 수 없었던 것을 어떤 이유에서든 체념하지 않으면 안 될 형편이었는데, 그 원인이 되었던 상태 또는 사항에 대해 앙갚음을 해주거나 심통을 부리고 싶은 생각으로 꽉 찬 상태다. 만약 어린이가 이 색깔을 선택하면 세심한 배려가 필요하다. 발산하는 방법에 따라 폭력이나 안 좋은 방향으로 빠질 우려가 있기 때문이다. 이 색깔은 어린이뿐 아니라 성인에게도 남을 괴롭히는 폭력의 위험성을 내포하고 있으므로 주의 깊게 지켜보아야 하며, 다른 선택된 색깔과 비교판단해서 빨리 대처하는 것이 좋다.</p>');
   }
-  if(localStorage.getItem('second')=='8'){
+  if(localStorage.getItem('second')=='8'){ // 사용자가 9번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4852,7 +3441,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4888,44 +3477,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR9.png" width="200"></p><p>9. 도움이 필요함</p><p>뭔가 큰 걱정거리를 가지고 있어 정신적으로 몹시 쫓기고 있는 상태, 누구에겐가 상담하고 싶고, 누구의 도움이 필요하다고 마음속으로 외치고 있다. 고민하는 문제에 관해 자신이 무력하고 아무 쓸모 없다고 생각하기 때문이다.</p>');
   }
-  if(localStorage.getItem('second')=='9'){
+  if(localStorage.getItem('second')=='9'){ // 사용자가 10번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -4961,7 +3517,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -4997,44 +3553,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR10.png" width="200"></p><p>10. 매우 강렬한 금전욕 물질욕</p><p>이 색깔을 선택한 당신은 무슨 사정인지 많은 금액과 비싼 상품이 꼭 필요한 상황에 놓였다. 그리고 그 목적은 달성하기 위해선 비록 비합법적인 방법이라도 손에 넣은 직후여서 아직도 그 의식으로부터 해방된 상태가 아니다. 이 색깔을 선택할 때는 감정이 무겁게 가라 않고, 그 일 이외에는 아무 생각도 없을 만큼 욕구가 강렬하기 때문이다.</p>');
   }
-  if(localStorage.getItem('second')=='10'){
+  if(localStorage.getItem('second')=='10'){ // 사용자가 11번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5070,44 +3593,47 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
+    $('#second-preview-COLOR1').hide();
+    $('#second-preview-COLOR2').hide();
+    $('#second-preview-COLOR3').hide();
+    $('#second-preview-COLOR4').hide();
+    $('#second-preview-COLOR5').hide();
+    $('#second-preview-COLOR6').hide();
+    $('#second-preview-COLOR7').hide();
+    $('#second-preview-COLOR8').hide();
+    $('#second-preview-COLOR9').hide();
+    $('#second-preview-COLOR10').hide();
+    $('#second-preview-COLOR12').hide();
+    $('#second-preview-COLOR13').hide();
+    $('#second-preview-COLOR14').hide();
+    $('#second-preview-COLOR15').hide();
+    $('#second-preview-COLOR16').hide();
+    $('#second-preview-COLOR17').hide();
+    $('#second-preview-COLOR18').hide();
+    $('#second-preview-COLOR19').hide();
+    $('#second-preview-COLOR20').hide();
+    $('#second-preview-COLOR21').hide();
+    $('#second-preview-COLOR22').hide();
+    $('#second-preview-COLOR23').hide();
+    $('#second-preview-COLOR24').hide();
+    $('#second-preview-COLOR25').hide();
+    $('#second-preview-COLOR26').hide();
+    $('#second-preview-COLOR27').hide();
+    $('#second-preview-COLOR28').hide();
+    $('#second-preview-COLOR29').hide();
+    $('#second-preview-COLOR30').hide();
+    $('#second-preview-COLOR31').hide();
+    $('#second-preview-COLOR32').hide();
+    $('#second-preview-COLOR33').hide();
+    $('#second-preview-COLOR34').hide();
+    $('#second-preview-COLOR35').hide();
+    $('#second-preview-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR11.png" width="200"></p><p>11. 자기주장욕 현시욕</p><p>기력이 충실하고 활기가 넘치며, 행동은 적극적이고 매사에 힘찬 활력이 넘쳐흐르지만, 그 밑바닥에는 뭔가 마음에 흡족하지 않은 것이 숨겨져 있어 그 불만의 행동의 기폭제가 되고 있는 상태이다. 그 때문에 남을 밀어내야겠다고 생각하며, 경우에 따라서는 상대를 공격해서라도 자신을 전면으로 내놓고 싶은 자기주장욕, 자기 현시욕이 강하다.</p>');
   }
-  if(localStorage.getItem('second')=='11'){
+  if(localStorage.getItem('second')=='11'){ // 사용자가 12번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5143,7 +3669,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5179,44 +3705,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR12.png" width="200"></p><p>12. 근심</p><p>현재 처하고 있는 상황 속에서 걱정되는 것, 마음이 놓이지 않는 것, 신경이 쓰이는 것 등 그 무엇인가의 의식에 사로잡혀 있다. 사람이 많건 적건 근심을 안고 있는 법인데, 이 색깔을 선택한다는 것은 그만큼 마음에 걸리는 근심 걱정이 강하는 것을 뜻한다. 어린이가 처음에 이 색깔을 선택하는 경우에는 대부분 공부(성적, 숙제, 시험)에 관한 걱정거리가 있다고 생각해도 좋다.</p>');
   }
-  if(localStorage.getItem('second')=='12'){
+  if(localStorage.getItem('second')=='12'){ // 사용자가 13번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5252,7 +3745,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5288,44 +3781,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR13.png" width="200"></p><p>13. 친한 남성이 그리움</p><p>할아버지, 아버지, 형제, 아들, 남편, 친구 등 당신에게 가장 가까운 남성이 당신에게서 멀어져 가는 것 같은 일종의 공포심마저 느끼는 상태다. 심하면 그리워지기까지 하여 이런 기분을 이해해 달라는 차원에서 자신이 사랑한 것만큼 상대로부터 사랑받고 싶어 한다. 어린이가 이 색깔을 선택하면 아버지에 대한 애정욕구로 보아도 좋다.</p>');
   }
-  if(localStorage.getItem('second')=='13'){
+  if(localStorage.getItem('second')=='13'){ // 사용자가 14번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5361,7 +3821,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5397,44 +3857,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR14.png" width="200"></p><p>14. 물욕 금전욕 애정욕</p><p>비싼 물품이 욕심난다든가 갑자기 돈이 필요하게 되는 등, 돈과 물품에 대한 생각이 머리에서 떠나지 않고 있는 상태다. 혹은 그런 것을 막 손에 넣은 직후인지도 모르겠지만, 어쨌거나 이런 욕구 의식이 남아있다. 이 색깔은 10번의 상황과 비슷하지만 10번처럼 비상수단을 취하면서까지 욕심낼 만큼 절박하지는 않다. 물질적, 금전적으로 만족하지 못하고 있으며, 어린이가 이 색깔을 선택한 경우에는 애정욕구가 강하므로 주의가 필요하다. 이 색깔은 세상의 경기가 좋지 않게 되면 유행하는데, 이 색깔이 가지는 뜻의 집단적인 의식의 표출이라고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('second')=='14'){
+  if(localStorage.getItem('second')=='14'){ // 사용자가 15번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5470,7 +3897,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5506,44 +3933,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR15.png" width="200"></p><p>15. 몸 상태 불량</p><p>몸 상태가 좋은 편도 아니지만 정신적으로도 어둡게 가라앉은 상태다. 선택한 색깔 중에 이 색깔이 돋보일 뿐 다른 것은 눈에 들어오지 않는다든가, 16, 31번과 함께 선택되고 다른 색깔은 관심이 없는 경우에는 별로 걱정할 것이 없다. 그러나 3, 9, 22번과 함께 선택되었을 경우에는 주의해야 하며, 이 경우에는 의사의 건강진단을 받아두는 것이 좋다. 이 색깔이 포함되고 있다고 해서 금세 암의 위험이 있다고 말할 수는 없지만, 선택하는 순서와 다른 색과의 관계에서 볼 때 위험한 요소가 내포되었다고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('second')=='15'){
+  if(localStorage.getItem('second')=='15'){ // 사용자가 16번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5579,7 +3973,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5615,44 +4009,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR16.png" width="200"></p><p>16. 육체적 피로</p><p>심신이 지칠 대로 지쳐서 쉬고 싶다는 생각이 드는 한편에서는 맡은 일을 성실하게 하지 않으면 안 된다는 생각에 정신적으로 협공을 당하는 상태다. 피로감과 의무감, 복종심이 내부에서 서로 갈등을 빚고 있는 상태, 어린이가 이 색깔을 선택하거나 즐겨 선택한다면 놀고 싶은 욕망을 강렬하게 억제당하고 있어 반항하고 싶지만 뜻대로 되지 않는다고 생각해도 무방하다.</p>');
   }
-  if(localStorage.getItem('second')=='16'){
+  if(localStorage.getItem('second')=='16'){ // 사용자가 17번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5688,7 +4049,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5724,44 +4085,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR17.png" width="200"></p><p>17. 증오 적의</p><p>뭔가를 잊고 싶고 생각하기 싶은데도 할 수 없이 자꾸 생각하게 되는 딜레마에 빠진 상태, 몹시 불쾌한 일이 있었으며, 그 원인이 되었던 사람과 사건에 대해 지독한 증오를 품고 있다. 더욱이 이 의식은 의외로 뿌리 깊은 지속성이 있어서 어떤 계기만 주어지면 직접 보복행위로 나올 위험성을 내포하고 있기도 하다. 올바른 가치 판단을 가지고 있지 않은 어린이가 이 색깔을 선택한 경우에는 신속히 그 원인을 찾아내 제거하도록 해야 한다. 6번이 내향적인 것과는 달리 이 색깔은 외향적인 특징을 가지고 있다.</p>');
   }
-  if(localStorage.getItem('second')=='17'){
+  if(localStorage.getItem('second')=='17'){ // 사용자가 18번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5797,7 +4125,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5833,44 +4161,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR18.png" width="200"></p><p>18. 만족감 포만감</p><p>오래전부터 갖고 싶어 하던 물건을 손에 넣은 만족감과 식사를 끝낸 후의 만복감을 만끽하고 있는 상태다. 느긋한 마음에 풍요감으로 가득 차 있으며, 인간관계나 애정, 물질적인 면에서도 아무 불만이 없는 극히 평화로운 기분에 싸여 있다. 마음의 평안을 뚜렷이 말해 주는 색깔이다.</p>');
   }
-  if(localStorage.getItem('second')=='18'){
+  if(localStorage.getItem('second')=='18'){ // 사용자가 19번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -5906,7 +4201,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -5942,44 +4237,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR19.png" width="200"></p><p>19. 겸허한 체험</p><p>솔직하고 순종적이지만 마음속으로는 체념해야 하는 그 무엇인가를 감추고 있는 상태다. 그러나 이 겸허함과 복종심으로 감싼 체념이 겉으로 나타나 불리하게 하는 일은 없다. 이 경우에는 `할 수 없다`는 이면의 사항을 말하기보다는 표면의 솔직성과 겸허함이 중요하며, 만약 다른 불만이 있으면 별도의 의식을 갖게 되어 다른 색깔을 택하게 될 것이다.</p>');
   }
-  if(localStorage.getItem('second')=='19'){
+  if(localStorage.getItem('second')=='19'){ // 사용자가 20번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6015,7 +4277,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6051,44 +4313,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR20.png" width="200"></p><p>20. 이성에 대한 그리움</p><p>꿈같은 연애를 하고 싶다거나 애인이 그립고 헤어진 사람과 다시 만나고 싶다거나 이성에 대한 그리움으로 견딜 수 없는 상태다. 또 성적인 충동도 억제할 수 없어서 ‘그 사람의 아이를 가지고 싶어’, ‘그에게 힘껏 안기고 싶어’ 하는 생각도 한다. 연령이나 상황에 따라 내용은 다르지만 이성에 대한 관심이 높아진 상태이며, 특히 성적으로 미숙한 어린이가 이 색깔을 선택한 경우 부모들의 행동을 보고 싶어 하는 수도 있으니 주의해야 한다. 이 색깔의 의식은 직접적이어서 기분이 나면 서슴지 않고 이 색깔을 선택하게 된다. 일생을 혼자 산 고흐는 이 색깔(섹스)을 죄악으로 생각했다고 한다.</p>');
   }
-  if(localStorage.getItem('second')=='20'){
+  if(localStorage.getItem('second')=='20'){ // 사용자가 21번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6124,7 +4353,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6160,44 +4389,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR21.png" width="200"></p><p>21. 사람에 대한 봉사</p><p>존경하는 사람, 사랑하는 사람, 평소에 소중하게 생각하는 사람들에 대해 자신을 희생하면서까지 헌신적인 애정을 바치고 싶다는 생각으로 가득 차 있는 상태. 물론 상대에게서도 강렬한 사랑을 받고 싶은 소망으로 안타까운 심정을 안고 있다. 이 색깔에 의해 나타나는 사랑의 의식 밑바닥에는 상대에게 바치는 행위가 실패로 끝나지나 않을까 하는 불안과 공포, 또는 상대가 자신에게서 떠나버리지는 않을까 하는 두 가지 근심으로 가슴을 죄고 있다. 신부 의상, 의사나 간호사의 흰 가운, 회교도들의 메카를 순례할 때 입는 갈라베이야, 싸움에서 졌을 때 흔드는 백기 등은 우리의 의식과 색깔이 갖는 뜻과 관련성을 상징하고 있다. 모든 색깔이 완전히 조화를 이루어 태양의 흰빛(白光)으로 되돌아가듯이 이 색깔은 인간의 사랑의 원형적인 것-가족애와 같은-이 아닌가 하는 느낌이 들기도 한다.</p>');
   }
-  if(localStorage.getItem('second')=='21'){
+  if(localStorage.getItem('second')=='21'){ // 사용자가 22번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6233,7 +4429,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6269,44 +4465,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR22.png" width="200"></p><p>22. 남을 학대하고 싶은 충동</p><p>지금 만족하는 것이 없이 극도로 욕구불만에 싸인 상태. 그 원인을 만든 상태 또는 자신보다 약한 사람을 괴롭히고 학대하는 것으로 불만을 해소하려 하고 있다. 불안정한 정신 상태로 위험할 수도 있다. 이런 의식은 비뚤어지고 왜곡된 내용을 가지고 있기 때문에 지성과 이성이 발달하지 못한 어린이가 선택했을 경우 종종 8번이나 17번과 같은 색깔로 연쇄반응을 일으키며, 폭력이나 잔학성의 원인이 될 수도 있으니 한시 빨리 원인을 찾고 대응책을 강구해야 한다.</p>');
   }
-  if(localStorage.getItem('second')=='22'){
+  if(localStorage.getItem('second')=='22'){ // 사용자가 23번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6342,7 +4505,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6378,44 +4541,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR23.png" width="200"></p><p>23. 희망</p><p>밝은 행복감이 넘쳐흘러 편안하고 안정된 마음으로 모든 것에 우호적인 정신 상태. 목표를 정하고 노력해 온 것이 달성된 직후의 기쁨, 혹은 달성이 눈앞에 다가온 것에 대한 확신 등 과거에 쌓아올린 근면과 연마가 `희망`으로 변하여 축복해 주고 있다. 이 색깔은 2번과 마찬가지로 성인보다는 어린이, 도시보다는 지방에 사는 사람들이 더 많이 선택한다.</p>');
   }
-  if(localStorage.getItem('second')=='23'){
+  if(localStorage.getItem('second')=='23'){ // 사용자가 24번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6451,7 +4581,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6487,44 +4617,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR24.png" width="200"></p><p>24. 초조함</p><p>무슨 일이 일어나면 자기 생각이나 의견을 전혀 내놓지 않고, 자기 힘으로는 해결할 수 없다는 것을 알고 초조하고 불안한 상태다. 초조한 자신이 다시 불안하고 초조해져서 나중에는 짜증을 내고, 또 짜증스러운 자신이 초조해져서 불안과 초조가 점점 더해간다. 마치 개미구멍에라도 빠진 것처럼 답답한 상태다.</p>');
   }
-  if(localStorage.getItem('second')=='24'){
+  if(localStorage.getItem('second')=='24'){ // 사용자가 25번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6560,7 +4657,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6596,44 +4693,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR25.png" width="200"></p><p>25. 만족감</p><p>의외로 목적을 빨리 달성하거나 뜻을 이루었다는 마음으로 기분이 최고조에 올라 남들이 의아해할 만큼 들떠 있는 상태다. 그러나 이 의식이 도가 지나치면 때로는 &#39나는 누구보다 뛰어나다&#39는 독선적인 생각으로 경박한 행동을 하게 돼 상대에게 불쾌감을 줄 수도 있으니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('second')=='25'){
+  if(localStorage.getItem('second')=='25'){ // 사용자가 26번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6669,7 +4733,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6705,44 +4769,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR26.png" width="200"></p><p>26. 밝은 명랑함 속의 불안</p><p>즐거운 일, 기쁜 일이 있어 매우 밝은 기분이지만, 마음에 걸리는 일과 해소되지 않는 근심거리도 있어서 명랑할 수만은 없는 상태다.</p>');
   }
-  if(localStorage.getItem('second')=='26'){
+  if(localStorage.getItem('second')=='26'){ // 사용자가 27번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6778,7 +4809,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6814,44 +4845,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR27.png" width="200"></p><p>27. 절대자에 대한 사랑</p><p>‘절대’적으로 믿는 것-종교, 회사, 거래처, 고객, 희망학교-이 자신으로부터 멀어져 가는 것은 아닐까 하는 불안, 자신이 하는 행위가 실패하는 것은 아닐까 하는 근심에서 그 ‘절대자’에게 강렬한 사랑을 받고 싶어 하는 바람이 ‘절대자’를 사랑하는 행위로 나타나 있는 상태. 이 색깔이 수도승, 수녀의 옷 색깔로 쓰이고 있는 것은 신에 대한 외경과 경건의 기도에 부응코자 하는 데서 나온 듯하다. 마음속에 있는 것이 색깔로 되어 표면으로 나타난 전형적인 예라고 하겠다. 장례를 지낼 때도 이 색깔을 쓰는데, 그것은 죽은 자에게 바치는 산 사람의 기도와 정화의 소원을 담은 뜻이라고 생각할 수 있다.</p>');
   }
-  if(localStorage.getItem('second')=='27'){
+  if(localStorage.getItem('second')=='27'){ // 사용자가 28번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6887,7 +4885,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -6923,44 +4921,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR28.png" width="200"></p><p>28. 허기</p><p>지금 몹시 허기가 졌거나 목이 말라 물을 마시고 싶은 상태다. 혹은 다이어트에 신경이 쓰여 자연식품에만 생각이 가 있을 수도 있다. 어린이의 편식을 걱정하거나 저녁 준비할 것으로 머리가 복잡해 있지는 않은지? 식사를 끝낸 직후에도 이 색깔을 선택하는데, 음식에 대한 관심이 높아져 있기 때문이다.</p>');
   }
-  if(localStorage.getItem('second')=='28'){
+  if(localStorage.getItem('second')=='28'){ // 사용자가 29번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -6996,7 +4961,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7032,44 +4997,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR29.png" width="200"></p><p>29. 망설임 불안</p><p>양자택일의 문제에 직면해 있는 상태. 그러나 어느 쪽을 택하든 어느 정도의 곤란과 앞일에 대한 불안을 떨쳐버릴 수가 없어 숨이 막힐 것만 같은 심정이다.</p>');
   }
-  if(localStorage.getItem('second')=='29'){
+  if(localStorage.getItem('second')=='29'){ // 사용자가 30번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7105,7 +5037,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7141,44 +5073,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR30.png" width="200"></p><p>30. 소화기 불량</p><p>현재 소화기계에 질환을 가지고 있든가, 소화기 질환을 앓은 경력이 있어 아직도 그 의식의 꼬리를 떨치지 못하고 있는 상태다.</p>');
   }
-  if(localStorage.getItem('second')=='30'){
+  if(localStorage.getItem('second')=='30'){ // 사용자가 31번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7214,7 +5113,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7250,44 +5149,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR31.png" width="200"></p><p>31. 수면</p><p>수면 부족이 계속되고 밤을 꼬박 새우기도 하며, 또 그와는 반대로 잠을 지나치게 많이 자서 의식이 잠에서 덜 깬 흐리멍덩한 상태. 바빠서 잠을 충분히 자지 못하는 상황으로, 16번과 함께 선택되는 경우가 많고 방치해 두면 3번 색을 선택하게 되니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('second')=='31'){
+  if(localStorage.getItem('second')=='31'){ // 사용자가 32번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7323,7 +5189,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7359,44 +5225,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR32.png" width="200"></p><p>32. 정서불안</p><p>어떤 이유로, 혹은 이유도 모르는 채 막연한 불안감을 가지고 있으며, 미래에 대해서도 전망이 밝지 않아 괴로운 상태다. 이 색깔이 뜻하는 것은 12번이나 29번과는 근본적으로 다르며, 생명을 잡아 흔드는 듯한 뿌리 깊은 곳에서 솟구쳐 오르는 불안이다. 어머니에게 호되게 야단을 맞은 어린이가 이 색깔을 선택하는 것도 그런 이유에서다.</p>');
   }
-  if(localStorage.getItem('second')=='32'){
+  if(localStorage.getItem('second')=='32'){ // 사용자가 33번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7432,7 +5265,7 @@ $(document).ready(function(){
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7468,44 +5301,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR33.png" width="200"></p><p>33. 신변정리</p><p>언제나 하지 않으면 안 된다고 생각해 온 것, 가령 청소, 세탁, 정리 정돈, 방의 도배, 이사, 채권채무의 이행 등 마음에 걸리는 것이 있거나, 그런 것을 하고 난 직후여서 아직도 의식이 남아 있는 상태다. 어린이가 이 색깔을 선택했을 경우에는 어머니로부터 방 청소, 뒷정리 등으로 꾸지람을 들었음을 나타낸다.</p>');
   }
-  if(localStorage.getItem('second')=='33'){
+  if(localStorage.getItem('second')=='33'){ // 사용자가 34번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7541,7 +5341,7 @@ $(document).ready(function(){
     $('#second-a-COLOR33').hide();
     $('#second-a-COLOR35').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7577,44 +5377,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR33').hide();
     $('#second-preview-COLOR35').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR35').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR34.png" width="200"></p><p>34. 회복</p><p>질병, 스트레스, 생리, 부상 등으로 앓고 있던 몸과 정신이 이제는 확실히 회복기에 접어들었거나, 회복해서 원기를 되찾은 직후의 상태다. 평온함으로 가득 찬 해방감이 넘쳐흐르는 바람직한 정신 상태다.</p>');
   }
-  if(localStorage.getItem('second')=='34'){
+  if(localStorage.getItem('second')=='34'){ // 사용자가 35번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7650,7 +5417,7 @@ $(document).ready(function(){
     $('#second-a-COLOR33').hide();
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7686,44 +5453,11 @@ $(document).ready(function(){
     $('#second-preview-COLOR33').hide();
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR36').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR35.png" width="200"></p><p>35. 친한 여성이 그리움</p><p>어머니, 할머니, 자매, 딸, 아내, 여자 친구 등 평소에 가장 가깝게 지내던 여성이 멀어져 가는듯한 느낌이 들어 안타까워하고 있는 상태. 그리고 그 사람을 그리워하고 있으며, 이런 기분을 알아주었으면 하는 마음에서 자신이 사랑하는 것만큼 상대에게서 사랑을 받았으면 하는 바람으로 가득 차 있다. 어린이가 이 색깔을 선택한 경우에는 어머니에 대한 애정욕구가 큰 것으로 볼 수 있다.</p>');
   }
-  if(localStorage.getItem('second')=='35'){
+  if(localStorage.getItem('second')=='35'){ // 사용자가 36번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-a-COLOR1').hide();
     $('#second-a-COLOR2').hide();
     $('#second-a-COLOR3').hide();
@@ -7759,7 +5493,7 @@ $(document).ready(function(){
     $('#second-a-COLOR33').hide();
     $('#second-a-COLOR34').hide();
     $('#second-a-COLOR35').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#second-preview-COLOR1').hide();
     $('#second-preview-COLOR2').hide();
     $('#second-preview-COLOR3').hide();
@@ -7795,45 +5529,12 @@ $(document).ready(function(){
     $('#second-preview-COLOR33').hide();
     $('#second-preview-COLOR34').hide();
     $('#second-preview-COLOR35').hide();
-
-    $('#second-info-COLOR1').hide();
-    $('#second-info-COLOR2').hide();
-    $('#second-info-COLOR3').hide();
-    $('#second-info-COLOR4').hide();
-    $('#second-info-COLOR5').hide();
-    $('#second-info-COLOR6').hide();
-    $('#second-info-COLOR7').hide();
-    $('#second-info-COLOR8').hide();
-    $('#second-info-COLOR9').hide();
-    $('#second-info-COLOR10').hide();
-    $('#second-info-COLOR11').hide();
-    $('#second-info-COLOR12').hide();
-    $('#second-info-COLOR13').hide();
-    $('#second-info-COLOR14').hide();
-    $('#second-info-COLOR15').hide();
-    $('#second-info-COLOR16').hide();
-    $('#second-info-COLOR17').hide();
-    $('#second-info-COLOR18').hide();
-    $('#second-info-COLOR19').hide();
-    $('#second-info-COLOR20').hide();
-    $('#second-info-COLOR21').hide();
-    $('#second-info-COLOR22').hide();
-    $('#second-info-COLOR23').hide();
-    $('#second-info-COLOR24').hide();
-    $('#second-info-COLOR25').hide();
-    $('#second-info-COLOR26').hide();
-    $('#second-info-COLOR27').hide();
-    $('#second-info-COLOR28').hide();
-    $('#second-info-COLOR29').hide();
-    $('#second-info-COLOR30').hide();
-    $('#second-info-COLOR31').hide();
-    $('#second-info-COLOR32').hide();
-    $('#second-info-COLOR33').hide();
-    $('#second-info-COLOR34').hide();
-    $('#second-info-COLOR35').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#second-info-COLOR').html('<p><img src="img/COLOR36.png" width="200"></p><p>36. 애정결핍</p><p>특정한 사람으로부터 강렬한 사랑을 받고 싶고, 보다 더 신경 써 주었으면 하는 마음에서 조바심을 내고 있는 상태. 또 누구라도 좋으니 모르는 이성으로부터 강렬한 사랑을 받고 싶다는 간절한 소망을 안고 있다. 이 의식 밑바닥에는 스스로도 모르는 애수의 감정, 안타까운 심정, 슬픔, 인생은 무상하다는 느낌, 그리움 등이 뒤섞여 있다.</p>');
   }
-
-  if(localStorage.getItem('third')=='0'){
+  // 결과 페이지의 third div
+  if(localStorage.getItem('third')=='0'){ // 사용자가 1번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
     $('#third-a-COLOR4').hide();
@@ -7869,7 +5570,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
     $('#third-preview-COLOR4').hide();
@@ -7905,44 +5606,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR1.png" width="200"></p><p>1. 쓸쓸함 어리광</p><p>표면상으로 명랑하고 사교적이며 정서적인 인정미가 넘쳐흐르는 것처럼 보이지만 마음 한구석에는 누구도 편드는 사람이 없어 혼자 외롭게 지내며, 의지할 이성, 안심하고 어리광 부리거나 의존하고 싶은 애정욕구를 갖고 있다. 이 색깔이 36번과 함께 선택되면 어느 쪽이 먼저 선택되었는가에 따라 뉘앙스가 좀 달라진다. 고독감, 쓸쓸함이 특히 강하다.</p>');
   }
-  if(localStorage.getItem('third')=='1'){
+  if(localStorage.getItem('third')=='1'){ // 사용자가 2번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR3').hide();
     $('#third-a-COLOR4').hide();
@@ -7978,7 +5646,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR3').hide();
     $('#third-preview-COLOR4').hide();
@@ -8014,44 +5682,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR2.png" width="200"></p><p>2. 명랑함 넘치는 자신감</p><p>명랑하고 자신감이 넘치며 기쁨으로 가득 차 있다. 애정이 풍부하고, 매우 협조적이며 난잡한 점이 전혀 없어 가장 바람직한 정신 상태를 유지하고 있다고 볼 수 있다. 성인보다는 어린, 도시보다는 지방 사람들이 많이 선택하는데, 이는 도시인과 성인에게 그만큼 스트레스가 많다는 것을 나타낸다. 축제의상이나 축하행사에 이용되는 경우가 많은데, `내부에 잠재한 것이 겉으로 나타난 현상`이라고 봐도 좋다. 슬픔에 잠겨 있을 때는 쓸 수 없는 색깔이기 때문이다.</p>');
   }
-  if(localStorage.getItem('third')=='2'){
+  if(localStorage.getItem('third')=='2'){ // 사용자가 3번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR4').hide();
@@ -8087,7 +5722,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR4').hide();
@@ -8123,44 +5758,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR3.png" width="200"></p><p>3. 우울</p><p> 현재 감기에 걸렸거나, 피로가 쌓여 힘들거나, 생리 전후거나, 애인과의 사이에 트러블이 발생해 좋은 상태가 아니다. 또 가족 중에 환자가 있어서 마음과 몸의 밸런스가 취해지지 않아 늘 위화감이 생기고 울적한 생활이 계속되고 있는 상태이다. 자신의 의식이나 몸 상태가 왜 나쁜지 그 원인을 자각할 때가 많으며, 이 색깔을 선택한 시점에서 원인을 물으면 전혀 주저하지 않고 자신이 처한 상황을 솔직하게 대답해 준다.</p>');
   }
-  if(localStorage.getItem('third')=='3'){
+  if(localStorage.getItem('third')=='3'){ // 사용자가 4번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8196,7 +5798,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8232,44 +5834,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR4.png" width="200"></p><p>4. 소화기 불량</p><p>과식과 과음에 따른 가슴 앓이와 위통으로 몸 상태가 좋지 않으며, 지나치게 신경을 혹사한 탓에 위의 상태가 나빠져 통증을 느끼고 있을 수도 있다. 또 실제로는 나쁜 곳이 없는데도 끊임없이 위에 신경이 쓰이는 등 소화기 쪽으로 늘 의식이 향해 있다. 자각증세가 없어도 나중에 정말로 나빠진 예가 많으니 위장이 약해지지 않도록 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('third')=='4'){
+  if(localStorage.getItem('third')=='4'){ // 사용자가 5번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8305,7 +5874,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8341,44 +5910,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR5.png" width="200"></p><p>5. 비뇨기 불량</p><p>지금 화장실에 가고 싶지 않은가? 혹은 소변을 자주 본다든가 깊은 밤에 소변을 본다는 말을 들은 적은 없는지? 또 그런 것에 마음 쓴 적은 없는지? 또 신장, 요관, 방광, 요도 등 비뇨기과의 질병이나 기왕증에 고민하고 있는 것은 아닌지, 술을 좋아하는 사람이 종종 선택하는 색깔인데, 알코올에 의한 요폐증 또는 불완전 요폐 등의 불안한 근심을 잠재적으로 품고 있으며, 선천적으로 비뇨기계의 결함을 가지고 있으면서도 알코올을 좋아하는 사람이 많다.</p>');
   }
-  if(localStorage.getItem('third')=='5'){
+  if(localStorage.getItem('third')=='5'){ // 사용자가 6번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8414,7 +5950,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8450,44 +5986,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR6.png" width="200"></p><p>6. 불신 의혹</p><p>뜻하지 않게 보기 싫은 것을 보거나, 생각하지도 않았던 불쾌한 얘기를 듣거나 해서 평소에 믿었던 것에 의문을 품게 되며, 그 원인이 되는 인물이나 사건에 대해 불안과 불신을 가지게 된 상태, 이 의식은 불신, 의혹, 불안, 공포, 죽음으로 이어지는 것으로 어린이가 이 색깔을 선택한 경우에는 그 밖에 선택한 다른 색깔이나 생활환경 등을 고려해 원인을 확인할 필요가 있다. 다른 불건전한 의식도 상승작용하여 위험한 행동으로 나타나는 경우도 있으니 매우 주의해야 한다. 이 색깔을 선택하는 자체가 건전한 정신 상태라고 할 수 없는데, 최근 이 색깔을 선택하는 사람이 부쩍 늘고 있는 추세라고 한다. 사소한 것으로 남을 신용할 수 없는 세상이 온 것이다.</p>');
   }
-  if(localStorage.getItem('third')=='6'){
+  if(localStorage.getItem('third')=='6'){ // 사용자가 7번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8523,7 +6026,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8559,44 +6062,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR7.png" width="200"></p><p>7. 피</p><p>마음속으로 `피`에 관한 무엇인가를 가지고 있다. 예를 들면 교통사고 현장을 만나게 된다든가, 텔레비전이나 영화의 무서운 장면이 기억에 남아 있다든가, 또 자신 아니면 친구나 애인이 큰 부상을 입었거나 출산이 마음에 걸리는 등 피와 관계되는 일이 있다. 특히 성인 여성은 생리 중이거나 그 전후에 이 색깔을 선택하게 되는데, 이 색깔의 의식은 바람직하지 못한 피에 얽힌 것이다. 유혈 사건이 텔레비전에서 방영되면 그 직후에는 거의 모든 사람들이 이 색을 선택한다고 한다.</p>');
   }
-  if(localStorage.getItem('third')=='7'){
+  if(localStorage.getItem('third')=='7'){ // 사용자가 8번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8632,7 +6102,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8668,44 +6138,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR8.png" width="200"></p><p>8. 체념 거슬림</p><p>욕심이 나서 견딜 수 없었던 것, 하고 싶어서 참을 수 없었던 것을 어떤 이유에서든 체념하지 않으면 안 될 형편이었는데, 그 원인이 되었던 상태 또는 사항에 대해 앙갚음을 해주거나 심통을 부리고 싶은 생각으로 꽉 찬 상태다. 만약 어린이가 이 색깔을 선택하면 세심한 배려가 필요하다. 발산하는 방법에 따라 폭력이나 안 좋은 방향으로 빠질 우려가 있기 때문이다. 이 색깔은 어린이뿐 아니라 성인에게도 남을 괴롭히는 폭력의 위험성을 내포하고 있으므로 주의 깊게 지켜보아야 하며, 다른 선택된 색깔과 비교판단해서 빨리 대처하는 것이 좋다.</p>');
   }
-  if(localStorage.getItem('third')=='8'){
+  if(localStorage.getItem('third')=='8'){ // 사용자가 9번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8741,7 +6178,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8777,44 +6214,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR9.png" width="200"></p><p>9. 도움이 필요함</p><p>뭔가 큰 걱정거리를 가지고 있어 정신적으로 몹시 쫓기고 있는 상태, 누구에겐가 상담하고 싶고, 누구의 도움이 필요하다고 마음속으로 외치고 있다. 고민하는 문제에 관해 자신이 무력하고 아무 쓸모 없다고 생각하기 때문이다.</p>');
   }
-  if(localStorage.getItem('third')=='9'){
+  if(localStorage.getItem('third')=='9'){ // 사용자가 10번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8850,7 +6254,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -8886,44 +6290,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR10.png" width="200"></p><p>10. 매우 강렬한 금전욕 물질욕</p><p>이 색깔을 선택한 당신은 무슨 사정인지 많은 금액과 비싼 상품이 꼭 필요한 상황에 놓였다. 그리고 그 목적은 달성하기 위해선 비록 비합법적인 방법이라도 손에 넣은 직후여서 아직도 그 의식으로부터 해방된 상태가 아니다. 이 색깔을 선택할 때는 감정이 무겁게 가라 않고, 그 일 이외에는 아무 생각도 없을 만큼 욕구가 강렬하기 때문이다.</p>');
   }
-  if(localStorage.getItem('third')=='10'){
+  if(localStorage.getItem('third')=='10'){ // 사용자가 11번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -8959,44 +6330,47 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
+    $('#third-preview-COLOR1').hide();
+    $('#third-preview-COLOR2').hide();
+    $('#third-preview-COLOR3').hide();
+    $('#third-preview-COLOR4').hide();
+    $('#third-preview-COLOR5').hide();
+    $('#third-preview-COLOR6').hide();
+    $('#third-preview-COLOR7').hide();
+    $('#third-preview-COLOR8').hide();
+    $('#third-preview-COLOR9').hide();
+    $('#third-preview-COLOR10').hide();
+    $('#third-preview-COLOR12').hide();
+    $('#third-preview-COLOR13').hide();
+    $('#third-preview-COLOR14').hide();
+    $('#third-preview-COLOR15').hide();
+    $('#third-preview-COLOR16').hide();
+    $('#third-preview-COLOR17').hide();
+    $('#third-preview-COLOR18').hide();
+    $('#third-preview-COLOR19').hide();
+    $('#third-preview-COLOR20').hide();
+    $('#third-preview-COLOR21').hide();
+    $('#third-preview-COLOR22').hide();
+    $('#third-preview-COLOR23').hide();
+    $('#third-preview-COLOR24').hide();
+    $('#third-preview-COLOR25').hide();
+    $('#third-preview-COLOR26').hide();
+    $('#third-preview-COLOR27').hide();
+    $('#third-preview-COLOR28').hide();
+    $('#third-preview-COLOR29').hide();
+    $('#third-preview-COLOR30').hide();
+    $('#third-preview-COLOR31').hide();
+    $('#third-preview-COLOR32').hide();
+    $('#third-preview-COLOR33').hide();
+    $('#third-preview-COLOR34').hide();
+    $('#third-preview-COLOR35').hide();
+    $('#third-preview-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR11.png" width="200"></p><p>11. 자기주장욕 현시욕</p><p>기력이 충실하고 활기가 넘치며, 행동은 적극적이고 매사에 힘찬 활력이 넘쳐흐르지만, 그 밑바닥에는 뭔가 마음에 흡족하지 않은 것이 숨겨져 있어 그 불만의 행동의 기폭제가 되고 있는 상태이다. 그 때문에 남을 밀어내야겠다고 생각하며, 경우에 따라서는 상대를 공격해서라도 자신을 전면으로 내놓고 싶은 자기주장욕, 자기 현시욕이 강하다.</p>');
   }
-  if(localStorage.getItem('third')=='11'){
+  if(localStorage.getItem('third')=='11'){ // 사용자가 12번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9032,7 +6406,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9068,44 +6442,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR12.png" width="200"></p><p>12. 근심</p><p>현재 처하고 있는 상황 속에서 걱정되는 것, 마음이 놓이지 않는 것, 신경이 쓰이는 것 등 그 무엇인가의 의식에 사로잡혀 있다. 사람이 많건 적건 근심을 안고 있는 법인데, 이 색깔을 선택한다는 것은 그만큼 마음에 걸리는 근심 걱정이 강하는 것을 뜻한다. 어린이가 처음에 이 색깔을 선택하는 경우에는 대부분 공부(성적, 숙제, 시험)에 관한 걱정거리가 있다고 생각해도 좋다.</p>');
   }
-  if(localStorage.getItem('third')=='12'){
+  if(localStorage.getItem('third')=='12'){ // 사용자가 13번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9141,7 +6482,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9177,44 +6518,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR13.png" width="200"></p><p>13. 친한 남성이 그리움</p><p>할아버지, 아버지, 형제, 아들, 남편, 친구 등 당신에게 가장 가까운 남성이 당신에게서 멀어져 가는 것 같은 일종의 공포심마저 느끼는 상태다. 심하면 그리워지기까지 하여 이런 기분을 이해해 달라는 차원에서 자신이 사랑한 것만큼 상대로부터 사랑받고 싶어 한다. 어린이가 이 색깔을 선택하면 아버지에 대한 애정욕구로 보아도 좋다.</p>');
   }
-  if(localStorage.getItem('third')=='13'){
+  if(localStorage.getItem('third')=='13'){ // 사용자가 14번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9250,7 +6558,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9286,44 +6594,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR14.png" width="200"></p><p>14. 물욕 금전욕 애정욕</p><p>비싼 물품이 욕심난다든가 갑자기 돈이 필요하게 되는 등, 돈과 물품에 대한 생각이 머리에서 떠나지 않고 있는 상태다. 혹은 그런 것을 막 손에 넣은 직후인지도 모르겠지만, 어쨌거나 이런 욕구 의식이 남아있다. 이 색깔은 10번의 상황과 비슷하지만 10번처럼 비상수단을 취하면서까지 욕심낼 만큼 절박하지는 않다. 물질적, 금전적으로 만족하지 못하고 있으며, 어린이가 이 색깔을 선택한 경우에는 애정욕구가 강하므로 주의가 필요하다. 이 색깔은 세상의 경기가 좋지 않게 되면 유행하는데, 이 색깔이 가지는 뜻의 집단적인 의식의 표출이라고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('third')=='14'){
+  if(localStorage.getItem('third')=='14'){ // 사용자가 15번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9359,7 +6634,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9395,44 +6670,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR15.png" width="200"></p><p>15. 몸 상태 불량</p><p>몸 상태가 좋은 편도 아니지만 정신적으로도 어둡게 가라앉은 상태다. 선택한 색깔 중에 이 색깔이 돋보일 뿐 다른 것은 눈에 들어오지 않는다든가, 16, 31번과 함께 선택되고 다른 색깔은 관심이 없는 경우에는 별로 걱정할 것이 없다. 그러나 3, 9, 22번과 함께 선택되었을 경우에는 주의해야 하며, 이 경우에는 의사의 건강진단을 받아두는 것이 좋다. 이 색깔이 포함되고 있다고 해서 금세 암의 위험이 있다고 말할 수는 없지만, 선택하는 순서와 다른 색과의 관계에서 볼 때 위험한 요소가 내포되었다고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('third')=='15'){
+  if(localStorage.getItem('third')=='15'){ // 사용자가 16번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9468,7 +6710,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9504,44 +6746,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR16.png" width="200"></p><p>16. 육체적 피로</p><p>심신이 지칠 대로 지쳐서 쉬고 싶다는 생각이 드는 한편에서는 맡은 일을 성실하게 하지 않으면 안 된다는 생각에 정신적으로 협공을 당하는 상태다. 피로감과 의무감, 복종심이 내부에서 서로 갈등을 빚고 있는 상태, 어린이가 이 색깔을 선택하거나 즐겨 선택한다면 놀고 싶은 욕망을 강렬하게 억제당하고 있어 반항하고 싶지만 뜻대로 되지 않는다고 생각해도 무방하다.</p>');
   }
-  if(localStorage.getItem('third')=='16'){
+  if(localStorage.getItem('third')=='16'){ // 사용자가 17번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9577,7 +6786,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9613,44 +6822,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR17.png" width="200"></p><p>17. 증오 적의</p><p>뭔가를 잊고 싶고 생각하기 싶은데도 할 수 없이 자꾸 생각하게 되는 딜레마에 빠진 상태, 몹시 불쾌한 일이 있었으며, 그 원인이 되었던 사람과 사건에 대해 지독한 증오를 품고 있다. 더욱이 이 의식은 의외로 뿌리 깊은 지속성이 있어서 어떤 계기만 주어지면 직접 보복행위로 나올 위험성을 내포하고 있기도 하다. 올바른 가치 판단을 가지고 있지 않은 어린이가 이 색깔을 선택한 경우에는 신속히 그 원인을 찾아내 제거하도록 해야 한다. 6번이 내향적인 것과는 달리 이 색깔은 외향적인 특징을 가지고 있다.</p>');
   }
-  if(localStorage.getItem('third')=='17'){
+  if(localStorage.getItem('third')=='17'){ // 사용자가 18번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9686,7 +6862,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9722,44 +6898,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR18.png" width="200"></p><p>18. 만족감 포만감</p><p>오래전부터 갖고 싶어 하던 물건을 손에 넣은 만족감과 식사를 끝낸 후의 만복감을 만끽하고 있는 상태다. 느긋한 마음에 풍요감으로 가득 차 있으며, 인간관계나 애정, 물질적인 면에서도 아무 불만이 없는 극히 평화로운 기분에 싸여 있다. 마음의 평안을 뚜렷이 말해 주는 색깔이다.</p>');
   }
-  if(localStorage.getItem('third')=='18'){
+  if(localStorage.getItem('third')=='18'){ // 사용자가 19번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9795,7 +6938,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9831,44 +6974,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR19.png" width="200"></p><p>19. 겸허한 체험</p><p>솔직하고 순종적이지만 마음속으로는 체념해야 하는 그 무엇인가를 감추고 있는 상태다. 그러나 이 겸허함과 복종심으로 감싼 체념이 겉으로 나타나 불리하게 하는 일은 없다. 이 경우에는 `할 수 없다`는 이면의 사항을 말하기보다는 표면의 솔직성과 겸허함이 중요하며, 만약 다른 불만이 있으면 별도의 의식을 갖게 되어 다른 색깔을 택하게 될 것이다.</p>');
   }
-  if(localStorage.getItem('third')=='19'){
+  if(localStorage.getItem('third')=='19'){ // 사용자가 20번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -9904,7 +7014,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -9940,44 +7050,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR20.png" width="200"></p><p>20. 이성에 대한 그리움</p><p>꿈같은 연애를 하고 싶다거나 애인이 그립고 헤어진 사람과 다시 만나고 싶다거나 이성에 대한 그리움으로 견딜 수 없는 상태다. 또 성적인 충동도 억제할 수 없어서 ‘그 사람의 아이를 가지고 싶어’, ‘그에게 힘껏 안기고 싶어’ 하는 생각도 한다. 연령이나 상황에 따라 내용은 다르지만 이성에 대한 관심이 높아진 상태이며, 특히 성적으로 미숙한 어린이가 이 색깔을 선택한 경우 부모들의 행동을 보고 싶어 하는 수도 있으니 주의해야 한다. 이 색깔의 의식은 직접적이어서 기분이 나면 서슴지 않고 이 색깔을 선택하게 된다. 일생을 혼자 산 고흐는 이 색깔(섹스)을 죄악으로 생각했다고 한다.</p>');
   }
-  if(localStorage.getItem('third')=='20'){
+  if(localStorage.getItem('third')=='20'){ // 사용자가 21번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10013,7 +7090,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10049,44 +7126,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR21.png" width="200"></p><p>21. 사람에 대한 봉사</p><p>존경하는 사람, 사랑하는 사람, 평소에 소중하게 생각하는 사람들에 대해 자신을 희생하면서까지 헌신적인 애정을 바치고 싶다는 생각으로 가득 차 있는 상태. 물론 상대에게서도 강렬한 사랑을 받고 싶은 소망으로 안타까운 심정을 안고 있다. 이 색깔에 의해 나타나는 사랑의 의식 밑바닥에는 상대에게 바치는 행위가 실패로 끝나지나 않을까 하는 불안과 공포, 또는 상대가 자신에게서 떠나버리지는 않을까 하는 두 가지 근심으로 가슴을 죄고 있다. 신부 의상, 의사나 간호사의 흰 가운, 회교도들의 메카를 순례할 때 입는 갈라베이야, 싸움에서 졌을 때 흔드는 백기 등은 우리의 의식과 색깔이 갖는 뜻과 관련성을 상징하고 있다. 모든 색깔이 완전히 조화를 이루어 태양의 흰빛(白光)으로 되돌아가듯이 이 색깔은 인간의 사랑의 원형적인 것-가족애와 같은-이 아닌가 하는 느낌이 들기도 한다.</p>');
   }
-  if(localStorage.getItem('third')=='21'){
+  if(localStorage.getItem('third')=='21'){ // 사용자가 22번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10122,7 +7166,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10158,44 +7202,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR22.png" width="200"></p><p>22. 남을 학대하고 싶은 충동</p><p>지금 만족하는 것이 없이 극도로 욕구불만에 싸인 상태. 그 원인을 만든 상태 또는 자신보다 약한 사람을 괴롭히고 학대하는 것으로 불만을 해소하려 하고 있다. 불안정한 정신 상태로 위험할 수도 있다. 이런 의식은 비뚤어지고 왜곡된 내용을 가지고 있기 때문에 지성과 이성이 발달하지 못한 어린이가 선택했을 경우 종종 8번이나 17번과 같은 색깔로 연쇄반응을 일으키며, 폭력이나 잔학성의 원인이 될 수도 있으니 한시 빨리 원인을 찾고 대응책을 강구해야 한다.</p>');
   }
-  if(localStorage.getItem('third')=='22'){
+  if(localStorage.getItem('third')=='22'){ // 사용자가 23번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10231,7 +7242,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10267,44 +7278,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR23.png" width="200"></p><p>23. 희망</p><p>밝은 행복감이 넘쳐흘러 편안하고 안정된 마음으로 모든 것에 우호적인 정신 상태. 목표를 정하고 노력해 온 것이 달성된 직후의 기쁨, 혹은 달성이 눈앞에 다가온 것에 대한 확신 등 과거에 쌓아올린 근면과 연마가 `희망`으로 변하여 축복해 주고 있다. 이 색깔은 2번과 마찬가지로 성인보다는 어린이, 도시보다는 지방에 사는 사람들이 더 많이 선택한다.</p>');
   }
-  if(localStorage.getItem('third')=='23'){
+  if(localStorage.getItem('third')=='23'){ // 사용자가 24번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10340,7 +7318,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10376,44 +7354,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR24.png" width="200"></p><p>24. 초조함</p><p>무슨 일이 일어나면 자기 생각이나 의견을 전혀 내놓지 않고, 자기 힘으로는 해결할 수 없다는 것을 알고 초조하고 불안한 상태다. 초조한 자신이 다시 불안하고 초조해져서 나중에는 짜증을 내고, 또 짜증스러운 자신이 초조해져서 불안과 초조가 점점 더해간다. 마치 개미구멍에라도 빠진 것처럼 답답한 상태다.</p>');
   }
-  if(localStorage.getItem('third')=='24'){
+  if(localStorage.getItem('third')=='24'){ // 사용자가 25번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10449,7 +7394,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10485,44 +7430,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR25.png" width="200"></p><p>25. 만족감</p><p>의외로 목적을 빨리 달성하거나 뜻을 이루었다는 마음으로 기분이 최고조에 올라 남들이 의아해할 만큼 들떠 있는 상태다. 그러나 이 의식이 도가 지나치면 때로는 &#39나는 누구보다 뛰어나다&#39는 독선적인 생각으로 경박한 행동을 하게 돼 상대에게 불쾌감을 줄 수도 있으니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('third')=='25'){
+  if(localStorage.getItem('third')=='25'){ // 사용자가 26번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10558,7 +7470,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10594,44 +7506,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR26.png" width="200"></p><p>26. 밝은 명랑함 속의 불안</p><p>즐거운 일, 기쁜 일이 있어 매우 밝은 기분이지만, 마음에 걸리는 일과 해소되지 않는 근심거리도 있어서 명랑할 수만은 없는 상태다.</p>');
   }
-  if(localStorage.getItem('third')=='26'){
+  if(localStorage.getItem('third')=='26'){ // 사용자가 27번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10667,7 +7546,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10703,44 +7582,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR27.png" width="200"></p><p>27. 절대자에 대한 사랑</p><p>‘절대’적으로 믿는 것-종교, 회사, 거래처, 고객, 희망학교-이 자신으로부터 멀어져 가는 것은 아닐까 하는 불안, 자신이 하는 행위가 실패하는 것은 아닐까 하는 근심에서 그 ‘절대자’에게 강렬한 사랑을 받고 싶어 하는 바람이 ‘절대자’를 사랑하는 행위로 나타나 있는 상태. 이 색깔이 수도승, 수녀의 옷 색깔로 쓰이고 있는 것은 신에 대한 외경과 경건의 기도에 부응코자 하는 데서 나온 듯하다. 마음속에 있는 것이 색깔로 되어 표면으로 나타난 전형적인 예라고 하겠다. 장례를 지낼 때도 이 색깔을 쓰는데, 그것은 죽은 자에게 바치는 산 사람의 기도와 정화의 소원을 담은 뜻이라고 생각할 수 있다.</p>');
   }
-  if(localStorage.getItem('third')=='27'){
+  if(localStorage.getItem('third')=='27'){ // 사용자가 28번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10776,7 +7622,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10812,44 +7658,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR28.png" width="200"></p><p>28. 허기</p><p>지금 몹시 허기가 졌거나 목이 말라 물을 마시고 싶은 상태다. 혹은 다이어트에 신경이 쓰여 자연식품에만 생각이 가 있을 수도 있다. 어린이의 편식을 걱정하거나 저녁 준비할 것으로 머리가 복잡해 있지는 않은지? 식사를 끝낸 직후에도 이 색깔을 선택하는데, 음식에 대한 관심이 높아져 있기 때문이다.</p>');
   }
-  if(localStorage.getItem('third')=='28'){
+  if(localStorage.getItem('third')=='28'){ // 사용자가 29번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10885,7 +7698,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -10921,44 +7734,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR29.png" width="200"></p><p>29. 망설임 불안</p><p>양자택일의 문제에 직면해 있는 상태. 그러나 어느 쪽을 택하든 어느 정도의 곤란과 앞일에 대한 불안을 떨쳐버릴 수가 없어 숨이 막힐 것만 같은 심정이다.</p>');
   }
-  if(localStorage.getItem('third')=='29'){
+  if(localStorage.getItem('third')=='29'){ // 사용자가 30번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -10994,7 +7774,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11030,44 +7810,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR30.png" width="200"></p><p>30. 소화기 불량</p><p>현재 소화기계에 질환을 가지고 있든가, 소화기 질환을 앓은 경력이 있어 아직도 그 의식의 꼬리를 떨치지 못하고 있는 상태다.</p>');
   }
-  if(localStorage.getItem('third')=='30'){
+  if(localStorage.getItem('third')=='30'){ // 사용자가 31번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -11103,7 +7850,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11139,44 +7886,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR31.png" width="200"></p><p>31. 수면</p><p>수면 부족이 계속되고 밤을 꼬박 새우기도 하며, 또 그와는 반대로 잠을 지나치게 많이 자서 의식이 잠에서 덜 깬 흐리멍덩한 상태. 바빠서 잠을 충분히 자지 못하는 상황으로, 16번과 함께 선택되는 경우가 많고 방치해 두면 3번 색을 선택하게 되니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('third')=='31'){
+  if(localStorage.getItem('third')=='31'){ // 사용자가 32번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -11212,7 +7926,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11248,44 +7962,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR32.png" width="200"></p><p>32. 정서불안</p><p>어떤 이유로, 혹은 이유도 모르는 채 막연한 불안감을 가지고 있으며, 미래에 대해서도 전망이 밝지 않아 괴로운 상태다. 이 색깔이 뜻하는 것은 12번이나 29번과는 근본적으로 다르며, 생명을 잡아 흔드는 듯한 뿌리 깊은 곳에서 솟구쳐 오르는 불안이다. 어머니에게 호되게 야단을 맞은 어린이가 이 색깔을 선택하는 것도 그런 이유에서다.</p>');
   }
-  if(localStorage.getItem('third')=='32'){
+  if(localStorage.getItem('third')=='32'){ // 사용자가 33번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -11321,7 +8002,7 @@ $(document).ready(function(){
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11357,44 +8038,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR33.png" width="200"></p><p>33. 신변정리</p><p>언제나 하지 않으면 안 된다고 생각해 온 것, 가령 청소, 세탁, 정리 정돈, 방의 도배, 이사, 채권채무의 이행 등 마음에 걸리는 것이 있거나, 그런 것을 하고 난 직후여서 아직도 의식이 남아 있는 상태다. 어린이가 이 색깔을 선택했을 경우에는 어머니로부터 방 청소, 뒷정리 등으로 꾸지람을 들었음을 나타낸다.</p>');
   }
-  if(localStorage.getItem('third')=='33'){
+  if(localStorage.getItem('third')=='33'){ // 사용자가 34번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -11430,7 +8078,7 @@ $(document).ready(function(){
     $('#third-a-COLOR33').hide();
     $('#third-a-COLOR35').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11466,44 +8114,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR33').hide();
     $('#third-preview-COLOR35').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR35').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR34.png" width="200"></p><p>34. 회복</p><p>질병, 스트레스, 생리, 부상 등으로 앓고 있던 몸과 정신이 이제는 확실히 회복기에 접어들었거나, 회복해서 원기를 되찾은 직후의 상태다. 평온함으로 가득 찬 해방감이 넘쳐흐르는 바람직한 정신 상태다.</p>');
   }
-  if(localStorage.getItem('third')=='34'){
+  if(localStorage.getItem('third')=='34'){ // 사용자가 35번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -11539,7 +8154,7 @@ $(document).ready(function(){
     $('#third-a-COLOR33').hide();
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11575,44 +8190,11 @@ $(document).ready(function(){
     $('#third-preview-COLOR33').hide();
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR36').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR35.png" width="200"></p><p>35. 친한 여성이 그리움</p><p>어머니, 할머니, 자매, 딸, 아내, 여자 친구 등 평소에 가장 가깝게 지내던 여성이 멀어져 가는듯한 느낌이 들어 안타까워하고 있는 상태. 그리고 그 사람을 그리워하고 있으며, 이런 기분을 알아주었으면 하는 마음에서 자신이 사랑하는 것만큼 상대에게서 사랑을 받았으면 하는 바람으로 가득 차 있다. 어린이가 이 색깔을 선택한 경우에는 어머니에 대한 애정욕구가 큰 것으로 볼 수 있다.</p>');
   }
-  if(localStorage.getItem('third')=='35'){
+  if(localStorage.getItem('third')=='35'){ // 사용자가 36번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-a-COLOR1').hide();
     $('#third-a-COLOR2').hide();
     $('#third-a-COLOR3').hide();
@@ -11648,7 +8230,7 @@ $(document).ready(function(){
     $('#third-a-COLOR33').hide();
     $('#third-a-COLOR34').hide();
     $('#third-a-COLOR35').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#third-preview-COLOR1').hide();
     $('#third-preview-COLOR2').hide();
     $('#third-preview-COLOR3').hide();
@@ -11684,45 +8266,12 @@ $(document).ready(function(){
     $('#third-preview-COLOR33').hide();
     $('#third-preview-COLOR34').hide();
     $('#third-preview-COLOR35').hide();
-
-    $('#third-info-COLOR1').hide();
-    $('#third-info-COLOR2').hide();
-    $('#third-info-COLOR3').hide();
-    $('#third-info-COLOR4').hide();
-    $('#third-info-COLOR5').hide();
-    $('#third-info-COLOR6').hide();
-    $('#third-info-COLOR7').hide();
-    $('#third-info-COLOR8').hide();
-    $('#third-info-COLOR9').hide();
-    $('#third-info-COLOR10').hide();
-    $('#third-info-COLOR11').hide();
-    $('#third-info-COLOR12').hide();
-    $('#third-info-COLOR13').hide();
-    $('#third-info-COLOR14').hide();
-    $('#third-info-COLOR15').hide();
-    $('#third-info-COLOR16').hide();
-    $('#third-info-COLOR17').hide();
-    $('#third-info-COLOR18').hide();
-    $('#third-info-COLOR19').hide();
-    $('#third-info-COLOR20').hide();
-    $('#third-info-COLOR21').hide();
-    $('#third-info-COLOR22').hide();
-    $('#third-info-COLOR23').hide();
-    $('#third-info-COLOR24').hide();
-    $('#third-info-COLOR25').hide();
-    $('#third-info-COLOR26').hide();
-    $('#third-info-COLOR27').hide();
-    $('#third-info-COLOR28').hide();
-    $('#third-info-COLOR29').hide();
-    $('#third-info-COLOR30').hide();
-    $('#third-info-COLOR31').hide();
-    $('#third-info-COLOR32').hide();
-    $('#third-info-COLOR33').hide();
-    $('#third-info-COLOR34').hide();
-    $('#third-info-COLOR35').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#third-info-COLOR').html('<p><img src="img/COLOR36.png" width="200"></p><p>36. 애정결핍</p><p>특정한 사람으로부터 강렬한 사랑을 받고 싶고, 보다 더 신경 써 주었으면 하는 마음에서 조바심을 내고 있는 상태. 또 누구라도 좋으니 모르는 이성으로부터 강렬한 사랑을 받고 싶다는 간절한 소망을 안고 있다. 이 의식 밑바닥에는 스스로도 모르는 애수의 감정, 안타까운 심정, 슬픔, 인생은 무상하다는 느낌, 그리움 등이 뒤섞여 있다.</p>');
   }
-
-  if(localStorage.getItem('fourth')=='0'){
+  // 결과 페이지의 fourth div
+  if(localStorage.getItem('fourth')=='0'){ // 사용자가 1번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
     $('#fourth-a-COLOR4').hide();
@@ -11758,7 +8307,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
     $('#fourth-preview-COLOR4').hide();
@@ -11794,44 +8343,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR1.png" width="200"></p><p>1. 쓸쓸함 어리광</p><p>표면상으로 명랑하고 사교적이며 정서적인 인정미가 넘쳐흐르는 것처럼 보이지만 마음 한구석에는 누구도 편드는 사람이 없어 혼자 외롭게 지내며, 의지할 이성, 안심하고 어리광 부리거나 의존하고 싶은 애정욕구를 갖고 있다. 이 색깔이 36번과 함께 선택되면 어느 쪽이 먼저 선택되었는가에 따라 뉘앙스가 좀 달라진다. 고독감, 쓸쓸함이 특히 강하다.</p>');
   }
-  if(localStorage.getItem('fourth')=='1'){
+  if(localStorage.getItem('fourth')=='1'){ // 사용자가 2번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR3').hide();
     $('#fourth-a-COLOR4').hide();
@@ -11867,7 +8383,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR3').hide();
     $('#fourth-preview-COLOR4').hide();
@@ -11903,44 +8419,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR2.png" width="200"></p><p>2. 명랑함 넘치는 자신감</p><p>명랑하고 자신감이 넘치며 기쁨으로 가득 차 있다. 애정이 풍부하고, 매우 협조적이며 난잡한 점이 전혀 없어 가장 바람직한 정신 상태를 유지하고 있다고 볼 수 있다. 성인보다는 어린, 도시보다는 지방 사람들이 많이 선택하는데, 이는 도시인과 성인에게 그만큼 스트레스가 많다는 것을 나타낸다. 축제의상이나 축하행사에 이용되는 경우가 많은데, `내부에 잠재한 것이 겉으로 나타난 현상`이라고 봐도 좋다. 슬픔에 잠겨 있을 때는 쓸 수 없는 색깔이기 때문이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='2'){
+  if(localStorage.getItem('fourth')=='2'){ // 사용자가 3번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR4').hide();
@@ -11976,7 +8459,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR4').hide();
@@ -12012,44 +8495,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR3.png" width="200"></p><p>3. 우울</p><p> 현재 감기에 걸렸거나, 피로가 쌓여 힘들거나, 생리 전후거나, 애인과의 사이에 트러블이 발생해 좋은 상태가 아니다. 또 가족 중에 환자가 있어서 마음과 몸의 밸런스가 취해지지 않아 늘 위화감이 생기고 울적한 생활이 계속되고 있는 상태이다. 자신의 의식이나 몸 상태가 왜 나쁜지 그 원인을 자각할 때가 많으며, 이 색깔을 선택한 시점에서 원인을 물으면 전혀 주저하지 않고 자신이 처한 상황을 솔직하게 대답해 준다.</p>');
   }
-  if(localStorage.getItem('fourth')=='3'){
+  if(localStorage.getItem('fourth')=='3'){ // 사용자가 4번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12085,7 +8535,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12121,44 +8571,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR4.png" width="200"></p><p>4. 소화기 불량</p><p>과식과 과음에 따른 가슴 앓이와 위통으로 몸 상태가 좋지 않으며, 지나치게 신경을 혹사한 탓에 위의 상태가 나빠져 통증을 느끼고 있을 수도 있다. 또 실제로는 나쁜 곳이 없는데도 끊임없이 위에 신경이 쓰이는 등 소화기 쪽으로 늘 의식이 향해 있다. 자각증세가 없어도 나중에 정말로 나빠진 예가 많으니 위장이 약해지지 않도록 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='4'){
+  if(localStorage.getItem('fourth')=='4'){ // 사용자가 5번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12194,7 +8611,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12230,44 +8647,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR5.png" width="200"></p><p>5. 비뇨기 불량</p><p>지금 화장실에 가고 싶지 않은가? 혹은 소변을 자주 본다든가 깊은 밤에 소변을 본다는 말을 들은 적은 없는지? 또 그런 것에 마음 쓴 적은 없는지? 또 신장, 요관, 방광, 요도 등 비뇨기과의 질병이나 기왕증에 고민하고 있는 것은 아닌지, 술을 좋아하는 사람이 종종 선택하는 색깔인데, 알코올에 의한 요폐증 또는 불완전 요폐 등의 불안한 근심을 잠재적으로 품고 있으며, 선천적으로 비뇨기계의 결함을 가지고 있으면서도 알코올을 좋아하는 사람이 많다.</p>');
   }
-  if(localStorage.getItem('fourth')=='5'){
+  if(localStorage.getItem('fourth')=='5'){ // 사용자가 6번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12303,7 +8687,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12339,44 +8723,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR6.png" width="200"></p><p>6. 불신 의혹</p><p>뜻하지 않게 보기 싫은 것을 보거나, 생각하지도 않았던 불쾌한 얘기를 듣거나 해서 평소에 믿었던 것에 의문을 품게 되며, 그 원인이 되는 인물이나 사건에 대해 불안과 불신을 가지게 된 상태, 이 의식은 불신, 의혹, 불안, 공포, 죽음으로 이어지는 것으로 어린이가 이 색깔을 선택한 경우에는 그 밖에 선택한 다른 색깔이나 생활환경 등을 고려해 원인을 확인할 필요가 있다. 다른 불건전한 의식도 상승작용하여 위험한 행동으로 나타나는 경우도 있으니 매우 주의해야 한다. 이 색깔을 선택하는 자체가 건전한 정신 상태라고 할 수 없는데, 최근 이 색깔을 선택하는 사람이 부쩍 늘고 있는 추세라고 한다. 사소한 것으로 남을 신용할 수 없는 세상이 온 것이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='6'){
+  if(localStorage.getItem('fourth')=='6'){ // 사용자가 7번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12412,7 +8763,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12448,44 +8799,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR7.png" width="200"></p><p>7. 피</p><p>마음속으로 `피`에 관한 무엇인가를 가지고 있다. 예를 들면 교통사고 현장을 만나게 된다든가, 텔레비전이나 영화의 무서운 장면이 기억에 남아 있다든가, 또 자신 아니면 친구나 애인이 큰 부상을 입었거나 출산이 마음에 걸리는 등 피와 관계되는 일이 있다. 특히 성인 여성은 생리 중이거나 그 전후에 이 색깔을 선택하게 되는데, 이 색깔의 의식은 바람직하지 못한 피에 얽힌 것이다. 유혈 사건이 텔레비전에서 방영되면 그 직후에는 거의 모든 사람들이 이 색을 선택한다고 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='7'){
+  if(localStorage.getItem('fourth')=='7'){ // 사용자가 8번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12521,7 +8839,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12557,44 +8875,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR8.png" width="200"></p><p>8. 체념 거슬림</p><p>욕심이 나서 견딜 수 없었던 것, 하고 싶어서 참을 수 없었던 것을 어떤 이유에서든 체념하지 않으면 안 될 형편이었는데, 그 원인이 되었던 상태 또는 사항에 대해 앙갚음을 해주거나 심통을 부리고 싶은 생각으로 꽉 찬 상태다. 만약 어린이가 이 색깔을 선택하면 세심한 배려가 필요하다. 발산하는 방법에 따라 폭력이나 안 좋은 방향으로 빠질 우려가 있기 때문이다. 이 색깔은 어린이뿐 아니라 성인에게도 남을 괴롭히는 폭력의 위험성을 내포하고 있으므로 주의 깊게 지켜보아야 하며, 다른 선택된 색깔과 비교판단해서 빨리 대처하는 것이 좋다.</p>');
   }
-  if(localStorage.getItem('fourth')=='8'){
+  if(localStorage.getItem('fourth')=='8'){ // 사용자가 9번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12630,7 +8915,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12666,44 +8951,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR9.png" width="200"></p><p>9. 도움이 필요함</p><p>뭔가 큰 걱정거리를 가지고 있어 정신적으로 몹시 쫓기고 있는 상태, 누구에겐가 상담하고 싶고, 누구의 도움이 필요하다고 마음속으로 외치고 있다. 고민하는 문제에 관해 자신이 무력하고 아무 쓸모 없다고 생각하기 때문이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='9'){
+  if(localStorage.getItem('fourth')=='9'){ // 사용자가 10번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12739,7 +8991,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12775,44 +9027,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR10.png" width="200"></p><p>10. 매우 강렬한 금전욕 물질욕</p><p>이 색깔을 선택한 당신은 무슨 사정인지 많은 금액과 비싼 상품이 꼭 필요한 상황에 놓였다. 그리고 그 목적은 달성하기 위해선 비록 비합법적인 방법이라도 손에 넣은 직후여서 아직도 그 의식으로부터 해방된 상태가 아니다. 이 색깔을 선택할 때는 감정이 무겁게 가라 않고, 그 일 이외에는 아무 생각도 없을 만큼 욕구가 강렬하기 때문이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='10'){
+  if(localStorage.getItem('fourth')=='10'){ // 사용자가 11번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12848,44 +9067,47 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
+    $('#fourth-preview-COLOR1').hide();
+    $('#fourth-preview-COLOR2').hide();
+    $('#fourth-preview-COLOR3').hide();
+    $('#fourth-preview-COLOR4').hide();
+    $('#fourth-preview-COLOR5').hide();
+    $('#fourth-preview-COLOR6').hide();
+    $('#fourth-preview-COLOR7').hide();
+    $('#fourth-preview-COLOR8').hide();
+    $('#fourth-preview-COLOR9').hide();
+    $('#fourth-preview-COLOR10').hide();
+    $('#fourth-preview-COLOR12').hide();
+    $('#fourth-preview-COLOR13').hide();
+    $('#fourth-preview-COLOR14').hide();
+    $('#fourth-preview-COLOR15').hide();
+    $('#fourth-preview-COLOR16').hide();
+    $('#fourth-preview-COLOR17').hide();
+    $('#fourth-preview-COLOR18').hide();
+    $('#fourth-preview-COLOR19').hide();
+    $('#fourth-preview-COLOR20').hide();
+    $('#fourth-preview-COLOR21').hide();
+    $('#fourth-preview-COLOR22').hide();
+    $('#fourth-preview-COLOR23').hide();
+    $('#fourth-preview-COLOR24').hide();
+    $('#fourth-preview-COLOR25').hide();
+    $('#fourth-preview-COLOR26').hide();
+    $('#fourth-preview-COLOR27').hide();
+    $('#fourth-preview-COLOR28').hide();
+    $('#fourth-preview-COLOR29').hide();
+    $('#fourth-preview-COLOR30').hide();
+    $('#fourth-preview-COLOR31').hide();
+    $('#fourth-preview-COLOR32').hide();
+    $('#fourth-preview-COLOR33').hide();
+    $('#fourth-preview-COLOR34').hide();
+    $('#fourth-preview-COLOR35').hide();
+    $('#fourth-preview-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR11.png" width="200"></p><p>11. 자기주장욕 현시욕</p><p>기력이 충실하고 활기가 넘치며, 행동은 적극적이고 매사에 힘찬 활력이 넘쳐흐르지만, 그 밑바닥에는 뭔가 마음에 흡족하지 않은 것이 숨겨져 있어 그 불만의 행동의 기폭제가 되고 있는 상태이다. 그 때문에 남을 밀어내야겠다고 생각하며, 경우에 따라서는 상대를 공격해서라도 자신을 전면으로 내놓고 싶은 자기주장욕, 자기 현시욕이 강하다.</p>');
   }
-  if(localStorage.getItem('fourth')=='11'){
+  if(localStorage.getItem('fourth')=='11'){ // 사용자가 12번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -12921,7 +9143,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -12957,44 +9179,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR12.png" width="200"></p><p>12. 근심</p><p>현재 처하고 있는 상황 속에서 걱정되는 것, 마음이 놓이지 않는 것, 신경이 쓰이는 것 등 그 무엇인가의 의식에 사로잡혀 있다. 사람이 많건 적건 근심을 안고 있는 법인데, 이 색깔을 선택한다는 것은 그만큼 마음에 걸리는 근심 걱정이 강하는 것을 뜻한다. 어린이가 처음에 이 색깔을 선택하는 경우에는 대부분 공부(성적, 숙제, 시험)에 관한 걱정거리가 있다고 생각해도 좋다.</p>');
   }
-  if(localStorage.getItem('fourth')=='12'){
+  if(localStorage.getItem('fourth')=='12'){ // 사용자가 13번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13030,7 +9219,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13066,44 +9255,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR13.png" width="200"></p><p>13. 친한 남성이 그리움</p><p>할아버지, 아버지, 형제, 아들, 남편, 친구 등 당신에게 가장 가까운 남성이 당신에게서 멀어져 가는 것 같은 일종의 공포심마저 느끼는 상태다. 심하면 그리워지기까지 하여 이런 기분을 이해해 달라는 차원에서 자신이 사랑한 것만큼 상대로부터 사랑받고 싶어 한다. 어린이가 이 색깔을 선택하면 아버지에 대한 애정욕구로 보아도 좋다.</p>');
   }
-  if(localStorage.getItem('fourth')=='13'){
+  if(localStorage.getItem('fourth')=='13'){ // 사용자가 14번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13139,7 +9295,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13175,44 +9331,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR14.png" width="200"></p><p>14. 물욕 금전욕 애정욕</p><p>비싼 물품이 욕심난다든가 갑자기 돈이 필요하게 되는 등, 돈과 물품에 대한 생각이 머리에서 떠나지 않고 있는 상태다. 혹은 그런 것을 막 손에 넣은 직후인지도 모르겠지만, 어쨌거나 이런 욕구 의식이 남아있다. 이 색깔은 10번의 상황과 비슷하지만 10번처럼 비상수단을 취하면서까지 욕심낼 만큼 절박하지는 않다. 물질적, 금전적으로 만족하지 못하고 있으며, 어린이가 이 색깔을 선택한 경우에는 애정욕구가 강하므로 주의가 필요하다. 이 색깔은 세상의 경기가 좋지 않게 되면 유행하는데, 이 색깔이 가지는 뜻의 집단적인 의식의 표출이라고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('fourth')=='14'){
+  if(localStorage.getItem('fourth')=='14'){ // 사용자가 15번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13248,7 +9371,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13284,44 +9407,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR15.png" width="200"></p><p>15. 몸 상태 불량</p><p>몸 상태가 좋은 편도 아니지만 정신적으로도 어둡게 가라앉은 상태다. 선택한 색깔 중에 이 색깔이 돋보일 뿐 다른 것은 눈에 들어오지 않는다든가, 16, 31번과 함께 선택되고 다른 색깔은 관심이 없는 경우에는 별로 걱정할 것이 없다. 그러나 3, 9, 22번과 함께 선택되었을 경우에는 주의해야 하며, 이 경우에는 의사의 건강진단을 받아두는 것이 좋다. 이 색깔이 포함되고 있다고 해서 금세 암의 위험이 있다고 말할 수는 없지만, 선택하는 순서와 다른 색과의 관계에서 볼 때 위험한 요소가 내포되었다고 할 수 있다.</p>');
   }
-  if(localStorage.getItem('fourth')=='15'){
+  if(localStorage.getItem('fourth')=='15'){ // 사용자가 16번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13357,7 +9447,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13393,44 +9483,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR16.png" width="200"></p><p>16. 육체적 피로</p><p>심신이 지칠 대로 지쳐서 쉬고 싶다는 생각이 드는 한편에서는 맡은 일을 성실하게 하지 않으면 안 된다는 생각에 정신적으로 협공을 당하는 상태다. 피로감과 의무감, 복종심이 내부에서 서로 갈등을 빚고 있는 상태, 어린이가 이 색깔을 선택하거나 즐겨 선택한다면 놀고 싶은 욕망을 강렬하게 억제당하고 있어 반항하고 싶지만 뜻대로 되지 않는다고 생각해도 무방하다.</p>');
   }
-  if(localStorage.getItem('fourth')=='16'){
+  if(localStorage.getItem('fourth')=='16'){ // 사용자가 17번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13466,7 +9523,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13502,44 +9559,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR17.png" width="200"></p><p>17. 증오 적의</p><p>뭔가를 잊고 싶고 생각하기 싶은데도 할 수 없이 자꾸 생각하게 되는 딜레마에 빠진 상태, 몹시 불쾌한 일이 있었으며, 그 원인이 되었던 사람과 사건에 대해 지독한 증오를 품고 있다. 더욱이 이 의식은 의외로 뿌리 깊은 지속성이 있어서 어떤 계기만 주어지면 직접 보복행위로 나올 위험성을 내포하고 있기도 하다. 올바른 가치 판단을 가지고 있지 않은 어린이가 이 색깔을 선택한 경우에는 신속히 그 원인을 찾아내 제거하도록 해야 한다. 6번이 내향적인 것과는 달리 이 색깔은 외향적인 특징을 가지고 있다.</p>');
   }
-  if(localStorage.getItem('fourth')=='17'){
+  if(localStorage.getItem('fourth')=='17'){ // 사용자가 18번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13575,7 +9599,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13611,44 +9635,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR18.png" width="200"></p><p>18. 만족감 포만감</p><p>오래전부터 갖고 싶어 하던 물건을 손에 넣은 만족감과 식사를 끝낸 후의 만복감을 만끽하고 있는 상태다. 느긋한 마음에 풍요감으로 가득 차 있으며, 인간관계나 애정, 물질적인 면에서도 아무 불만이 없는 극히 평화로운 기분에 싸여 있다. 마음의 평안을 뚜렷이 말해 주는 색깔이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='18'){
+  if(localStorage.getItem('fourth')=='18'){ // 사용자가 19번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13684,7 +9675,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13720,44 +9711,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR19.png" width="200"></p><p>19. 겸허한 체험</p><p>솔직하고 순종적이지만 마음속으로는 체념해야 하는 그 무엇인가를 감추고 있는 상태다. 그러나 이 겸허함과 복종심으로 감싼 체념이 겉으로 나타나 불리하게 하는 일은 없다. 이 경우에는 `할 수 없다`는 이면의 사항을 말하기보다는 표면의 솔직성과 겸허함이 중요하며, 만약 다른 불만이 있으면 별도의 의식을 갖게 되어 다른 색깔을 택하게 될 것이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='19'){
+  if(localStorage.getItem('fourth')=='19'){ // 사용자가 20번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13793,7 +9751,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13829,44 +9787,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR20.png" width="200"></p><p>20. 이성에 대한 그리움</p><p>꿈같은 연애를 하고 싶다거나 애인이 그립고 헤어진 사람과 다시 만나고 싶다거나 이성에 대한 그리움으로 견딜 수 없는 상태다. 또 성적인 충동도 억제할 수 없어서 ‘그 사람의 아이를 가지고 싶어’, ‘그에게 힘껏 안기고 싶어’ 하는 생각도 한다. 연령이나 상황에 따라 내용은 다르지만 이성에 대한 관심이 높아진 상태이며, 특히 성적으로 미숙한 어린이가 이 색깔을 선택한 경우 부모들의 행동을 보고 싶어 하는 수도 있으니 주의해야 한다. 이 색깔의 의식은 직접적이어서 기분이 나면 서슴지 않고 이 색깔을 선택하게 된다. 일생을 혼자 산 고흐는 이 색깔(섹스)을 죄악으로 생각했다고 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='20'){
+  if(localStorage.getItem('fourth')=='20'){ // 사용자가 21번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -13902,7 +9827,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -13938,44 +9863,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR21.png" width="200"></p><p>21. 사람에 대한 봉사</p><p>존경하는 사람, 사랑하는 사람, 평소에 소중하게 생각하는 사람들에 대해 자신을 희생하면서까지 헌신적인 애정을 바치고 싶다는 생각으로 가득 차 있는 상태. 물론 상대에게서도 강렬한 사랑을 받고 싶은 소망으로 안타까운 심정을 안고 있다. 이 색깔에 의해 나타나는 사랑의 의식 밑바닥에는 상대에게 바치는 행위가 실패로 끝나지나 않을까 하는 불안과 공포, 또는 상대가 자신에게서 떠나버리지는 않을까 하는 두 가지 근심으로 가슴을 죄고 있다. 신부 의상, 의사나 간호사의 흰 가운, 회교도들의 메카를 순례할 때 입는 갈라베이야, 싸움에서 졌을 때 흔드는 백기 등은 우리의 의식과 색깔이 갖는 뜻과 관련성을 상징하고 있다. 모든 색깔이 완전히 조화를 이루어 태양의 흰빛(白光)으로 되돌아가듯이 이 색깔은 인간의 사랑의 원형적인 것-가족애와 같은-이 아닌가 하는 느낌이 들기도 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='21'){
+  if(localStorage.getItem('fourth')=='21'){ // 사용자가 22번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14011,7 +9903,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14047,44 +9939,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR22.png" width="200"></p><p>22. 남을 학대하고 싶은 충동</p><p>지금 만족하는 것이 없이 극도로 욕구불만에 싸인 상태. 그 원인을 만든 상태 또는 자신보다 약한 사람을 괴롭히고 학대하는 것으로 불만을 해소하려 하고 있다. 불안정한 정신 상태로 위험할 수도 있다. 이런 의식은 비뚤어지고 왜곡된 내용을 가지고 있기 때문에 지성과 이성이 발달하지 못한 어린이가 선택했을 경우 종종 8번이나 17번과 같은 색깔로 연쇄반응을 일으키며, 폭력이나 잔학성의 원인이 될 수도 있으니 한시 빨리 원인을 찾고 대응책을 강구해야 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='22'){
+  if(localStorage.getItem('fourth')=='22'){ // 사용자가 23번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14120,7 +9979,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14156,44 +10015,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR23.png" width="200"></p><p>23. 희망</p><p>밝은 행복감이 넘쳐흘러 편안하고 안정된 마음으로 모든 것에 우호적인 정신 상태. 목표를 정하고 노력해 온 것이 달성된 직후의 기쁨, 혹은 달성이 눈앞에 다가온 것에 대한 확신 등 과거에 쌓아올린 근면과 연마가 `희망`으로 변하여 축복해 주고 있다. 이 색깔은 2번과 마찬가지로 성인보다는 어린이, 도시보다는 지방에 사는 사람들이 더 많이 선택한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='23'){
+  if(localStorage.getItem('fourth')=='23'){ // 사용자가 24번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14229,7 +10055,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14265,44 +10091,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR24.png" width="200"></p><p>24. 초조함</p><p>무슨 일이 일어나면 자기 생각이나 의견을 전혀 내놓지 않고, 자기 힘으로는 해결할 수 없다는 것을 알고 초조하고 불안한 상태다. 초조한 자신이 다시 불안하고 초조해져서 나중에는 짜증을 내고, 또 짜증스러운 자신이 초조해져서 불안과 초조가 점점 더해간다. 마치 개미구멍에라도 빠진 것처럼 답답한 상태다.</p>');
   }
-  if(localStorage.getItem('fourth')=='24'){
+  if(localStorage.getItem('fourth')=='24'){ // 사용자가 25번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14338,7 +10131,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14374,44 +10167,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR25.png" width="200"></p><p>25. 만족감</p><p>의외로 목적을 빨리 달성하거나 뜻을 이루었다는 마음으로 기분이 최고조에 올라 남들이 의아해할 만큼 들떠 있는 상태다. 그러나 이 의식이 도가 지나치면 때로는 &#39나는 누구보다 뛰어나다&#39는 독선적인 생각으로 경박한 행동을 하게 돼 상대에게 불쾌감을 줄 수도 있으니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='25'){
+  if(localStorage.getItem('fourth')=='25'){ // 사용자가 26번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14447,7 +10207,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14483,44 +10243,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR26.png" width="200"></p><p>26. 밝은 명랑함 속의 불안</p><p>즐거운 일, 기쁜 일이 있어 매우 밝은 기분이지만, 마음에 걸리는 일과 해소되지 않는 근심거리도 있어서 명랑할 수만은 없는 상태다.</p>');
   }
-  if(localStorage.getItem('fourth')=='26'){
+  if(localStorage.getItem('fourth')=='26'){ // 사용자가 27번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14556,7 +10283,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14592,44 +10319,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR27.png" width="200"></p><p>27. 절대자에 대한 사랑</p><p>‘절대’적으로 믿는 것-종교, 회사, 거래처, 고객, 희망학교-이 자신으로부터 멀어져 가는 것은 아닐까 하는 불안, 자신이 하는 행위가 실패하는 것은 아닐까 하는 근심에서 그 ‘절대자’에게 강렬한 사랑을 받고 싶어 하는 바람이 ‘절대자’를 사랑하는 행위로 나타나 있는 상태. 이 색깔이 수도승, 수녀의 옷 색깔로 쓰이고 있는 것은 신에 대한 외경과 경건의 기도에 부응코자 하는 데서 나온 듯하다. 마음속에 있는 것이 색깔로 되어 표면으로 나타난 전형적인 예라고 하겠다. 장례를 지낼 때도 이 색깔을 쓰는데, 그것은 죽은 자에게 바치는 산 사람의 기도와 정화의 소원을 담은 뜻이라고 생각할 수 있다.</p>');
   }
-  if(localStorage.getItem('fourth')=='27'){
+  if(localStorage.getItem('fourth')=='27'){ // 사용자가 28번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14665,7 +10359,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14701,44 +10395,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR28.png" width="200"></p><p>28. 허기</p><p>지금 몹시 허기가 졌거나 목이 말라 물을 마시고 싶은 상태다. 혹은 다이어트에 신경이 쓰여 자연식품에만 생각이 가 있을 수도 있다. 어린이의 편식을 걱정하거나 저녁 준비할 것으로 머리가 복잡해 있지는 않은지? 식사를 끝낸 직후에도 이 색깔을 선택하는데, 음식에 대한 관심이 높아져 있기 때문이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='28'){
+  if(localStorage.getItem('fourth')=='28'){ // 사용자가 29번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14774,7 +10435,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14810,44 +10471,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR29.png" width="200"></p><p>29. 망설임 불안</p><p>양자택일의 문제에 직면해 있는 상태. 그러나 어느 쪽을 택하든 어느 정도의 곤란과 앞일에 대한 불안을 떨쳐버릴 수가 없어 숨이 막힐 것만 같은 심정이다.</p>');
   }
-  if(localStorage.getItem('fourth')=='29'){
+  if(localStorage.getItem('fourth')=='29'){ // 사용자가 30번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14883,7 +10511,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -14919,44 +10547,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR30.png" width="200"></p><p>30. 소화기 불량</p><p>현재 소화기계에 질환을 가지고 있든가, 소화기 질환을 앓은 경력이 있어 아직도 그 의식의 꼬리를 떨치지 못하고 있는 상태다.</p>');
   }
-  if(localStorage.getItem('fourth')=='30'){
+  if(localStorage.getItem('fourth')=='30'){ // 사용자가 31번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -14992,7 +10587,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -15028,44 +10623,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR31.png" width="200"></p><p>31. 수면</p><p>수면 부족이 계속되고 밤을 꼬박 새우기도 하며, 또 그와는 반대로 잠을 지나치게 많이 자서 의식이 잠에서 덜 깬 흐리멍덩한 상태. 바빠서 잠을 충분히 자지 못하는 상황으로, 16번과 함께 선택되는 경우가 많고 방치해 두면 3번 색을 선택하게 되니 주의해야 한다.</p>');
   }
-  if(localStorage.getItem('fourth')=='31'){
+  if(localStorage.getItem('fourth')=='31'){ // 사용자가 32번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -15101,7 +10663,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -15137,44 +10699,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR32.png" width="200"></p><p>32. 정서불안</p><p>어떤 이유로, 혹은 이유도 모르는 채 막연한 불안감을 가지고 있으며, 미래에 대해서도 전망이 밝지 않아 괴로운 상태다. 이 색깔이 뜻하는 것은 12번이나 29번과는 근본적으로 다르며, 생명을 잡아 흔드는 듯한 뿌리 깊은 곳에서 솟구쳐 오르는 불안이다. 어머니에게 호되게 야단을 맞은 어린이가 이 색깔을 선택하는 것도 그런 이유에서다.</p>');
   }
-  if(localStorage.getItem('fourth')=='32'){
+  if(localStorage.getItem('fourth')=='32'){ // 사용자가 33번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -15210,7 +10739,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -15246,44 +10775,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR33.png" width="200"></p><p>33. 신변정리</p><p>언제나 하지 않으면 안 된다고 생각해 온 것, 가령 청소, 세탁, 정리 정돈, 방의 도배, 이사, 채권채무의 이행 등 마음에 걸리는 것이 있거나, 그런 것을 하고 난 직후여서 아직도 의식이 남아 있는 상태다. 어린이가 이 색깔을 선택했을 경우에는 어머니로부터 방 청소, 뒷정리 등으로 꾸지람을 들었음을 나타낸다.</p>');
   }
-  if(localStorage.getItem('fourth')=='33'){
+  if(localStorage.getItem('fourth')=='33'){ // 사용자가 34번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -15319,7 +10815,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR33').hide();
     $('#fourth-a-COLOR35').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -15355,44 +10851,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR33').hide();
     $('#fourth-preview-COLOR35').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR35').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR34.png" width="200"></p><p>34. 회복</p><p>질병, 스트레스, 생리, 부상 등으로 앓고 있던 몸과 정신이 이제는 확실히 회복기에 접어들었거나, 회복해서 원기를 되찾은 직후의 상태다. 평온함으로 가득 찬 해방감이 넘쳐흐르는 바람직한 정신 상태다.</p>');
   }
-  if(localStorage.getItem('fourth')=='34'){
+  if(localStorage.getItem('fourth')=='34'){ // 사용자가 35번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -15428,7 +10891,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR33').hide();
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR36').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -15464,44 +10927,11 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR33').hide();
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR36').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR36').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR35.png" width="200"></p><p>35. 친한 여성이 그리움</p><p>어머니, 할머니, 자매, 딸, 아내, 여자 친구 등 평소에 가장 가깝게 지내던 여성이 멀어져 가는듯한 느낌이 들어 안타까워하고 있는 상태. 그리고 그 사람을 그리워하고 있으며, 이런 기분을 알아주었으면 하는 마음에서 자신이 사랑하는 것만큼 상대에게서 사랑을 받았으면 하는 바람으로 가득 차 있다. 어린이가 이 색깔을 선택한 경우에는 어머니에 대한 애정욕구가 큰 것으로 볼 수 있다.</p>');
   }
-  if(localStorage.getItem('fourth')=='35'){
+  if(localStorage.getItem('fourth')=='35'){ // 사용자가 36번째 이미지를 선택했을 때
+    // 선택한 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-a-COLOR1').hide();
     $('#fourth-a-COLOR2').hide();
     $('#fourth-a-COLOR3').hide();
@@ -15537,7 +10967,7 @@ $(document).ready(function(){
     $('#fourth-a-COLOR33').hide();
     $('#fourth-a-COLOR34').hide();
     $('#fourth-a-COLOR35').hide();
-
+    // 이미지 div 클릭하면 나오는 결과 div의 이미지 div에 사용자가 선택한 이미지만 나타남
     $('#fourth-preview-COLOR1').hide();
     $('#fourth-preview-COLOR2').hide();
     $('#fourth-preview-COLOR3').hide();
@@ -15573,42 +11003,7 @@ $(document).ready(function(){
     $('#fourth-preview-COLOR33').hide();
     $('#fourth-preview-COLOR34').hide();
     $('#fourth-preview-COLOR35').hide();
-
-    $('#fourth-info-COLOR1').hide();
-    $('#fourth-info-COLOR2').hide();
-    $('#fourth-info-COLOR3').hide();
-    $('#fourth-info-COLOR4').hide();
-    $('#fourth-info-COLOR5').hide();
-    $('#fourth-info-COLOR6').hide();
-    $('#fourth-info-COLOR7').hide();
-    $('#fourth-info-COLOR8').hide();
-    $('#fourth-info-COLOR9').hide();
-    $('#fourth-info-COLOR10').hide();
-    $('#fourth-info-COLOR11').hide();
-    $('#fourth-info-COLOR12').hide();
-    $('#fourth-info-COLOR13').hide();
-    $('#fourth-info-COLOR14').hide();
-    $('#fourth-info-COLOR15').hide();
-    $('#fourth-info-COLOR16').hide();
-    $('#fourth-info-COLOR17').hide();
-    $('#fourth-info-COLOR18').hide();
-    $('#fourth-info-COLOR19').hide();
-    $('#fourth-info-COLOR20').hide();
-    $('#fourth-info-COLOR21').hide();
-    $('#fourth-info-COLOR22').hide();
-    $('#fourth-info-COLOR23').hide();
-    $('#fourth-info-COLOR24').hide();
-    $('#fourth-info-COLOR25').hide();
-    $('#fourth-info-COLOR26').hide();
-    $('#fourth-info-COLOR27').hide();
-    $('#fourth-info-COLOR28').hide();
-    $('#fourth-info-COLOR29').hide();
-    $('#fourth-info-COLOR30').hide();
-    $('#fourth-info-COLOR31').hide();
-    $('#fourth-info-COLOR32').hide();
-    $('#fourth-info-COLOR33').hide();
-    $('#fourth-info-COLOR34').hide();
-    $('#fourth-info-COLOR35').hide();
+    //이미지 div 클릭하면 나오는 결과 div의 해당하는 상태 출력 div에 사용자가 선택한 이미지에 해당하는 결과가 나타남
+    $('#fourth-info-COLOR').html('<p><img src="img/COLOR36.png" width="200"></p><p>36. 애정결핍</p><p>특정한 사람으로부터 강렬한 사랑을 받고 싶고, 보다 더 신경 써 주었으면 하는 마음에서 조바심을 내고 있는 상태. 또 누구라도 좋으니 모르는 이성으로부터 강렬한 사랑을 받고 싶다는 간절한 소망을 안고 있다. 이 의식 밑바닥에는 스스로도 모르는 애수의 감정, 안타까운 심정, 슬픔, 인생은 무상하다는 느낌, 그리움 등이 뒤섞여 있다.</p>');
   }
-
 });

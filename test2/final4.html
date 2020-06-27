@@ -1,7 +1,9 @@
 <!doctype html>
 <html class="no-js">
 <head>
+	<!-- 폰트 삽입 -->
 	<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+	<!-- CSS 삽입 -->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="css/reset.css"> 
 	<link rel="stylesheet" href="css/style.css"> 
@@ -10,26 +12,26 @@
 	<title>나의 전생 알아보기</title>
 </head>
 <body class="scrub-transition">
-<div>
+<div>  <!-- Header 부분 -->
 	<h2 class = "hH">우리집에 왜왔니?</h2>
 </div>
 <div>
-	<div class="hh" id="myNavbar">
-	  <a href="../index.html" class="w3-bar-item w3-button">메인으로 돌아가기</a>
-	  <a href="gummy.html" class="w3-bar-item w3-button">다시하기</a>
+	<div class="hh" id="myNavbar">  <!-- Nav 부분 -->
+	  <a href="../index.html" class="w3-bar-item w3-button">메인으로 돌아가기</a> <!-- 메인 이동 버튼 -->
+	  <a href="gummy.html" class="w3-bar-item w3-button">다시하기</a>  <!-- 다시 하기 버튼 -->
 	</div>
   </div>
-<main class="cd-main-content">
+<main class="cd-main-content">  <!-- Section 부분 -->
 	<div class="center">
-		<h1>당신의 전생은 ?</h1>
-	 <button href="#modal-1" class="cd-btn cd-modal-trigger" >Result</button>
-	 <div>
+		<h1>당신의 전생은 ?</h1> <!-- text -->
+	 <button href="#modal-1" class="cd-btn cd-modal-trigger" >Result</button>  <!-- 결과보기 버튼 -->
+	 <div>  <!-- 별이 떠다니는 배경 애니메이션 효과 -->
 		<div class="stars"></div>
 		<div class="stars2"></div>
 	  </div>
 	</div>
-	</div>
 </main> 
+<!-- 댓글창 -->
 <div id="disqus_thread" class="hhh"></div>
 <script>
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -40,7 +42,7 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
+<!-- 결과 모달창 -->
 <div class="cd-modal" id="modal-1">
 	<div class="modal-content">
 		<div class="cont">
@@ -48,7 +50,7 @@ s.setAttribute('data-timestamp', +new Date());
               <div class="photo" style="background-image: url('img/owl.jpg')"></div>
               <h4>대담하고 똑부러지는 성격을 가진 </h4>
               <h4>당신의 전생은 "부엉이" 입니다! </h4>
-            </div>
+            </div><!-- 배경 애니메이션 효과 -->
               <div class="shooting_star"></div>
               <div class="shooting_star"></div>
               <div class="shooting_star"></div>
@@ -65,7 +67,7 @@ s.setAttribute('data-timestamp', +new Date());
 	</div> 
 	<a href="#0" class="modal-close">Close</a>
 </div> 
-
+<!-- footer 부분 -->
 <footer class = "hhh"><br>본 서비스는 세종대학교 2020년 1학기 <웹프로그래밍>의 팀 프로젝트입니다. 페이지 관련 문의사항 및 건의사항을 보내주세요. 확인 후 빠르게 연락 드리겠습니다. 본 서비스의 공유 및 사용은 격렬하게 환영합니다.<br>
 	Disclaimer: All content is provided for fun and entertainment purposes only.<br><br></footer>
 
@@ -73,12 +75,8 @@ s.setAttribute('data-timestamp', +new Date());
 	<div class="bg-layer"></div>
 </div> 
 
-
-<script src="js/modernizr.js"></script> 
+<!-- JS 삽입 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script>
-	if( !window.jQuery ) document.write('<script src="js/jquery-2.2.1-min.js"><\/script>');
-</script>
 <script src="js/main.js"></script> 
 </body>
 </html>

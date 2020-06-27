@@ -1,212 +1,181 @@
 
-.cont {
+.cont { /* 모달창 컨텐츠에 적용 */
     transform:rotate(0deg);
-    width: 100%;
-    height: 100%;
-    display: block;
-    text-align: center;
+    width: 100%;            /* 화면에 꽉 차는 너비로 설정 */
+    height: 100%;           /* 화면에 꽉 차는 높이로 설정 */
+    display: block;         /* display 속성 설정 */
+    text-align: center;     /* 가운데 정렬 */
     justify-content: center;
     align-items: center;
   }
   
-  .polaroid {
-    margin: 0 auto;
-    margin-bottom: 60px;
-    height: 600px;
+  .polaroid {         /* 결과 보여주는 box */
+    margin: 0 auto;   /* 가운데 정렬 */
+    margin-bottom: 60px;     /* 여백 설정(text가 들어갈 곳) */
+    height: 600px;            /* 크기 설정 */
     width: 600px;
     padding: 15px;
-    /*  background-color: #e9e9e9;*/
-    background-color: rgb(192, 219, 228);
+    background-color: rgb(192, 219, 228);   /* 배경색 설정 */
     box-sizing: border-box;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.404), 0 6px 20px 0 rgba(0, 0, 0, 0.377);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.404), 0 6px 20px 0 rgba(0, 0, 0, 0.377);  /* 그림자 효과 */
   }
   
-  .photo {
+  .photo {          /* 결과 보여주는 box 속 사진 */
     background-size: cover;
-    background-position: center center;
-   /* box-shadow: inset 0 0 40px rgba(99, 99, 80, 0.8);*/
-    height: 450px;
+    background-position: center center;    /* 가운데 위치 */
+    height: 450px;                         /* 크기 조정 */
     width: 570px;
-    background-color: white;
+    background-color: white;            /* 배경색 설정 */
   }
   
-  .polaroid h4 {
-    font: 700 100px/0.8 'Gaegu', Helvetica, sans-serif;
-    color: black;
-    margin: 25px 0;
+  .polaroid h4 {      /* 결과 보여주는 box 속 text */
+    font: 700 100px/0.8 'Gaegu', Helvetica, sans-serif;  /* 폰트 설정 */
+    color: black;         /* 폰트색 설정 */
+    margin: 25px 0;          /* 여백 설정 */
     font-size: 34px;
-    text-align: center;
+    text-align: center;       /* 가운데 정렬 */
     opacity: 0.8;
   }
   
   
   
   
-  
-  .night {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-transform: rotateZ(45deg);
-            transform: rotateZ(45deg);
+/* 모달창 배경의 애니메이션 효과 */
+  .night {        
+    position: relative;       /* 위치 속성 설정 */
+    width: 100%;              /* 화면에 꽉 차는 높이로 설정 */
+    height: 100%;             /* 화면에 꽉 차는 너비로 설정 */
+    transform: rotateZ(45deg);  /* Z속성 45도 회전 */
   }
   
-  .shooting_star {
-    position: absolute;
+  .shooting_star {    /* 별똥별이 움직이는 배경 */
+    position: absolute;   /* 위치 속성 설정 */
     left: 0%;
     top: 0%;
-    height: 2px;
-    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+    height: 2px;          /* 크기 설정 */
+    background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));   /* 그라데이션 배경 설정 */
     border-radius: 999px;
-    -webkit-filter: drop-shadow(0 0 6px #699bff);
-            filter: drop-shadow(0 0 6px #699bff);
-    -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
-            animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+    filter: drop-shadow(0 0 6px #699bff);   /* 별똥별의 꼬리 나타냄 */
+    animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;     /* 동적인 애니메이션 효과 적용 */
   }
-  .shooting_star::before, .shooting_star::after {
+  .shooting_star::before, .shooting_star::after { /* 가상요소 설정 - 장식용 효과 */
     content: '';
-    position: absolute;
+    position: absolute;       /* 위치 속성 설정 */
     top: calc(5% - 1px);
-    right: 0;
+    right: 0;                  /* 크기 지정 */
     height: 2px;
-    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
-    -webkit-transform: translateX(50%) rotateZ(45deg);
-            transform: translateX(50%) rotateZ(45deg);
-    border-radius: 100%;
-    -webkit-animation: shining 3000ms ease-in-out infinite;
-            animation: shining 3000ms ease-in-out infinite;
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0)); /* 그라데이션 배경 설정 */
+    transform: translateX(50%) rotateZ(45deg);      /* 위치 이동 */
+    border-radius: 100%;  
+    animation: shining 3000ms ease-in-out infinite;  /* 동적인 애니메이션 효과 적용 */
   }
   .shooting_star::after {
-    -webkit-transform: translateX(50%) rotateZ(-45deg);
-            transform: translateX(50%) rotateZ(-45deg);
+    transform: translateX(50%) rotateZ(-45deg);
   }
+
+ /* 배경에 나타낼 12개의 별 */
+ /* 각각의 별마다 위치 설정 및 동적 효과 설정 */
   .shooting_star:nth-child(1) {
-    top: calc(5% - -15px);
+    top: calc(5% - -15px);      /* 위치 설정 */
     left: calc(5% - 16px);
-    -webkit-animation-delay: 2933ms;
-            animation-delay: 2933ms;
+    animation-delay: 2933ms;   /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after, .shooting_star:nth-child(1)::after {
-    -webkit-animation-delay: 2933ms;
-            animation-delay: 2933ms;
+    animation-delay: 2933ms;  /* 애니메이션이 시작할 시점 */
   }
-  
   .shooting_star:nth-child(2) {
-    top: calc(5% - 171px);
+    top: calc(5% - 171px);  /* 위치 설정 */
     left: calc(5% - 53px);
-    -webkit-animation-delay: 3968ms;
-            animation-delay: 3968ms;
+    animation-delay: 3968ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after, .shooting_star:nth-child(2)::after {
-    -webkit-animation-delay: 3968ms;
-            animation-delay: 3968ms;
+    animation-delay: 3968ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(3) {
-    top: calc(5% - -169px);
+    top: calc(5% - -169px); /* 위치 설정 */
     left: calc(5% - 9px);
-    -webkit-animation-delay: 6435ms;
-            animation-delay: 6435ms;
+    animation-delay: 6435ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after, .shooting_star:nth-child(3)::after {
-    -webkit-animation-delay: 6435ms;
-            animation-delay: 6435ms;
+    animation-delay: 6435ms;  /* 애니메이션이 시작할 시점 */
   }
   
   .shooting_star:nth-child(4) {
-    top: calc(10% - 161px);
+    top: calc(10% - 161px); /* 위치 설정 */
     left: calc(10% - 198px);
-    -webkit-animation-delay: 6373ms;
-            animation-delay: 6373ms;
+    animation-delay: 6373ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after, .shooting_star:nth-child(4)::after {
-    -webkit-animation-delay: 6373ms;
-            animation-delay: 6373ms;
+    animation-delay: 6373ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(5) {
-    top: calc(10% - 50px);
+    top: calc(10% - 50px); /* 위치 설정 */
     left: calc(10% - 108px);
-    -webkit-animation-delay: 4824ms;
-            animation-delay: 4824ms;
+    animation-delay: 4824ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(5)::before, .shooting_star:nth-child(5)::after, .shooting_star:nth-child(5)::after {
-    -webkit-animation-delay: 4824ms;
-            animation-delay: 4824ms;
+    animation-delay: 4824ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(6) {
-    top: calc(10% - -51px);
+    top: calc(10% - -51px);  /* 위치 설정 */
     left: calc(10% - 131px);
-    -webkit-animation-delay: 295ms;
-            animation-delay: 295ms;
+    animation-delay: 295ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(6)::before, .shooting_star:nth-child(6)::after, .shooting_star:nth-child(6)::after {
-    -webkit-animation-delay: 295ms;
-            animation-delay: 295ms;
+    animation-delay: 295ms;  /* 애니메이션이 시작할 시점 */
   }
-  
   .shooting_star:nth-child(7) {
-    top: calc(10% - -27px);
+    top: calc(10% - -27px);  /* 위치 설정 */
     left: calc(10% - 114px);
-    -webkit-animation-delay: 8856ms;
-            animation-delay: 8856ms;
+    animation-delay: 8856ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(7)::before, .shooting_star:nth-child(7)::after, .shooting_star:nth-child(7)::after {
-    -webkit-animation-delay: 8856ms;
-            animation-delay: 8856ms;
+     animation-delay: 8856ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(8) {
-    top: calc(10% - 67px);
+    top: calc(10% - 67px);  /* 위치 설정 */
     left: calc(10% - 208px);
-    -webkit-animation-delay: 2043ms;
-            animation-delay: 2043ms;
+    animation-delay: 2043ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(8)::before, .shooting_star:nth-child(8)::after, .shooting_star:nth-child(8)::after {
-    -webkit-animation-delay: 2043ms;
-            animation-delay: 2043ms;
+    animation-delay: 2043ms;  /* 애니메이션이 시작할 시점 */
   }
-  
   .shooting_star:nth-child(9) {
-    top: calc(90% - -43px);
+    top: calc(90% - -43px);  /* 위치 설정 */
     left: calc(90% - 223px);
-    -webkit-animation-delay: 331ms;
-            animation-delay: 331ms;
+    animation-delay: 331ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(9)::before, .shooting_star:nth-child(9)::after, .shooting_star:nth-child(9)::after {
-    -webkit-animation-delay: 331ms;
-            animation-delay: 331ms;
+    animation-delay: 331ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(10) {
-    top: calc(90% - 196px);
+    top: calc(90% - 196px);  /* 위치 설정 */
     left: calc(90% - 240px);
-    -webkit-animation-delay: 7278ms;
-            animation-delay: 7278ms;
+    animation-delay: 7278ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(10)::before, .shooting_star:nth-child(10)::after, .shooting_star:nth-child(10)::after {
-    -webkit-animation-delay: 7278ms;
-            animation-delay: 7278ms;
+    animation-delay: 7278ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(11) {
-    top: calc(90% - 27px);
+    top: calc(90% - 27px);  /* 위치 설정 */
     left: calc(90% - 241px);
-    -webkit-animation-delay: 5062ms;
-            animation-delay: 5062ms;
+     animation-delay: 5062ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(11)::before, .shooting_star:nth-child(11)::after, .shooting_star:nth-child(11)::after {
-    -webkit-animation-delay: 5062ms;
-            animation-delay: 5062ms;
+    animation-delay: 5062ms;  /* 애니메이션이 시작할 시점 */
   }
   
   .shooting_star:nth-child(12) {
-    top: calc(90% - 164px);
+    top: calc(90% - 164px);  /* 위치 설정 */
     left: calc(90% - 268px);
-    -webkit-animation-delay: 937ms;
-            animation-delay: 937ms;
+    animation-delay: 937ms;  /* 애니메이션이 시작할 시점 */
   }
   .shooting_star:nth-child(12)::before, .shooting_star:nth-child(12)::after, .shooting_star:nth-child(12)::after {
-    -webkit-animation-delay: 937ms;
-            animation-delay: 937ms;
+    animation-delay: 937ms;  /* 애니메이션이 시작할 시점 */
   }
   
-  @-webkit-keyframes tail {
+/* 별똥별 꼬리 애니메이션 */
+  @keyframes tail {   /* keyframe 구간 지정해 효과가 동적으로 나타나게 함 */
     0% {
       width: 0;
     }
@@ -217,19 +186,8 @@
       width: 0;
     }
   }
-  
-  @keyframes tail {
-    0% {
-      width: 0;
-    }
-    30% {
-      width: 100px;
-    }
-    100% {
-      width: 0;
-    }
-  }
-  @-webkit-keyframes shining {
+/* 별똥별 이동 효과 애니메이션 */
+  @keyframes shining {    /* keyframe 구간 지정해 효과가 동적으로 나타나게 함 */
     0% {
       width: 0;
     }
@@ -240,55 +198,22 @@
       width: 0;
     }
   }
-  @keyframes shining {
+/* 별똥별 이동 효과 애니메이션 */
+  @keyframes shooting { /* keyframe 구간 지정해 효과가 동적으로 나타나게 함 */
     0% {
-      width: 0;
-    }
-    50% {
-      width: 30px;
+      transform: translateX(0);
     }
     100% {
-      width: 0;
+      transform: translateX(300px);
     }
   }
-  @-webkit-keyframes shooting {
+/* 별똥별 머리 부분 애니메이션 */
+  @keyframes sky {    /* keyframe 구간 지정해 효과가 동적으로 나타나게 함 */
     0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+      transform: rotate(45deg);
     }
     100% {
-      -webkit-transform: translateX(300px);
-              transform: translateX(300px);
-    }
-  }
-  @keyframes shooting {
-    0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-    }
-    100% {
-      -webkit-transform: translateX(300px);
-              transform: translateX(300px);
-    }
-  }
-  @-webkit-keyframes sky {
-    0% {
-      -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
-    }
-    100% {
-      -webkit-transform: rotate(405deg);
-              transform: rotate(405deg);
-    }
-  }
-  @keyframes sky {
-    0% {
-      -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
-    }
-    100% {
-      -webkit-transform: rotate(405deg);
-              transform: rotate(405deg);
+      transform: rotate(405deg);
     }
   }
   

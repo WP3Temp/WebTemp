@@ -1,3 +1,5 @@
+/* CSS reset */
+/* html의 모든 요소들의 스타일 초기화 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,23 +13,22 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
+	margin: 0;						/* 중간에 공간이 비지 않도록 여백은 다 0으로 처리 */
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	font: inherit;					/* 폰트는 부모 요소값을 상속받도록 함 */
+	vertical-align: baseline;		/* 수직정렬 기본값으로 설정 */
 }
-
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, main {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 1;					/* 글자 높이 설정 */
 }
 ol, ul {
-	list-style: none;
+	list-style: none;				/* 리스트에서 기본값으로는 아무런 장식도 보여주지 않음 */
 }
 blockquote, q {
 	quotes: none;
